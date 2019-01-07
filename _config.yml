@@ -57,11 +57,11 @@ kramdown:
 
 # 评论系统
 # Disqus（https://disqus.com/）
-# disqus_username: shunyu
+disqus_username: shunyu
 
 # Gitalk
 gitalk:
-  enable: true    #是否开启Gitalk评论
+  enable: false    #是否开启Gitalk评论
   clientID: 7fa2aa7670ebae7bf2b4                            #生成的clientID
   clientSecret: 436e2734b724a9dc65bba97f11b6cb550c700044    #生成的clientSecret
   repo: liushunyu.github.io    #仓库名称
