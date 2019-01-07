@@ -3,7 +3,7 @@ title: Shunyu's Blog
 SEOTitle: 顺宇的博客 | Shunyu's Blog
 header-img: img/post-bg-desk.jpg
 email: shunyu.liu@foxmail.com
-description: "怕什么真理无穷"
+description: "顺宇的博客"
 keyword: "顺宇的博客, Shunyu's Blog, Machine Learning, Python"
 url: "http://liushunyu.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
@@ -11,19 +11,19 @@ github_repo: "https://github.com/qiubaiying/qiubaiying.github.io.git" # you code
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "进一寸有进一寸的欢喜"
+sidebar-about-description: "愿你年少有为。"
 sidebar-avatar: /img/header.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # SNS settings
 RSS: false
-# weibo_username:     qiubaiying
-# zhihu_username:     qiubaiying
+# weibo_username:     
+# zhihu_username:     
 github_username:    liushunyu
-# facebook_username:  baiying.qiu.7
-# jianshu_username:   e71990ada2fd
-# twitter_username:   qiubaiying
+# facebook_username:  
+# jianshu_username:   
+# twitter_username:   
 
 
 
