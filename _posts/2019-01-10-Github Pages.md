@@ -75,7 +75,7 @@ tags:
 
 ### 错误
 
-##### jekyll-paginate 依赖缺失
+#### jekyll-paginate 依赖缺失
 
 解决方法：
 
@@ -85,7 +85,7 @@ gem install jekyll-paginate
 
 
 
-##### 4000端口被占用
+#### 4000端口被占用
 
 原因：
 
@@ -145,6 +145,10 @@ port: 1234
 [网页动态背景——随鼠标变换的动态线条](https://www.cnblogs.com/qq597585136/p/7019755.html)
 
 [加入页码跳转功能](https://github.com/Gaohaoyang/gaohaoyang.github.io/pull/109/commits/31667a8bc2a5cf7b4a005cf4ba44dc8b42d9c564)
+
+[文章中的catalog怎样实现多级菜单](https://github.com/Huxpro/huxpro.github.io/issues/116#)
+
+[如何添加栏目？](https://github.com/Huxpro/huxpro.github.io/issues/237#)
 
 
 
