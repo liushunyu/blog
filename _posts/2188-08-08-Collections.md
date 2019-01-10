@@ -13,7 +13,7 @@ tags:
 
 
 
-# 教程/文档
+## 教程/文档
 
 ### Pytorch
 
@@ -42,7 +42,7 @@ tags:
 
 
 
-# 书籍
+## 书籍
 
 ### 《Convex Optimization》
 
@@ -79,7 +79,7 @@ tags:
 
 
 
-# 网课及其笔记
+## 网课及其笔记
 
 ### 线性代数
 
@@ -175,7 +175,7 @@ tags:
 
 
 
-# Other blogs
+## Other blogs
 
 - [刘建平github](https://github.com/ljpzzz/machinelearning)
 - [零基础学习入门深度学习](https://www.zybuluo.com/hanbingtao/note/433855)

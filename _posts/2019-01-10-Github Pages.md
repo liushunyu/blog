@@ -25,7 +25,7 @@ tags:
 
 
 
-# 环境配置
+## 环境配置
 
 ### 参考
 
@@ -130,7 +130,7 @@ port: 1234
 
 
 
-# 博客搭建
+## 博客搭建
 
 直接 clone 或者 fork [Gaohaoyang](https://github.com/Gaohaoyang/gaohaoyang.github.io) 或者 [Huxpro](https://github.com/Huxpro/huxpro.github.io) 大神的博客即可。
 
@@ -148,6 +148,6 @@ port: 1234
 
 
 
-# 致谢
+## 致谢
 
 该博客模板是从 [Huxpro](https://github.com/Huxpro/huxpro.github.io) fork 的，具体搭建参考了 [Gaohaoyang](https://github.com/Gaohaoyang/gaohaoyang.github.io) 的教程，感谢这两位作者。
