@@ -27,14 +27,14 @@ tags:
 
 ## 环境配置
 
-### 参考
+#### 参考
 
 - [Jekyll 搭建静态博客](https://gaohaoyang.github.io/2015/02/15/create-my-blog-with-jekyll/)
 - [对这个 jekyll 博客主题的改版和重构](https://gaohaoyang.github.io/2016/03/12/jekyll-theme-version-2.0/)
 
 
 
-### 流程
+#### 流程
 
 
 1. 下载安装 [Ruby](https://rubyinstaller.org/downloads/)
@@ -73,9 +73,9 @@ tags:
 
 
 
-### 错误
+#### 错误
 
-#### jekyll-paginate 依赖缺失
+##### jekyll-paginate 依赖缺失
 
 解决方法：
 
@@ -85,7 +85,7 @@ gem install jekyll-paginate
 
 
 
-#### 4000端口被占用
+##### 4000端口被占用
 
 原因：
 
@@ -140,7 +140,7 @@ port: 1234
 
 
 
-### 细节修改
+#### 细节修改
 
 [网页动态背景——随鼠标变换的动态线条](https://www.cnblogs.com/qq597585136/p/7019755.html)
 
