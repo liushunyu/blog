@@ -13,13 +13,12 @@ future: true
 
 # SNS settings
 RSS: false
-weibo_username:     liushunyu
-zhihu_username:     liushunyu
+#weibo_username:     liushunyu
+#zhihu_username:     liushunyu
 github_username:    liushunyu
-twitter_username:   liushunyu
+#twitter_username:   liushunyu
 #facebook_username:  liushunyu
 #linkedin_username:  firstname-lastname-idxxxx
-
 
 
 # Build settings
