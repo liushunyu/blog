@@ -25,16 +25,16 @@ tags:
 
 
 
-## 环境配置
+# 环境配置
 
-#### 参考
+### 参考
 
 - [Jekyll 搭建静态博客](https://gaohaoyang.github.io/2015/02/15/create-my-blog-with-jekyll/)
 - [对这个 jekyll 博客主题的改版和重构](https://gaohaoyang.github.io/2016/03/12/jekyll-theme-version-2.0/)
 
 
 
-#### 流程
+### 流程
 
 
 1. 下载安装 [Ruby](https://rubyinstaller.org/downloads/)
@@ -73,7 +73,7 @@ tags:
 
 
 
-#### 错误
+### 错误
 
 ##### jekyll-paginate 依赖缺失
 
@@ -130,7 +130,7 @@ port: 1234
 
 
 
-## 博客搭建
+# 博客搭建
 
 直接 clone 或者 fork [Gaohaoyang](https://github.com/Gaohaoyang/gaohaoyang.github.io) 或者 [Huxpro](https://github.com/Huxpro/huxpro.github.io) 大神的博客即可。
 
@@ -140,7 +140,7 @@ port: 1234
 
 
 
-#### 细节修改
+### 细节修改
 
 [网页动态背景——随鼠标变换的动态线条](https://www.cnblogs.com/qq597585136/p/7019755.html)
 
@@ -148,6 +148,6 @@ port: 1234
 
 
 
-## 致谢
+# 致谢
 
 该博客模板是从 [Huxpro](https://github.com/Huxpro/huxpro.github.io) fork 的，具体搭建参考了 [Gaohaoyang](https://github.com/Gaohaoyang/gaohaoyang.github.io) 的教程，感谢这两位作者。

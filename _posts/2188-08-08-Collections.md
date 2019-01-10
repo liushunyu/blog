@@ -13,9 +13,9 @@ tags:
 
 
 
-## 教程/文档
+# 教程/文档
 
-#### Pytorch
+### Pytorch
 
 - [PYTORCH DOCUMENTATION](https://pytorch.org/docs/stable/index.html)
 - [PyTorch 中文网](https://www.pytorchtutorial.com/pytorch-tutorials-list/)
@@ -23,34 +23,34 @@ tags:
 
 
 
-#### NetworkX
+### NetworkX
 
 - [networkx — NetworkX 1.9 documentation](https://www.baidu.com/link?url=zjXEDk05271GehvXvALcrw149dduIBcRaDsORBfvtxEihXQF8AXIkO26cW4wTeSV1h7piWjlaeFsAPkYH3nSlAjyP1R6ZEqM4qsjdAY0j6-y3Ri_dw3SvP0raSYgDPDB&wd=&eqid=88697eff0003d1f5000000065c2f0c35)
 
 
 
-#### Tensorflow
+### Tensorflow
 
 - [osforscience/TensorFlow-Course](https://github.com/osforscience/TensorFlow-Course)
 
 
 
-#### Keras
+### Keras
 
 - [Keras 中文文档](https://keras.io/zh/)
 - [Keras:基于Python的深度学习库 - Keras中文文档](https://keras-cn.readthedocs.io/en/latest/)
 
 
 
-## 书籍
+# 书籍
 
-#### 《Convex Optimization》
+### 《Convex Optimization》
 
 - [《Convex Optimization》](http://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf)
 
 
 
-#### 《Pattern Recognition and Machine Learning》
+### 《Pattern Recognition and Machine Learning》
 
 - [英文版](https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf)
 - [代码实现](https://github.com/ctgk/PRML)
@@ -59,29 +59,29 @@ tags:
 
 
 
-#### 《Machine Learning: a Probabilistic Perspective》
+### 《Machine Learning: a Probabilistic Perspective》
 
 - [英文版](http://120.198.248.25/cache/liuchengxu.org/books/src/Theory/Machine-Learning-A-Probabilistic-Perspective.pdf?ich_args2=888-04230103042586_8a634a93c7437a8f1959e07de3022c87_10001002_9c89602fdec0f4d6973d518939a83798_50fad326318fb3948ce13746cb5b09c5)
 - [MLAPP 中文笔记项目](https://github.com/Kivy-CN/MLAPP-CN)
 
 
 
-#### 《The Elements of Statistical Learning》
+### 《The Elements of Statistical Learning》
 
 - [英文版](https://web.stanford.edu/~hastie/ElemStatLearn//printings/ESLII_print10.pdf)
 
 
 
-#### 《Deep Learning》
+### 《Deep Learning》
 
 - [中文版](https://github.com/exacity/deeplearningbook-chinese)
 - [英文版](https://github.com/janishar/mit-deep-learning-book-pdf/blob/master/complete-book-bookmarked-pdf/deeplearningbook.pdf)
 
 
 
-## 网课及其笔记
+# 网课及其笔记
 
-#### 线性代数
+### 线性代数
 
 **麻省理工公开课：线性代数**
 
@@ -103,7 +103,7 @@ tags:
 
 
 
-#### 机器学习
+### 机器学习
 
 **Andrew Ng《Machine Learning》**
 
@@ -145,7 +145,7 @@ tags:
 
 
 
-#### 深度学习
+### 深度学习
 
 **Andrew Ng 《深度学习专项课程》**
 
@@ -175,7 +175,7 @@ tags:
 
 
 
-## Other blogs
+# Other blogs
 
 - [刘建平github](https://github.com/ljpzzz/machinelearning)
 - [零基础学习入门深度学习](https://www.zybuluo.com/hanbingtao/note/433855)
