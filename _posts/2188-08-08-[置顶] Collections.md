@@ -163,21 +163,21 @@ tags:
 **李飞飞《视觉识别深度学习》CS231**
 
 - 网课：
-  - [斯坦福李飞飞视觉识别深度学习CS231-2017](https://study.163.com/course/introduction/1004697005.htm)
-  - [斯坦福李飞飞视觉识别深度学习CS231-2016](https://study.163.com/course/introduction/1003223001.htm)
+  - [斯坦福李飞飞视觉识别深度学习 CS231-2017](https://study.163.com/course/introduction/1004697005.htm)
+  - [斯坦福李飞飞视觉识别深度学习 CS231-2016](https://study.163.com/course/introduction/1003223001.htm)
 
 
 
 **Chris Manning & Richard Socher《自然语言处理课程》CS224n**
 
 - 网课：
-  - [斯坦福2017季CS224n深度学习自然语言处理课程](https://www.bilibili.com/video/av13383754?from=search&seid=7885912967229647423)
+  - [斯坦福 2017 季 CS224n 深度学习自然语言处理课程](https://www.bilibili.com/video/av13383754?from=search&seid=7885912967229647423)
 
 
 
 ## Other blogs
 
-- [刘建平github](https://github.com/ljpzzz/machinelearning)
+- [刘建平 github](https://github.com/ljpzzz/machinelearning)
 - [零基础学习入门深度学习](https://www.zybuluo.com/hanbingtao/note/433855)
 - [马同学高等数学公众号](http://mp.weixin.qq.com/mp/homepage?__biz=MzIyMTU0NDMyNA==&hid=4&sn=90c1c726d828163d151a94db194765a5&scene=18#wechat_redirect)
-- [Andrew Ng ufldl教程](http://ufldl.stanford.edu/wiki/index.php/UFLDL%E6%95%99%E7%A8%8B)
+- [Andrew Ng ufldl 教程](http://ufldl.stanford.edu/wiki/index.php/UFLDL%E6%95%99%E7%A8%8B)
