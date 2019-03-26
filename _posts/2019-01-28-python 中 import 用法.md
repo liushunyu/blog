@@ -133,6 +133,6 @@ sys.path 返回的是一个列表，该列表已经添加到系统的环境变�
 
 
 
-## 致谢
+## 参考资料及致谢
 
 [Python中import导入上一级目录模块及循环import问题的解决](https://www.cnblogs.com/sjy18039225956/p/9265461.html)

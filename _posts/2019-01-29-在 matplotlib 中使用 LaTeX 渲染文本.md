@@ -52,7 +52,7 @@ tags:
 
 
 
-## 致谢
+## 参考资料及致谢
 
 [Text rendering With LaTeX](https://matplotlib.org/tutorials/text/usetex.html)
 

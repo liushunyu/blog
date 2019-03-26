@@ -123,7 +123,7 @@ conda create -n py35 python=3.5 ipykernel
 
 
 
-## 致谢
+## 参考资料及致谢
 
 [pip和conda批量导出、安装组件(requirements.txt)](https://blog.csdn.net/chekongfu/article/details/83187591)
 

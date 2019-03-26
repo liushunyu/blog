@@ -152,6 +152,6 @@ port: 1234
 
 
 
-## 致谢
+## 参考资料及致谢
 
 该博客模板是从 [Huxpro](https://github.com/Huxpro/huxpro.github.io) fork 的，具体搭建参考了 [Gaohaoyang](https://github.com/Gaohaoyang/gaohaoyang.github.io) 的教程，感谢这两位作者。
