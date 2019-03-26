@@ -72,7 +72,7 @@ exit
 
 `screen` 其他具体操作可参考 [linux screen 命令 ：离线运行程序](https://www.cnblogs.com/lifegoesonitself/p/3516718.html)。
 
-SIGHUP 信号原理可参考 [linux 技巧：使用 screen 管理你的远程会话](https://www.ibm.com/developerworks/cn/linux/l-cn-screen/)。
+`SIGHUP` 信号原理可参考 [linux 技巧：使用 screen 管理你的远程会话](https://www.ibm.com/developerworks/cn/linux/l-cn-screen/)。
 
 
 
@@ -80,9 +80,7 @@ SIGHUP 信号原理可参考 [linux 技巧：使用 screen 管理你的远程会
 
 ## 其他说明
 
-还可以 [使用 `nohub` 实现后台运行服务器]() 的功能，还有一些其他方法可参考 [Linux下让进程在后台可靠运行的几种方法（nohup/&）和前后台运行程序切换](https://blog.csdn.net/u011630575/article/details/51037153)
-
-。
+还可以 [使用 `nohub` 实现后台运行服务器]() 的功能，还有一些其他方法可参考 [Linux下让进程在后台可靠运行的几种方法（nohup/&）和前后台运行程序切换](https://blog.csdn.net/u011630575/article/details/51037153)。
 
 
 
