@@ -15,9 +15,13 @@ tags:
 
 
 
+在 mac 环境下，运行 matplotlib 时出现错误。
+
+
+
 #### 错误
 
-在 mac 环境下，运行 matplotlib 时出现错误提示如下：
+错误提示如下：
 
 ```
 ImportError: Python is not installed as a framework.
