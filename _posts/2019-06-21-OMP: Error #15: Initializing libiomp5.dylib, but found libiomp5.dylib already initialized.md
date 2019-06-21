@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "ImportError: Python is not installed as a framework."
-subtitle:    "运行 matplotlib 时出现 ImportError: Python is not installed as a framework."
+title:      "OMP: Error #15"
+subtitle:    "在 mac 环境下，运行机器学习代码时出现 OMP: Error #15: Initializing libiomp5.dylib, but found libiomp5.dylib already initialized."
 date:       2019-06-21
 author:     Shunyu
 header-style: text
