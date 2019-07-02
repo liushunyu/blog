@@ -32,6 +32,7 @@ tags:
 ### Tensorflow
 
 - [osforscience/TensorFlow-Course](https://github.com/osforscience/TensorFlow-Course)
+- [*TensorFlow*中文社区](https://www.baidu.com/link?url=ou0O4B7oA9B1wS_j9ZzrbMbtsXN-R7pkeoszJp8bXPiKNB-KkIJjWgsAdOQjSL37&wd=&eqid=fc213e7c000d4348000000065c9b5caa)
 
 
 
@@ -39,6 +40,36 @@ tags:
 
 - [Keras 中文文档](https://keras.io/zh/)
 - [Keras:基于Python的深度学习库 - Keras中文文档](https://keras-cn.readthedocs.io/en/latest/)
+
+
+
+### Git
+
+- [Git教程 - 廖雪峰的官方网站](http://www.baidu.com/link?url=W6VLdBMd4AupkHr-im3AghSLYQKcl7WCj-H3y4gdCf1W4uf6SAdJVbu3ToeU16sFtvWOSztC1chrbAqFZnQfbBxnsOuraEoJVpJDZho0eOA7h_scdQlSPZZxC8-raRB2&ck=6612.2.0.0.0.253.142.0&shh=www.baidu.com&sht=baiduhome_pg)
+
+
+
+### 爬虫
+
+- [Python2爬虫学习系列教程](https://cuiqingcai.com/1052.html)
+
+- [Python爬虫入门教程](<https://blog.csdn.net/wxg694175346/column/info/why-bug>)
+
+
+
+### Docker
+
+[只要一小时，零基础入门Docker](https://zhuanlan.zhihu.com/p/23599229)
+
+[Docker与Dockerfile极简入门文档](https://blog.csdn.net/qq_33256688/article/details/80319673)
+
+
+
+### 开源项目风格指南
+
+- [Google 开源项目风格指南 (中文版)](<https://zh-google-styleguide.readthedocs.io/en/latest/>)
+
+- [Google Style Guides](<https://google.github.io/styleguide/>)
 
 
 
@@ -76,6 +107,12 @@ tags:
 
 - [中文版](https://github.com/exacity/deeplearningbook-chinese)
 - [英文版](https://github.com/janishar/mit-deep-learning-book-pdf/blob/master/complete-book-bookmarked-pdf/deeplearningbook.pdf)
+
+
+
+#### 《机器学习》
+
+- [南瓜书PumpkinBook](https://datawhalechina.github.io/pumpkin-book/#/?id=%e5%8d%97%e7%93%9c%e4%b9%a6pumpkinbook)
 
 
 
@@ -178,6 +215,7 @@ tags:
 ## Other blogs
 
 - [刘建平 github](https://github.com/ljpzzz/machinelearning)
+- [刘建平博客](https://www.cnblogs.com/pinard/)
 - [零基础学习入门深度学习](https://www.zybuluo.com/hanbingtao/note/433855)
 - [马同学高等数学公众号](http://mp.weixin.qq.com/mp/homepage?__biz=MzIyMTU0NDMyNA==&hid=4&sn=90c1c726d828163d151a94db194765a5&scene=18#wechat_redirect)
 - [Andrew Ng ufldl 教程](http://ufldl.stanford.edu/wiki/index.php/UFLDL%E6%95%99%E7%A8%8B)
