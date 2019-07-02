@@ -26,7 +26,7 @@ tags:
 将 bash 终端切换为 zsh 终端
 
 ```
-chsh -s /bin/zsh
+$ chsh -s /bin/zsh
 ```
 
 
@@ -34,7 +34,7 @@ chsh -s /bin/zsh
 下载 oh my zsh
 
 ```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
 
@@ -42,7 +42,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 下载 powerlevel9k 主题样式
 
 ```
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+$ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 ```
 
 
@@ -50,7 +50,7 @@ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/theme
 修改 zsh 主题样式为 powerlevel9k
 
 ```
-vim ~/.zshrc
+$ vim ~/.zshrc
 # 修改文件如下
 ZSH_THEME="powerlevel9k/powerlevel9k"  # 修@更改主题样式
 POWERLEVEL9K_CONTEXT_TEMPLATE=“lsy”  # 加@更改命令前面的用户名
@@ -73,7 +73,7 @@ POWERLEVEL9K_CONTEXT_TEMPLATE=“lsy”  # 加@更改命令前面的用户名
 vim 语法高亮
 
 ```
-vim ~/.vimrc
+$ vim ~/.vimrc
 # 修改文件如下
 syntax on
 set number
@@ -111,7 +111,7 @@ Hotkey Window 设置
 安装 `zsh-autosuggestions` 
 
 ```
-git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+$ git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 ```
 
 
@@ -119,7 +119,7 @@ git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh
 安装 `zsh-syntax-highlighting` 
 
 ```
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+$ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 ```
 
 
@@ -127,7 +127,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 添加至 `plugins`
 
 ```
-vim ~/.zshrc
+$ vim ~/.zshrc
 # 修改文件如下
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 ```
@@ -137,7 +137,7 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 ## 添加 bash 中的环境路径
 
 ```
-vim ~/.zshrc
+$ vim ~/.zshrc
 # 修改文件如下
 source ~/.bash_profile # 加@把 bash 中.bash_profile 全部环境变量加入
 ```
@@ -159,6 +159,7 @@ $ cp solarized.vim ~/.vim/colors/
 设置 vim
 
 ```
+$ vim ~/.vimrc
 # 修改文件如下
 syntax on
 filetype on
