@@ -4,7 +4,6 @@ title:      "ImportError: Python is not installed as a framework."
 subtitle:    "运行 matplotlib 时出现 ImportError: Python is not installed as a framework."
 date:       2019-06-21
 author:     Shunyu
-header-style: text
 header-img: img/post-bg-2015.jpg
 header-mask: 0.1
 catalog: true
