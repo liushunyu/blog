@@ -12,5 +12,5 @@
 #### 联系我
 
 - GitHub：[liushunyu](https://github.com/liushunyu)
-- Email：[shunyu.liu@foxmail.com](shunyu.liu@foxmail.com)
+- Email：shunyu.liu@foxmail.com
 
