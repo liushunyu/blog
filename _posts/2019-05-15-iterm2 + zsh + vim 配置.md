@@ -139,7 +139,7 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 ```
 $ vim ~/.zshrc
 # 修改文件如下
-source ~/.bash_profile # 加@把 bash 中.bash_profile 全部环境变量加入
+source ~/.bash_profile # 加 bash 中.bash_profile 全部环境变量加入
 ```
 
 
@@ -169,6 +169,20 @@ colorscheme solarized
 
 
 
+## 显示 conda 环境名称
+
+```
+$ vim /Users/liushunyu/.oh-my-zsh/custom/themes/powerlevel9k/powerlevel9k.zsh-theme
+
+# 修改文件如下
+# 将
+defined POWERLEVEL9K_LEFT_PROMPT_ELEMENTS || POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+# 修改为
+defined POWERLEVEL9K_LEFT_PROMPT_ELEMENTS || POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(anaconda context dir vcs)
+```
+
+
+
 ## 参考资料及致谢
 
 [打造Mac下最强终端，iTerm2 + Oh My Zsh + powerlevel9k](https://feeeei.com/archives/27/?utm_source=wechat_session&utm_medium=social&utm_oi=639600489608777728)
@@ -180,3 +194,5 @@ colorscheme solarized
 [iterm2 如何禁用自动隐藏?](https://www.zhihu.com/question/35568215)
 
 [ITerm2配置-让你的mac命令行更加丰富高效](https://www.jianshu.com/p/405956cdaca6)
+
+[如何解决zsh + oh-my-zsh 使用conda时不显示环境名称的问题](https://www.cnblogs.com/czy-skyline/p/10941546.html)
