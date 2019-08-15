@@ -23,12 +23,6 @@ tags:
 
 
 
-### NetworkX
-
-- [networkx — NetworkX 1.9 documentation](https://www.baidu.com/link?url=zjXEDk05271GehvXvALcrw149dduIBcRaDsORBfvtxEihXQF8AXIkO26cW4wTeSV1h7piWjlaeFsAPkYH3nSlAjyP1R6ZEqM4qsjdAY0j6-y3Ri_dw3SvP0raSYgDPDB&wd=&eqid=88697eff0003d1f5000000065c2f0c35)
-
-
-
 ### Tensorflow
 
 - [osforscience/TensorFlow-Course](https://github.com/osforscience/TensorFlow-Course)
@@ -228,4 +222,6 @@ tags:
 - [零基础学习入门深度学习](https://www.zybuluo.com/hanbingtao/note/433855)
 - [马同学高等数学公众号](http://mp.weixin.qq.com/mp/homepage?__biz=MzIyMTU0NDMyNA==&hid=4&sn=90c1c726d828163d151a94db194765a5&scene=18#wechat_redirect)
 - [Andrew Ng ufldl 教程](http://ufldl.stanford.edu/wiki/index.php/UFLDL%E6%95%99%E7%A8%8B)
+
+- [李宏毅机器学习笔记(LeeML-Notes)](https://datawhalechina.github.io/leeml-notes/#/?id=李宏毅机器学习笔记leeml-notes)
 
