@@ -63,7 +63,8 @@ tags:
 
 - [Google 开源项目风格指南 (中文版)](<https://zh-google-styleguide.readthedocs.io/en/latest/>)
 - [Google Style Guides](<https://google.github.io/styleguide/>)
-- [学习 python 编写规范 pep8 的问题笔记](https://www.cnblogs.com/hackpig/p/8290117.html)
+- [Python PEP8 编码规范中文版](https://blog.csdn.net/ratsniper/article/details/78954852)
+- [PEP 8 -- Style Guide for Python Code](https://legacy.python.org/dev/peps/pep-0008/)
 
 
 
