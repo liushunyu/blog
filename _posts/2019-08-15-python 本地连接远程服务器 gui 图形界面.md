@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "本地连接远程服务器 gui 图形界面"
+title:      "本地连接远程服务器 GUI 图形界面"
 subtitle:    "在本地显示远程服务器上运行得到的图形界面"
 date:       2019-08-15
 author:     Shunyu
