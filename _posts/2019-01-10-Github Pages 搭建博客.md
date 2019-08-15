@@ -8,8 +8,8 @@ header-img: img/post-bg-2015.jpg
 header-mask: 0.1
 catalog: true
 tags:
-    - Github
-    - Jekyll
+    - github
+    - jekyll
     - 环境配置
 
 ---

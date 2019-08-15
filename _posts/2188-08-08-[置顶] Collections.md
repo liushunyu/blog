@@ -212,6 +212,15 @@ tags:
 
 
 
+### 强化学习
+
+**莫烦《强化学习》**
+
+- 网课：
+  - [莫烦强化学习](https://morvanzhou.github.io/tutorials/machine-learning/reinforcement-learning/)
+
+
+
 ## Other blogs
 
 - [刘建平 github](https://github.com/ljpzzz/machinelearning)
@@ -219,3 +228,4 @@ tags:
 - [零基础学习入门深度学习](https://www.zybuluo.com/hanbingtao/note/433855)
 - [马同学高等数学公众号](http://mp.weixin.qq.com/mp/homepage?__biz=MzIyMTU0NDMyNA==&hid=4&sn=90c1c726d828163d151a94db194765a5&scene=18#wechat_redirect)
 - [Andrew Ng ufldl 教程](http://ufldl.stanford.edu/wiki/index.php/UFLDL%E6%95%99%E7%A8%8B)
+
