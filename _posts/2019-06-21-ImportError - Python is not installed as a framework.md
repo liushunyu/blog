@@ -37,6 +37,7 @@ The Mac OS X backend will not be able to function correctly if Python is not ins
 
 ```
 $ vim /Users/liushunyu/anaconda3/envs/XXXX/lib/pythonX.X/site-packages/matplotlib/mpl-data/matplotlibrc
+# 修改文件如下
 backend: TkAgg
 ```
 

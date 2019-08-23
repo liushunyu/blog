@@ -34,7 +34,7 @@ X11DisplayOffset 10
 2、重启 sshd 服务
 
 ```
-$ service ssh restart
+service ssh restart
 ```
 
 
@@ -76,7 +76,7 @@ ssh -Y username@ip:port
 1、使用上面带有 X 协议的终端连接服务器端输入以下命令获得 `DISPLAY` 值。
 
 ```
-printenv grep DISPLAY
+$ printenv grep DISPLAY
 # 比如我输出的 DISPLAY 如下
 localhost:13.0
 ```
@@ -87,9 +87,9 @@ localhost:13.0
 
 **第一种方法：在 pycharm 中配置**
 
-```
-pycharm 菜单栏 -> Run -> Edit Configurations -> 选中我们运行的 configuration -> Environment variables
-```
+> pycharm 菜单栏 -> Run -> Edit Configurations -> 选中我们运行的 configuration -> Environment variables
+
+
 
 添加一个 DISPLAY 变量 `DISPLAY=localhost:13.0`
 

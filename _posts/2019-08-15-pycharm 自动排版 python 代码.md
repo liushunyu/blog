@@ -21,9 +21,7 @@ pycharm 使用自带功能或者 autopep8 自动排版 python 代码
 
 windows 使用 `Ctrl+Alt+L` 快捷键，mac 使用 `command+option+L` 快捷键，就可以对整个文件的代码进行排版了。
 
-```
-pycharm 菜单栏 -> Code -> Reformat Code
-```
+> pycharm 菜单栏 -> Code -> Reformat Code
 
 
 
@@ -39,9 +37,12 @@ pip install autopep8
 
 ##### 配置 autopep8
 
-```
-pycharm 菜单栏 -> PyCharm -> Preferences -> Tools -> Externel Tools -> 点击+加号
 
+> pycharm 菜单栏 -> PyCharm -> Preferences -> Tools -> Externel Tools -> 点击+加号
+
+
+
+```
 Name: autopep8
 Programs: autopep8
 Parameters: --in-place --aggressive --aggressive $FilePath$
@@ -53,9 +54,7 @@ Advanced Options -> Output Filters: $FILE_PATH$\:$LINE$\:$COLUMN$\:.*
 
 ##### 使用 autopep8
 
-```
-右键 python 文件 -> Externel Tools -> autopep8
-```
+> 右键 python 文件 -> Externel Tools -> autopep8
 
 
 

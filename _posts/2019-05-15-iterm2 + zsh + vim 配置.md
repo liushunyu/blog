@@ -26,7 +26,7 @@ tags:
 将 bash 终端切换为 zsh 终端
 
 ```
-$ chsh -s /bin/zsh
+chsh -s /bin/zsh
 ```
 
 
@@ -34,7 +34,7 @@ $ chsh -s /bin/zsh
 下载 oh my zsh
 
 ```
-$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
 
@@ -42,7 +42,7 @@ $ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/m
 下载 powerlevel9k 主题样式
 
 ```
-$ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 ```
 
 
@@ -111,7 +111,7 @@ Hotkey Window 设置
 安装 `zsh-autosuggestions` 
 
 ```
-$ git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 ```
 
 
@@ -119,7 +119,7 @@ $ git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/z
 安装 `zsh-syntax-highlighting` 
 
 ```
-$ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 ```
 
 
@@ -149,9 +149,9 @@ source ~/.bash_profile # 加 bash 中.bash_profile 全部环境变量加入
 下载 [solarized](http://ethanschoonover.com/solarized/files/solarized.zip) 配色
 
 ```
-$ cd solarized/vim-colors-solarized/colors
-$ mkdir -p ~/.vim/colors 
-$ cp solarized.vim ~/.vim/colors/
+cd solarized/vim-colors-solarized/colors
+mkdir -p ~/.vim/colors 
+cp solarized.vim ~/.vim/colors/
 ```
 
 

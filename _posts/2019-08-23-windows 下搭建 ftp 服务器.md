@@ -43,7 +43,7 @@ tags:
 
 2、Windows 服务主进程
 
-如果没有这一项请手动添加：点击 “允许其它应用” -> 浏览 -> 添加 “C:Windows\System32\svchost.exe”
+> 注：如果没有这一项请手动添加：点击 “允许其它应用” -> 浏览 -> 添加 “C:Windows\System32\svchost.exe”
 
 <img width="480" src="/img/in-post/2019-08-15-windows 下搭建 ftp 服务器.assets/3.png"/>
 
