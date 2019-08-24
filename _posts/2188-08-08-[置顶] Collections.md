@@ -59,6 +59,16 @@ tags:
 
 
 
+### Typora
+
+[markdown数学公式符号记录](https://blog.csdn.net/deepinC/article/details/81103326#10%E5%A6%82%E4%BD%95%E8%BE%93%E5%85%A5%E7%B4%AF%E5%8A%A0%E7%B4%AF%E4%B9%98%E8%BF%90%E7%AE%97)
+
+[Latex常用数学符号输入方法](https://jingyan.baidu.com/article/4b52d702df537efc5c774bc9.html)
+
+[Typora快捷键](https://blog.csdn.net/it_guang/article/details/53456026)
+
+
+
 ### 开源项目风格指南
 
 - [Google 开源项目风格指南 (中文版)](<https://zh-google-styleguide.readthedocs.io/en/latest/>)
