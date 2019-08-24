@@ -21,13 +21,13 @@ linux 下 matplotlib 中文字体支持设置。
 
 ## 中文字体配置
 
-#### 下载 ttf 字体文件
+### 下载 ttf 字体文件
 
 下载 ttf 字体文件（如[黑体字体simhei.ttf](https://link.zhihu.com/?target=http%3A//www.font5.com.cn/font_download.php%3Fid%3D151%26part%3D1237887120)）放到 `~/anaconda3/envs/metro/lib/python3.6/site-packages/matplotlib/mpl-data/fonts/ttf/`
 
 
 
-#### 清除缓存
+### 清除缓存
 
 注意一点，要删除缓存文件：
 
@@ -37,7 +37,7 @@ rm -r ~/.cache/matplotlib
 
 
 
-#### 代码编写
+### 代码编写
 
 ```
 plt.rcParams['font.sans-serif'] = ['SimHei']  # 设置加载的字体名

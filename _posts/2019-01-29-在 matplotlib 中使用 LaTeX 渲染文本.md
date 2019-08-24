@@ -39,7 +39,7 @@ tags:
 
 ## 安装过程
 
-#### CTeX 安装
+### CTeX 安装
 
 进入官网下载 [CTeX](http://www.ctex.org/HomePage) 进行安装即可，在安装过程中可勾选是否安装 Ghostscript，记得勾选。
 
@@ -47,7 +47,7 @@ tags:
 
 
 
-#### type1cm 宏包缺失
+### type1cm 宏包缺失
 
 在安装好 CTeX 之后进行代码编译时，出现了 type1cm 宏包缺失的问题，发现自己的 CTeX 无法进行自动安装宏包操作，出现 `get host by name failed in tcp_connect()` 的错误，暂时不知道怎么解决，所以采用了手动安装宏包的方法安装了 type1cm 宏包，具体参考 [LaTeX 手动安装宏包](https://liushunyu.github.io/2019/01/29/LaTeX-%E6%89%8B%E5%8A%A8%E5%AE%89%E8%A3%85%E5%AE%8F%E5%8C%85/)。
 

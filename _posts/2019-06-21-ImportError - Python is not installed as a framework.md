@@ -18,7 +18,7 @@ tags:
 
 
 
-#### 错误
+## 错误
 
 错误提示如下：
 
@@ -31,7 +31,7 @@ The Mac OS X backend will not be able to function correctly if Python is not ins
 
 
 
-#### 解决方法一
+### 解决方法一
 
 较麻烦，每次新建项目均需要修改
 
@@ -45,7 +45,7 @@ backend: TkAgg
 
 
 
-#### 解决方法二
+### 解决方法二
 
 使用命令，但不改变 matplotlibrc 配置文件中的内容，添加以下代码：
 
