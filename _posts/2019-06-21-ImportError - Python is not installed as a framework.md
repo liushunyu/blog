@@ -35,7 +35,7 @@ The Mac OS X backend will not be able to function correctly if Python is not ins
 
 较麻烦，每次新建项目均需要修改
 
-```
+```bash
 $ vim /Users/liushunyu/anaconda3/envs/XXXX/lib/pythonX.X/site-packages/matplotlib/mpl-data/matplotlibrc
 # 修改文件如下
 backend: TkAgg
@@ -49,7 +49,7 @@ backend: TkAgg
 
 使用命令，但不改变 matplotlibrc 配置文件中的内容，添加以下代码：
 
-```
+```python
 import matplotlib
 matplotlib.rcParams['backend'] = 'TkAgg'
 ```

@@ -31,7 +31,7 @@ linux 下 matplotlib 中文字体支持设置。
 
 注意一点，要删除缓存文件：
 
-```
+```bash
 rm -r ~/.cache/matplotlib
 ```
 
@@ -39,7 +39,7 @@ rm -r ~/.cache/matplotlib
 
 ### 代码编写
 
-```
+```python
 plt.rcParams['font.sans-serif'] = ['SimHei']  # 设置加载的字体名
 plt.rcParams['axes.unicode_minus'] = False  # 解决保存图像中负号 '-' 显示为方块的问题
 ```

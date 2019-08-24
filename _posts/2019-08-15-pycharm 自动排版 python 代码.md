@@ -29,7 +29,7 @@ windows 使用 `Ctrl+Alt+L` 快捷键，mac 使用 `command+option+L` 快捷键�
 
 ### 安装 autopep8
 
-```
+```bash
 pip install autopep8
 ```
 

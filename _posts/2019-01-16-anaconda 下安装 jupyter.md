@@ -25,7 +25,7 @@ tags:
 
 如果你安装了 [anaconda](https://www.anaconda.com/download/) 就不需要安装 python 了，不同版本的 anaconda 包括了对应版本的 python 在内。可以认为 anaconda 是一个 python 的管理系统，里面已经包含了 python，而且还可以使用`conda`命令下载 python 库。
 
-```
+```bash
 anaconda --version
 conda --version
 conda list                            #查看已安装Python库
@@ -39,13 +39,13 @@ conda install Package_name            #安装Python库
 
 conda 批量导出包含环境中所有组件的 requirements.txt 文件
 
-```
+```bash
 conda list -e > requirements.txt
 ```
 
 conda 批量安装 requirements.txt 文件中包含的组件依赖
 
-```
+```bash
 conda install --yes --file requirements.txt
 ```
 
@@ -55,7 +55,7 @@ conda install --yes --file requirements.txt
 
 anaconda 中同样也安装了 jupyter notebook，所以不需要再安装了，通过命令即可运行：
 
-```
+```bash
 jupyter notebook
 ```
 
@@ -71,7 +71,7 @@ I couldn't find a kernel matching IPython (Python 2.7). Please select a kernel
 
 原来是没有安装 ipykernel 库所导致的，安装即可。
 
-```
+```bash
 conda install ipykernel
 ```
 
@@ -85,7 +85,7 @@ conda install ipykernel
 
 2. 输入以下命令查看安装的 kernel 和位置。
 
-   ```
+   ```bash
    jupyter kernelspec list
    ```
 
@@ -97,7 +97,7 @@ conda install ipykernel
 
 可通过以下命令查看已有环境：
 
-```
+```bash
 conda info -e
 ```
 
@@ -107,13 +107,13 @@ conda info -e
 
 安装 python 3.5 虚拟环境步骤如下：
 
-```
+```bash
 conda create -n py35 python=3.5
 ```
 
 但是在这时候我看到 [在jupyter notebook上使用python虚拟环境](https://www.jianshu.com/p/f70ea020e6f9) 博客里有直接在创建环境时便为其预装 ipykernel 的操作：
 
-```
+```bash
 conda create -n py35 python=3.5 ipykernel
 ```
 

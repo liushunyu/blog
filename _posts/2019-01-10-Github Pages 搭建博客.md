@@ -41,31 +41,31 @@ tags:
 
 2. 下载 [RubyGems](https://rubygems.org/pages/download) ，cd 到 RubyGems 文件夹，安装 RubyGems 
 
-   ```
+   ```bash
    ruby setup.rb
    ```
 
 3. 用 RubyGems 安装 Jekyll
 
-   ```
+   ```bash
    gem install jekyll
    ```
 
 4. 用 RubyGems 安装插件
 
-    ```
+    ```bash
     gem install yajl-ruby rouge jekyll-paginate
     ```
     
 5. cd 到博客文件夹，开启服务器，watch 为了检测文件夹内的变化，即修改后不需要重新启动 jekyll 
 
-    ```
+    ```bash
     jekyll serve --watch
     ```
 
 6. 再次启动服务器成功
 
-    ```
+    ```bash
     jekyll s
     ```
 
@@ -79,7 +79,7 @@ tags:
 
 解决方法：
 
-```
+```bash
 gem install jekyll-paginate
 ```
 
@@ -99,7 +99,7 @@ jekyll 启动使用的4000端口被福昕pdf阅读器的自动更新进程占用
 
 输入命令，查看各端口被占用情况
 
-```
+```bash
 netstat -ano
 ```
 
@@ -111,7 +111,7 @@ netstat -ano
 
 在启动jekyll服务的时候指定端口号，如下：
 
-```
+```bash
 jekyll serve --port 3000
 ```
 
@@ -122,6 +122,7 @@ jekyll serve --port 3000
 还可以在配置文件`_config.yml`中添加端口号设置：
 
 ```
+# 修改文件如下
 # port
 port: 1234
 ```

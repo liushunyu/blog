@@ -22,7 +22,7 @@ Dockerfile 基础格式。
 
 ### Dockerfile 实例
 
-```
+```dockerfile
 FROM ubuntu:16.04
 
 MAINTAINER shunyu "shunyu.liu@foxmail.com"

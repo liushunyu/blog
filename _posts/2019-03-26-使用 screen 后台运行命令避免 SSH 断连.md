@@ -28,7 +28,7 @@ tags:
 
 建立一个处于断开模式下的会话（并指定其会话名）：
 
-```
+```bash
 screen -S [name]
 ```
 
@@ -36,7 +36,7 @@ screen -S [name]
 
 列出所有会话：
 
-```
+```bash
 screen -ls
 ```
 
@@ -44,7 +44,7 @@ screen -ls
 
 重新连接指定会话：
 
-```
+```bash
 screen -r [name / pid]
 ```
 
@@ -52,15 +52,15 @@ screen -r [name / pid]
 
 离开会话并让程序断续运行（会话终端下）：
 
-```
+```bash
 快捷键：CTRL + a d (按住 ctrl 不放，分别按 a 和 d)
 ```
 
 
 
-关闭该 session：
+关闭该 session（会话终端下）：
 
-```
+```bash
 # 在该 screen 中退出，退到根下。
 exit
 ```
