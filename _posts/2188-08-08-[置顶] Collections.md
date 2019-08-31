@@ -15,22 +15,34 @@ tags:
 
 ## 教程/文档
 
+### Python
+
+- [Python教程 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/1016959663602400)
+- [Python 基础教程 - 菜鸟教程](https://www.runoob.com/python/python-tutorial.html)
+
+
+
 ### Pytorch
 
 - [PYTORCH DOCUMENTATION](https://pytorch.org/docs/stable/index.html)
-- [PyTorch 中文网](https://www.pytorchtutorial.com/pytorch-tutorials-list/)
 - [PyTorch 中文文档](https://pytorch-cn.readthedocs.io/zh/latest/)
+- [PyTorch 中文网](https://www.pytorchtutorial.com/pytorch-tutorials-list/)
 
 
 
 ### Tensorflow
 
+- [TensorFlow](https://tensorflow.google.cn/)
+- [TensorFlow 中文社区](https://www.baidu.com/link?url=ou0O4B7oA9B1wS_j9ZzrbMbtsXN-R7pkeoszJp8bXPiKNB-KkIJjWgsAdOQjSL37&wd=&eqid=fc213e7c000d4348000000065c9b5caa)
+
 - [osforscience/TensorFlow-Course](https://github.com/osforscience/TensorFlow-Course)
-- [*TensorFlow*中文社区](https://www.baidu.com/link?url=ou0O4B7oA9B1wS_j9ZzrbMbtsXN-R7pkeoszJp8bXPiKNB-KkIJjWgsAdOQjSL37&wd=&eqid=fc213e7c000d4348000000065c9b5caa)
+- [aymericdamien/TensorFlow-Examples](aymericdamien/TensorFlow-Examples)
 
 
 
 ### Keras
+
+- [Keras Documentation](https://keras.io/)
 
 - [Keras 中文文档](https://keras.io/zh/)
 - [Keras:基于Python的深度学习库 - Keras中文文档](https://keras-cn.readthedocs.io/en/latest/)
@@ -115,9 +127,10 @@ tags:
 
 
 
-#### 《机器学习》
+### 《机器学习》
 
 - [南瓜书PumpkinBook](https://datawhalechina.github.io/pumpkin-book/#/?id=%e5%8d%97%e7%93%9c%e4%b9%a6pumpkinbook)
+- [勘误表](https://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/MLbook2016.htm)
 
 
 
@@ -142,6 +155,7 @@ tags:
 
 - 网课：
   - [线性代数的本质 - 系列合集](https://www.bilibili.com/video/av6731067)
+  - [Mathematics for Machine Learning 专项课程](https://www.coursera.org/specializations/mathematics-machine-learning)
 
 
 
@@ -202,6 +216,16 @@ tags:
 
 
 
+**李宏毅《Machine Learning》**
+
+- 网课：
+  - [李宏毅 Machine Learning 2019](https://www.bilibili.com/video/av48285039/?spm_id_from=333.788.b_7265636f5f6c697374.2)
+- 笔记：
+  - [李宏毅主页](http://speech.ee.ntu.edu.tw/~tlkagk/courses.html)
+  - [李宏毅机器学习笔记(LeeML-Notes)](https://datawhalechina.github.io/leeml-notes/#/?id=李宏毅机器学习笔记leeml-notes)
+
+
+
 **李飞飞《视觉识别深度学习》CS231**
 
 - 网课：
@@ -228,11 +252,17 @@ tags:
 
 ## Other blogs
 
+### 数学
+
+- [马同学高等数学公众号](http://mp.weixin.qq.com/mp/homepage?__biz=MzIyMTU0NDMyNA==&hid=4&sn=90c1c726d828163d151a94db194765a5&scene=18#wechat_redirect)
+
+
+
+### 机器学习
+
 - [刘建平 github](https://github.com/ljpzzz/machinelearning)
 - [刘建平博客](https://www.cnblogs.com/pinard/)
 - [零基础学习入门深度学习](https://www.zybuluo.com/hanbingtao/note/433855)
-- [马同学高等数学公众号](http://mp.weixin.qq.com/mp/homepage?__biz=MzIyMTU0NDMyNA==&hid=4&sn=90c1c726d828163d151a94db194765a5&scene=18#wechat_redirect)
 - [Andrew Ng ufldl 教程](http://ufldl.stanford.edu/wiki/index.php/UFLDL%E6%95%99%E7%A8%8B)
 
-- [李宏毅机器学习笔记(LeeML-Notes)](https://datawhalechina.github.io/leeml-notes/#/?id=李宏毅机器学习笔记leeml-notes)
 
