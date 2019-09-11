@@ -71,13 +71,25 @@ tags:
 
 
 
-### Typora
+### 数学公式符号
 
 - [markdown数学公式符号记录](https://blog.csdn.net/deepinC/article/details/81103326#10%E5%A6%82%E4%BD%95%E8%BE%93%E5%85%A5%E7%B4%AF%E5%8A%A0%E7%B4%AF%E4%B9%98%E8%BF%90%E7%AE%97)
-
 - [Latex常用数学符号输入方法](https://jingyan.baidu.com/article/4b52d702df537efc5c774bc9.html)
 
+
+
+### Markdown & Typora
+
 - [Typora快捷键](https://blog.csdn.net/it_guang/article/details/53456026)
+- [献给写作者的 Markdown 新手指南](https://www.jianshu.com/p/q81RER)
+
+
+
+### LaTeX
+
+- [一份其实很短的 LaTeX 入门文档](https://liam.page/2014/09/08/latex-introduction/)
+
+- [Latex排版全解](https://blog.csdn.net/langb2014/article/details/51354238)
 
 
 
@@ -220,8 +232,8 @@ tags:
 
 - 网课：
   - [李宏毅 Machine Learning 2019](https://www.bilibili.com/video/av48285039/?spm_id_from=333.788.b_7265636f5f6c697374.2)
+  - [Machine Learning (2019,Spring)](http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML19.html)
 - 笔记：
-  - [李宏毅主页](http://speech.ee.ntu.edu.tw/~tlkagk/courses.html)
   - [李宏毅机器学习笔记(LeeML-Notes)](https://datawhalechina.github.io/leeml-notes/#/?id=李宏毅机器学习笔记leeml-notes)
 
 
@@ -250,6 +262,20 @@ tags:
 
 
 
+**李宏毅《Deep Reinforcement Learning》**
+
+- 网课：
+
+  - [李宏毅深度强化学习(国语)课程(2018)](https://www.bilibili.com/video/av24724071)
+
+  - [Machine Learning and having it deep and structured (2018,Spring)](http://speech.ee.ntu.edu.tw/~tlkagk/courses_MLDS18.html)
+
+- 笔记：
+
+  - [李宏毅深度强化学习笔记](https://blog.csdn.net/cindy_1102/article/category/8771061)
+
+
+
 ## Other blogs
 
 ### 数学
@@ -265,4 +291,7 @@ tags:
 - [零基础学习入门深度学习](https://www.zybuluo.com/hanbingtao/note/433855)
 - [Andrew Ng ufldl 教程](http://ufldl.stanford.edu/wiki/index.php/UFLDL%E6%95%99%E7%A8%8B)
 
+- [强化学习知识大讲堂](https://zhuanlan.zhihu.com/sharerl)
+- [Spinning Up](https://spinningup.openai.com/en/latest/index.html)
+- [Gym](https://gym.openai.com/)
 
