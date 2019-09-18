@@ -47,7 +47,7 @@ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/theme
 
 
 
-修改 zsh 主题样式为 powerlevel9k
+修改 zsh 主题样式为 powerlevel9k（此时终端显示乱码，需安装 Powerline 字体）
 
 ```bash
 $ vim ~/.zshrc
@@ -60,25 +60,13 @@ POWERLEVEL9K_CONTEXT_TEMPLATE=“lsy”  # 加@更改命令前面的用户名
 
 下载安装 [Powerline 字体](https://link.jianshu.com/?t=https%3A%2F%2Fgithub.com%2Fpowerline%2Ffonts%2Fblob%2Fmaster%2FMeslo%20Slashed%2FMeslo%20LG%20M%20Regular%20for%20Powerline.ttf)
 
-> Preferences -> Profiles -> text -> font -> Change Font -> 选择 “Roboto Mono for Powerline”
+> Preferences -> Profiles -> Text -> Font -> Change Font -> 选择 “Meslo LG M Regular for Powerline”
 
 
 
 修改配色
 
 > Preferences -> Profiles -> Colors -> Color Presets -> Solarized Dark
-
-
-
-vim 语法高亮
-
-```bash
-$ vim ~/.vimrc
-# 修改文件如下
-syntax on
-set number
-set ruler
-```
 
 
 
@@ -94,7 +82,7 @@ Hotkey 设置
 
 Hotkey Window 设置
 
-> Preferences -> keys -> Create a Dedicated Hotkey Window
+> Preferences -> Keys -> Create a Dedicated Hotkey Window
 >
 > 设置 Hotkey: option + .
 >
@@ -102,7 +90,9 @@ Hotkey Window 设置
 >
 > 勾选 Floating window
 >
-> preference -> profiles -> Window -> space -> All Spaces
+> Preference -> Profiles -> Hotkey Window -> Window -> Space -> All Spaces
+>
+> Preference -> Profiles -> Hotkey Window -> Window -> Style -> Full-Width Bottom of Screen
 
 
 
@@ -111,8 +101,20 @@ Hotkey Window 设置
 安装 `zsh-autosuggestions` 
 
 ```bash
-git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_CUSTOM/plugins/zsh-autosuggestions
 ```
+
+
+
+修改提示透明度
+
+```bash
+$ vim ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+# 修改文件如下
+typeset -g ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
+```
+
+
 
 
 
@@ -163,6 +165,7 @@ $ vim ~/.vimrc
 # 修改文件如下
 syntax on
 filetype on
+set number
 set ruler
 colorscheme solarized
 ```
@@ -172,7 +175,7 @@ colorscheme solarized
 ## 显示 conda 环境名称
 
 ```bash
-$ vim /Users/liushunyu/.oh-my-zsh/custom/themes/powerlevel9k/powerlevel9k.zsh-theme
+$ vim ~/.oh-my-zsh/custom/themes/powerlevel9k/powerlevel9k.zsh-theme
 
 # 修改文件如下
 # 将
