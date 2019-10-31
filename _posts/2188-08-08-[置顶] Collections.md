@@ -34,7 +34,6 @@ tags:
 
 - [TensorFlow](https://tensorflow.google.cn/)
 - [TensorFlow 中文社区](https://www.baidu.com/link?url=ou0O4B7oA9B1wS_j9ZzrbMbtsXN-R7pkeoszJp8bXPiKNB-KkIJjWgsAdOQjSL37&wd=&eqid=fc213e7c000d4348000000065c9b5caa)
-
 - [osforscience/TensorFlow-Course](https://github.com/osforscience/TensorFlow-Course)
 - [aymericdamien/TensorFlow-Examples](aymericdamien/TensorFlow-Examples)
 
@@ -43,7 +42,6 @@ tags:
 ### Keras
 
 - [Keras Documentation](https://keras.io/)
-
 - [Keras 中文文档](https://keras.io/zh/)
 - [Keras:基于Python的深度学习库 - Keras中文文档](https://keras-cn.readthedocs.io/en/latest/)
 
@@ -58,7 +56,6 @@ tags:
 ### 爬虫
 
 - [Python2爬虫学习系列教程](https://cuiqingcai.com/1052.html)
-
 - [Python爬虫入门教程](<https://blog.csdn.net/wxg694175346/column/info/why-bug>)
 
 
@@ -81,14 +78,13 @@ tags:
 ### Markdown & Typora
 
 - [Typora快捷键](https://blog.csdn.net/it_guang/article/details/53456026)
-- [献给写作者的 Markdown 新手指南](https://www.jianshu.com/p/q81RER)
+- [献给写作者的 Markdown 新手指南](https://www.jianshu.com/p/q81RER)
 
 
 
 ### LaTeX
 
 - [一份其实很短的 LaTeX 入门文档](https://liam.page/2014/09/08/latex-introduction/)
-
 - [Latex排版全解](https://blog.csdn.net/langb2014/article/details/51354238)
 
 
@@ -233,6 +229,7 @@ tags:
 - 网课：
   - [李宏毅 Machine Learning 2019](https://www.bilibili.com/video/av48285039/?spm_id_from=333.788.b_7265636f5f6c697374.2)
   - [Machine Learning (2019,Spring)](http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML19.html)
+
 - 笔记：
   - [李宏毅机器学习笔记(LeeML-Notes)](https://datawhalechina.github.io/leeml-notes/#/?id=李宏毅机器学习笔记leeml-notes)
 
@@ -265,9 +262,7 @@ tags:
 **李宏毅《Deep Reinforcement Learning》**
 
 - 网课：
-
   - [李宏毅深度强化学习(国语)课程(2018)](https://www.bilibili.com/video/av24724071)
-
   - [Machine Learning and having it deep and structured (2018,Spring)](http://speech.ee.ntu.edu.tw/~tlkagk/courses_MLDS18.html)
 
 - 笔记：
@@ -290,7 +285,6 @@ tags:
 - [刘建平博客](https://www.cnblogs.com/pinard/)
 - [零基础学习入门深度学习](https://www.zybuluo.com/hanbingtao/note/433855)
 - [Andrew Ng ufldl 教程](http://ufldl.stanford.edu/wiki/index.php/UFLDL%E6%95%99%E7%A8%8B)
-
 - [强化学习知识大讲堂](https://zhuanlan.zhihu.com/sharerl)
 - [Spinning Up](https://spinningup.openai.com/en/latest/index.html)
 - [Gym](https://gym.openai.com/)
