@@ -86,11 +86,11 @@ b. 配置 **Library install path**：`/home/lsy/cuda/lib`
 
 ## Cudnn 安装
 
-1. 下载 [cudnn](https://developer.nvidia.com/rdp/cudnn-archive)，选择与 cuda 版本对应的 cudnn，然后选择下载 **cuDNN Library for Linux**
+第一步：下载 [cudnn](https://developer.nvidia.com/rdp/cudnn-archive)，选择与 cuda 版本对应的 cudnn，然后选择下载 **cuDNN Library for Linux**
 
 > 注：由于下载 cuDNN 需要登录帐户，直接在终端用指令下载可能会失败，可以先在windows上注册个帐户下载好再上传到服务器。
 
-2. 安装 cudnn
+第二步：安装 cudnn
 
 ```bash
 # 解压 cudnn 文件夹，解压出来的文件夹名字为 cuda
@@ -108,7 +108,7 @@ rm -rf cuda
 chmod a+r ~/cuda/cuda-10.1/include/cudnn.h ~/cuda/cuda-10.1/lib64/libcudnn*
 ```
 
-3. 配置环境变量
+第三步：配置环境变量
 
 ```bash
 $ vim ~/.profile
@@ -118,7 +118,7 @@ export PATH="$CUDA_HOME/bin:$PATH"
 export LD_LIBRARY_PATH="$CUDA_HOME/lib64:$LD_LIBRARY_PATH"
 ```
 
-4. 激活环境变量
+第四步：激活环境变量
 
 ```bash
 source ~/.bashrc
