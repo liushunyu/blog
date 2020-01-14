@@ -21,14 +21,18 @@ tags:
 
 ## Cuda 安装
 
-1. 下载 [cuda](https://developer.nvidia.com/cuda-toolkit-archive)，选择所需要的版本，然后选择系统信息，**Installer Type** 选择 **runfile (local)**，接着就会出现下载安装的流程。
+#### 下载 [cuda](https://developer.nvidia.com/cuda-toolkit-archive)
+
+选择所需要的版本，然后选择系统信息，**Installer Type** 选择 **runfile (local)**，接着就会出现下载安装的流程。
 
 ```bash
 wget -c http://developer.download.nvidia.com/compute/cuda/10.1/Prod/local_installers/cuda_10.1.243_418.87.00_linux.run
 # -c 为断电重传
 ```
 
-2. 安装 cuda
+
+
+#### 安装 cuda
 
 ```bash
 # 必须先创建文件夹，不然会报错
@@ -64,7 +68,7 @@ sh cuda_10.1.243_418.87.00_linux.run
 a. 配置 **Toolkit Options**：
 
 - 取消全部选项的勾选
-- Change Toolkit Install Path：`/home/lsy/cuda`
+- Change Toolkit Install Path：`/home/lsy/cuda/cuda-10.1`
 
 <img width="480" src="/img/in-post/2019-10-31-cuda + cudnn 用户配置.assets/5.png"/>
 
@@ -74,7 +78,9 @@ b. 配置 **Library install path**：`/home/lsy/cuda/lib`
 
 
 
-3. 安装成功后会发现安装在此路径下：`/home/lsy/cuda/cuda-10.1`
+#### 安装成功
+
+会发现安装在此路径下：`/home/lsy/cuda/cuda-10.1`
 
 
 
@@ -105,17 +111,17 @@ chmod a+r ~/cuda/cuda-10.1/include/cudnn.h ~/cuda/cuda-10.1/lib64/libcudnn*
 3. 配置环境变量
 
 ```bash
-$ vim ~/.bashrc
+$ vim ~/.profile
 # 修改文件如下
 export CUDA_HOME="/home/lsy/cuda/cuda-10.1"
-export PATH="$PATH:$CUDA_HOME/bin"
-export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$CUDA_HOME/lib64"
+export PATH="$CUDA_HOME/bin:$PATH"
+export LD_LIBRARY_PATH="$CUDA_HOME/lib64:$LD_LIBRARY_PATH"
 ```
 
 4. 激活环境变量
 
 ```bash
-source ～/.bashrc
+source ~/.bashrc
 ```
 
 
