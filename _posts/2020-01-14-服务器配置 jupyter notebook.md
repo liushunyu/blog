@@ -74,6 +74,10 @@ Verify password:lsy
 
 ### 修改配置文件
 
+``` bash
+vim ~/.jupyter/jupyter_notebook_config.py
+```
+
 在 `jupyter_notebook_config.py` 中找到下面的行，取消注释并修改。
 
 ```python

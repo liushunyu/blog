@@ -1,10 +1,10 @@
 # Site settings
 title: Shunyu's Blog
-SEOTitle: 顺宇的博客 | Shunyu's Blog
+SEOTitle: Shunyu 的博客 | Shunyu's Blog
 header-img: img/post-bg-desk.jpg
 email: shunyu.liu@foxmail.com
-description: "顺宇的博客"
-keyword: "顺宇的博客, Shunyu's Blog, Machine Learning"
+description: "Shunyu 的博客"
+keyword: "Shunyu 的博客, Shunyu's Blog"
 url: "http://liushunyu.github.io"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -70,14 +70,14 @@ netease_comment: false
 # ba_track_id: [your track id]
 
 # Google Analytics
-ga_track_id: 'UA-131830363-1'            # Format: UA-xxxxxx-xx
-ga_domain: huangxuan.me
+# ga_track_id: 'UA-131830363-1'            # Format: UA-xxxxxx-xx
+# ga_domain: huangxuan.me
 
 
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "愿你年少有为。"
+sidebar-about-description: "斯丢彼得。"
 sidebar-avatar: /img/header.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 

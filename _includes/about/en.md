@@ -4,4 +4,4 @@
 
 #### About me
 
-Hey, I am liushunyu.
+A student.
