@@ -1,2 +1,2 @@
-# Shunyu's Blog
-Welcome to Shunyu's World
+# Richard's Blog
+Welcome to Richard's World
