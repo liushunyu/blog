@@ -5,17 +5,17 @@ header-img: img/post-bg-desk.jpg
 email: shunyu.liu@foxmail.com
 description: "Richard 的博客"
 keyword: "Richard 的博客, Richard's Blog"
-url: "http://liushunyu.github.io"              # your host, for absolute URL
-baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
+url: "http://liushunyu.github.io"          # your host, for absolute URL
+baseurl: ""                                # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
 future: true
 
 # SNS settings
 RSS: false
+github_username:    liushunyu
 #weibo_username:     liushunyu
 #zhihu_username:     liushunyu
-github_username:    liushunyu
 #twitter_username:   liushunyu
 #facebook_username:  liushunyu
 #linkedin_username:  firstname-lastname-idxxxx
@@ -56,13 +56,6 @@ kramdown:
       start_line: 1
 
 
-
-# Disqus settings
-disqus_username: shunyu
-
-# Netease settings
-netease_comment: false
-
 # Gitalk settings
 gitalk:
    enable: true
@@ -72,6 +65,12 @@ gitalk:
    clientSecret: 436e2734b724a9dc65bba97f11b6cb550c700044
    admin: liushunyu
 
+# Disqus settings
+disqus_username: shunyu
+
+# Netease settings
+netease_comment: false
+
 
 
 # Analytics settings
@@ -79,7 +78,7 @@ gitalk:
 # ba_track_id: [your track id]
 
 # Google Analytics
-# ga_track_id: [your track id]            # Format: UA-xxxxxx-xx
+# ga_track_id: [your track id]          # Format: UA-xxxxxx-xx
 # ga_domain: liushunyu.github.io
 
 
@@ -87,7 +86,7 @@ gitalk:
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "斯丢彼得。"
-sidebar-avatar: /img/header.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/header.jpg         # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
