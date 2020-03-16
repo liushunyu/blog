@@ -20,7 +20,7 @@ tags:
 $$
 \sum_a^T\alpha=1+1
 $$
-bbb
+b$1+\sum_1^2$bb
 
 
 
