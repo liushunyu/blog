@@ -7,7 +7,6 @@ author:      Shunyu
 header-img:  img/post-bg-2015.jpg
 header-mask: 0.1
 catalog:     true
-mathjax:     true
 tags:
     - linux
     - notebook
@@ -16,12 +15,6 @@ tags:
 
 
 希望实现在本地访问服务器上的 jupyter notebook。
-
-
-$$
-\sum_a^T\alpha=1+1
-$$
-b$1+\sum_1^2$bb
 
 
 
