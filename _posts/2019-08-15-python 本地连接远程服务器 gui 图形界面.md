@@ -2,7 +2,7 @@
 layout:     post
 title:      "本地连接远程服务器 GUI 图形界面"
 subtitle:    "在本地显示远程服务器上运行得到的图形界面"
-date:       2019-08-15
+date:       2019-08-15 12:00:00
 author:     Shunyu
 header-img: img/post-bg-2015.jpg
 header-mask: 0.1

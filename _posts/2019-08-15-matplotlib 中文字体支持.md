@@ -2,7 +2,7 @@
 layout:     post
 title:      "matplotlib 中文字体支持"
 subtitle:    "linux 下 matplotlib 中文字体支持"
-date:       2019-08-15
+date:       2019-08-15 09:00:00
 author:     Shunyu
 header-img: img/post-bg-2015.jpg
 header-mask: 0.1

@@ -2,7 +2,7 @@
 layout:     post
 title:      "pycharm 自动排版 python 代码"
 subtitle:    "使用自带功能或者 autopep8 自动排版 python 代码"
-date:       2019-08-15
+date:       2019-08-15 11:00:00
 author:     Shunyu
 header-img: img/post-bg-2015.jpg
 header-mask: 0.1

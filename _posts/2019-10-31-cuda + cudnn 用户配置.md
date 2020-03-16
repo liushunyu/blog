@@ -2,7 +2,7 @@
 layout:     post
 title:      "cuda + cudnn 用户配置"
 subtitle:    "为用户配置单独的 cuda 和 cudnn"
-date:       2019-10-31
+date:       2019-10-31 10:00:00
 author:     Shunyu
 header-img: img/post-bg-2015.jpg
 header-mask: 0.1

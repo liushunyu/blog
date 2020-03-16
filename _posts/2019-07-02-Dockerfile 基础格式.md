@@ -2,7 +2,7 @@
 layout:     post
 title:      "Dockerfile 基础格式"
 subtitle:    "Dockerfile 基础格式"
-date:       2019-07-02
+date:       2019-07-02 10:00:00
 author:     Shunyu
 header-img: img/post-bg-2015.jpg
 header-mask: 0.1

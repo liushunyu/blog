@@ -2,7 +2,7 @@
 layout:     post
 title:      "Hello, World"
 subtitle:    "Hello, World"
-date:       2019-01-08
+date:       2019-01-08 00:00:00
 author:     Shunyu
 header-img: img/post-bg-2015.jpg
 header-mask: 0.1

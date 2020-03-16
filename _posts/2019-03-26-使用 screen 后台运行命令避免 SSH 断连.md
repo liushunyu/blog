@@ -2,7 +2,7 @@
 layout:     post
 title:      "使用 screen 后台运行命令避免 SSH 断连"
 subtitle:    "Linux 服务器使用 screen 让进程在后台可靠运行，防止客户端 SSH 连接关闭导致进程挂断"
-date:       2019-03-26
+date:       2019-03-26 10:00:00
 author:     Shunyu
 header-img: img/post-bg-2015.jpg
 header-mask: 0.1

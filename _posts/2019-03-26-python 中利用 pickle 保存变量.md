@@ -2,7 +2,7 @@
 layout:     post
 title:      "python 中利用 pickle 保存变量"
 subtitle:    "利用 pickle 将变量结构及值，以便下次读取使用"
-date:       2019-03-26
+date:       2019-03-26 11:00:00
 author:     Shunyu
 header-img: img/post-bg-2015.jpg
 header-mask: 0.1

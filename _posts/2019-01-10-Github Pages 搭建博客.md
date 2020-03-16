@@ -2,7 +2,7 @@
 layout:     post
 title:      "Github Pages 搭建博客"
 subtitle:    "Window 下 Github Pages + Jekyll 搭建博客"
-date:       2019-01-10
+date:       2019-01-10 09:00:00
 author:     Shunyu
 header-img: img/post-bg-2015.jpg
 header-mask: 0.1

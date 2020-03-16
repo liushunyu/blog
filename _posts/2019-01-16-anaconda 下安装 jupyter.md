@@ -2,7 +2,7 @@
 layout:     post
 title:      "anaconda 下安装 jupyter notebook"
 subtitle:    "jupyter notebook 报错找不到 kernel 的解决及其他理解"
-date:       2019-01-16
+date:       2019-01-16 09:00:00
 author:     Shunyu
 header-img: img/post-bg-2015.jpg
 header-mask: 0.1

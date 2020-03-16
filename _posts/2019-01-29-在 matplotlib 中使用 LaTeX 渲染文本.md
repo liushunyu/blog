@@ -2,7 +2,7 @@
 layout:     post
 title:      "在 matplotlib 中使用 LaTeX 渲染文本"
 subtitle:    "Windows 中配置适用于 matplotlib 的 CTeX 套装"
-date:       2019-01-29
+date:       2019-01-29 09:00:00
 author:     Shunyu
 header-img: img/post-bg-2015.jpg
 header-mask: 0.1
