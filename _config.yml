@@ -63,6 +63,15 @@ disqus_username: shunyu
 # Netease settings
 netease_comment: false
 
+# Gitalk settings
+gitalk:
+   enable: true
+   owner: liushunyu
+   repo: liushunyu.github.io
+   clientID: 7fa2aa7670ebae7bf2b4
+   clientSecret: 436e2734b724a9dc65bba97f11b6cb550c700044
+   admin: liushunyu
+
 
 
 # Analytics settings
@@ -102,10 +111,7 @@ page-mathjax: false
 # Friends
 friends: [
     {
-    #     title: "Su",
-    #     href: "http://su.gallery/"
-    # },{
-        title: "又又",
-        href: "https://github.com/isluoshuang"
+      title: "又又",
+      href: "https://github.com/isluoshuang"
     }
 ]

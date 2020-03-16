@@ -17,6 +17,12 @@ tags:
 希望实现在本地访问服务器上的 jupyter notebook。
 
 
+$$
+\sum_a^T\alpha=1+1
+$$
+
+
+
 
 ## 配置远程访问
 

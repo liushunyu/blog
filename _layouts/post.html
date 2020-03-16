@@ -65,6 +65,13 @@ layout: default
                 <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
                 <!-- 网易云跟帖 评论框 end -->
                 {% endif %}
+
+                {% if site.gitalk.enable %}
+                <!-- gitalk 评论框 start -->
+                <div id="gitalk-container"></div>
+                <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+                <!-- gitalk 评论框 end -->
+                {% endif %}
             </div>  
 
     <!-- Side Catalog Container -->
@@ -119,6 +126,24 @@ layout: default
   Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
 </script>
 <!-- 网易云跟帖JS代码 end -->
+{% endif %}
+
+{% if site.gitalk.enable %}
+<!-- gitalk JS代码 start -->
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script>
+var gitalk = new Gitalk({
+    id: '{{ page.url }}',
+    clientID: '{{ site.gitalk.clientID }}',
+    clientSecret: '{{ site.gitalk.clientSecret }}',
+    repo: '{{ site.gitalk.repo }}',
+    owner: '{{ site.gitalk.owner }}',
+    admin: ['{{ site.gitalk.owner }}'], 
+    labels: ['Gitalk'],
+})
+gitalk.render('gitalk-container')
+</script> 
+<!-- gitalk JS代码 end -->
 {% endif %}
 
 
