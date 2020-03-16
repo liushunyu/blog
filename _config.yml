@@ -79,8 +79,8 @@ gitalk:
 # ba_track_id: [your track id]
 
 # Google Analytics
-# ga_track_id: 'UA-131830363-1'            # Format: UA-xxxxxx-xx
-# ga_domain: huangxuan.me
+# ga_track_id: [your track id]            # Format: UA-xxxxxx-xx
+# ga_domain: liushunyu.github.io
 
 
 
