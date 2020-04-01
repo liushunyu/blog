@@ -24,6 +24,11 @@ body {
 
 p {
   margin: 30px 0;
+  @media screen and (max-width: 768px) {
+    & {
+      margin: 25px 0;
+    }
+  }
 }
 
 h1,
@@ -96,10 +101,18 @@ select {
 }
 
 // override table style in bootstrap
+table{
+  margin-top: 10px;
+}
 table.table > tbody, table.table > thead {
   th,
   td {
-    border: 1px solid #eee;
+    border: 1px solid #eee !important;
+  }
+}
+@media screen and (max-width: 767px) {
+  .table-responsive {
+    border: 0;
   }
 }
 
@@ -151,31 +164,42 @@ samp {
   h4,
   h5,
   h6 {
-    margin: 30px 0 10px;
+    margin: 50px 0 20px;
     line-height: 1.4;
-  }
-  h5 {
-    font-size: 19px;
-    font-weight: 600;
-    color: gray;
     & + p {
-      margin-top: 5px;
+      margin-top: 20px;
     }
   }
-  h6 {
-    font-size: 16px;
+  h2::before {
+    content: " ";
+    display: block;
+    border-bottom: 1px solid #ececec;
+    margin-top: 44px;
+    margin-bottom: 30px;
+  }
+  h4 {
+    font-size: 22px;
     font-weight: 600;
     color: gray;
     & + p {
-      margin-top: 5px;
+      margin-top: 10px;
+    }
+  }
+  h5, h6 {
+    font-size: 20px;
+    font-weight: 600;
+    color: gray;
+    & + p {
+      margin-top: 10px;
     }
   }
   // downscale the font a little bit in mobile
   @media screen and (max-width: 768px) {
     h1 { font-size: 30px; }
-    h2 { font-size: 24px; }
-    h3 { font-size: 21px; }
+    h2 { font-size: 22px; }
+    h3 { font-size: 20px; }
     h4 { font-size: 19px; }
+    h5, h6 { font-size: 18px; }
   }
   ul,
   ol {
@@ -233,7 +257,7 @@ samp {
   .anchorjs-link {
     // I can not understand this but this made anchor always in the same line as title
     position: absolute; 
-    padding-top: 1px;
+    text-decoration: none !important;
   }
 }
 
@@ -242,10 +266,10 @@ samp {
 // materialize, mobile only
 @media only screen and (max-width: 767px) {
   /**
-	 * Layout
-	 * Since V1.6 we use absolute positioning to prevent to expand container-fluid
-	 * which would cover tags. A absolute positioning make a new layer.
-	 */
+   * Layout
+   * Since V1.6 we use absolute positioning to prevent to expand container-fluid
+   * which would cover tags. A absolute positioning make a new layer.
+   */
   .navbar-default .navbar-collapse {
     position: absolute;
     right: 0;
@@ -258,13 +282,13 @@ samp {
     width: 170px;
   }
   /**
-	 * Animation
-	 * HuxBlog-Navbar using genuine Material Design Animation
-	 */
+   * Animation
+   * HuxBlog-Navbar using genuine Material Design Animation
+   */
   #huxblog_navbar {
     /**
-		 * Sharable code and 'out' function
-		 */
+     * Sharable code and 'out' function
+     */
     // the container do width-transition
     opacity: 0;
     transform: scaleX(0);
@@ -294,8 +318,8 @@ samp {
       -webkit-transition: opacity 100ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
     }
     /**
-		 *'In' Animation
-		 */
+     *'In' Animation
+     */
     &.in {
       transform: scaleX(1);
       -webkit-transform: scaleX(1);
