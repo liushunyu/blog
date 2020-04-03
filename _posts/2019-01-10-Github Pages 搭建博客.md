@@ -355,11 +355,15 @@ tags:
 
 1、下载安装 [Ruby](https://rubyinstaller.org/downloads/)
 
+
+
 2、下载 [RubyGems](https://rubygems.org/pages/download) ，cd 到 RubyGems 文件夹，安装 RubyGems 
 
 ```bash
 ruby setup.rb
 ```
+
+
 
 3、用 RubyGems 安装 Jekyll
 
@@ -367,11 +371,15 @@ ruby setup.rb
 gem install jekyll
 ```
 
+
+
 4、用 RubyGems 安装插件
 
 ```bash
 gem install yajl-ruby rouge jekyll-paginate
 ```
+
+
 
 5、cd 到博客文件夹，开启服务器，watch 为了检测文件夹内的变化，即修改后不需要重新启动 jekyll 
 
@@ -379,11 +387,15 @@ gem install yajl-ruby rouge jekyll-paginate
 jekyll serve --watch
 ```
 
+
+
 6、再次启动服务器成功
 
 ```bash
 jekyll s
 ```
+
+
 
 7、访问 http://localhost:4000/
 
