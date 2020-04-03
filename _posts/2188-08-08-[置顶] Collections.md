@@ -86,6 +86,7 @@ tags:
 
 - [一份其实很短的 LaTeX 入门文档](https://liam.page/2014/09/08/latex-introduction/)
 - [Latex排版全解](https://blog.csdn.net/langb2014/article/details/51354238)
+- [Latex写算法的伪代码排版](https://blog.csdn.net/lwb102063/article/details/53046265)
 
 
 
