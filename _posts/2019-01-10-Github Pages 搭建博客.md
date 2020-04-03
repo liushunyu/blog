@@ -253,7 +253,7 @@ const PRECACHE_LIST = [
 
 修改 `HOSTNAME_WHITELIST`，将中间的那个域名替换为自己的。
 
-```
+```js
 const HOSTNAME_WHITELIST = [
   self.location.hostname,
   "liushunyu.github.io",
@@ -432,7 +432,7 @@ jekyll serve --port 3000
 
 还可以在配置文件`_config.yml`中添加端口号设置：
 
-```
+```yml
 # 修改文件如下
 # port
 port: 1234
