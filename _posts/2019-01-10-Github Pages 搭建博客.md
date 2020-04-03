@@ -272,23 +272,29 @@ const HOSTNAME_WHITELIST = [
 
 ### 4. Gitalk 设置
 
-1. 新建 Github OAuth Application
+1、新建 Github OAuth Application
 
-   > Github 头像下拉菜单 -> Settings -> 左边 Developer settings 下的 OAuth Apps -> New OAuth App -> 填写相关信息
+> Github 头像下拉菜单 -> Settings -> 左边 Developer settings 下的 OAuth Apps -> New OAuth App -> 填写相关信息
 
 <img width="480" src="/img/in-post/2019-01-10-Github Pages 搭建博客.assets/2.png"/>
 
-2. 填写相关信息
+
+
+2、填写相关信息
 
 <img width="480" src="/img/in-post/2019-01-10-Github Pages 搭建博客.assets/3.png"/>
 
-3. 获得 `Client ID` 和 `Client Secret`
 
-   点击刚刚新建的 OAuth Application，便可以看到该 App 的 `Client ID` 和 `Client Secret`。
 
-4. Gitalk 设置 
+3、获得 `Client ID` 和 `Client Secret`
 
-   回到刚刚博客的 `_config.yml` 文件中进行 Gitalk 设置，
+点击刚刚新建的 OAuth Application，便可以看到该 App 的 `Client ID` 和 `Client Secret`。
+
+
+
+4、Gitalk 设置 
+
+回到刚刚博客的 `_config.yml` 文件中进行 Gitalk 设置，
 
 ```yml
 # Gitalk settings
@@ -347,40 +353,39 @@ tags:
 
 ### 流程
 
+1、下载安装 [Ruby](https://rubyinstaller.org/downloads/)
 
-1. 下载安装 [Ruby](https://rubyinstaller.org/downloads/)
+2、下载 [RubyGems](https://rubygems.org/pages/download) ，cd 到 RubyGems 文件夹，安装 RubyGems 
 
-2. 下载 [RubyGems](https://rubygems.org/pages/download) ，cd 到 RubyGems 文件夹，安装 RubyGems 
+```bash
+ruby setup.rb
+```
 
-   ```bash
-   ruby setup.rb
-   ```
+3、用 RubyGems 安装 Jekyll
 
-3. 用 RubyGems 安装 Jekyll
+```bash
+gem install jekyll
+```
 
-   ```bash
-   gem install jekyll
-   ```
+4、用 RubyGems 安装插件
 
-4. 用 RubyGems 安装插件
+```bash
+gem install yajl-ruby rouge jekyll-paginate
+```
 
-    ```bash
-    gem install yajl-ruby rouge jekyll-paginate
-    ```
-    
-5. cd 到博客文件夹，开启服务器，watch 为了检测文件夹内的变化，即修改后不需要重新启动 jekyll 
+5、cd 到博客文件夹，开启服务器，watch 为了检测文件夹内的变化，即修改后不需要重新启动 jekyll 
 
-    ```bash
-    jekyll serve --watch
-    ```
+```bash
+jekyll serve --watch
+```
 
-6. 再次启动服务器成功
+6、再次启动服务器成功
 
-    ```bash
-    jekyll s
-    ```
+```bash
+jekyll s
+```
 
-7. 访问 http://localhost:4000/
+7、访问 http://localhost:4000/
 
 
 
