@@ -197,27 +197,12 @@ multilingual: true
 修改 `Powered by` 后面的 `href` 内容和文本，还需要修改 `iframe` 中的 `src`。
 
 ```html
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <!-- SNS Link -->
-                {% include sns-links.html center=true %}
-
-                <p class="copyright text-muted">
-                    Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}
-                    <br>
-                    Powered by <a href="https://github.com/liushunyu/liushunyu.github.io">Richard's Blog</a> |
-                    <iframe
-                        style="margin-left: 2px; margin-bottom:-5px;"
-                        frameborder="0" scrolling="0" width="100px" height="20px"
-                        src="https://ghbtns.com/github-btn.html?user=liushunyu&repo=liushunyu.github.io&type=star&count=true" >
-                    </iframe>
-                </p>
-            </div>
-        </div>
-    </div>
-</footer>
+Powered by <a href="https://github.com/liushunyu/liushunyu.github.io">Richard's Blog</a> |
+<iframe
+        style="margin-left: 2px; margin-bottom:-5px;"
+        frameborder="0" scrolling="0" width="100px" height="20px"
+        src="https://ghbtns.com/github-btn.html?user=liushunyu&repo=liushunyu.github.io&type=star&count=true" >
+</iframe>
 ```
 
 
