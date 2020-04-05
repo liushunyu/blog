@@ -1,9 +1,12 @@
 ---
-layout: page
+layout: default
 title: Collection
 description: "你好啊，这里是 Richard。"
 header-img: "img/about-bg.jpg"
 ---
+
+<!-- Page Header -->
+{% include intro-header.html type='page' short=true %}
 
 <!-- Collection -->
 <div class="post-container">
@@ -11,6 +14,7 @@ header-img: "img/about-bg.jpg"
     {{ collections | markdownify }}
 </div>
 
+<!-- Side Catalog Container -->
 <div class="
     col-lg-2 col-lg-offset-0
     visible-lg-block
@@ -23,6 +27,19 @@ header-img: "img/about-bg.jpg"
         </h5>
         <ul class="catalog-body"></ul>
     </div>
+</div>
+
+<!-- Sidebar Container -->
+<div class="
+    col-lg-8 col-lg-offset-2
+    col-md-10 col-md-offset-1
+    sidebar-container">
+
+    <!-- Featured Tags -->
+    {% include featured-tags.html bottom=true %}
+
+    <!-- Friends Blog -->
+    {% include friends.html %}
 </div>
 
 
