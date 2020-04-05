@@ -1,19 +1,16 @@
 ---
-layout: default
+layout: page
 title: Collection
-description: "你好啊，这里是 Richard。"
-header-img: "img/about-bg.jpg"
+description: "奇奇怪怪收藏夹。"
+header-img: "img/archive-bg.jpg"
 ---
 
-<!-- Page Header -->
-{% include intro-header.html type='page' short=true %}
 
 <!-- Collection -->
 <div class="post-container">
     {% capture collections %}{% include collections.md %}{% endcapture %}
     {{ collections | markdownify }}
 </div>
-
 
 
 
