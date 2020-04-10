@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Matplotlib 基础使用"
-subtitle:    "Matplotlib 基础使用"
+subtitle:   "Matplotlib 基础使用"
 date:       2020-04-03 09:00:00
 author:     Shunyu
 header-img: img/post-bg-2015.jpg

@@ -61,7 +61,7 @@ sh cuda_10.1.243_418.87.00_linux.run
 
 第四步：需要进行配置的有 **Toolkit Options** 和 **Library install path** 两项
 
-> 留意一下 **Samples Options** 中的 **Install Path** 是不是 `/home/lsy`
+> 留意一下 **Samples Options** 中的 **Install Path** 是不是 `/home/lsy/cuda`
 
 <img width="480" src="/img/in-post/2019-10-31-cuda + cudnn 用户配置.assets/4.png"/>
 
@@ -74,7 +74,7 @@ a. 配置 **Toolkit Options**：
 
 
 
-b. 配置 **Library install path**：`/home/lsy/cuda/lib`
+b. 配置 **Library install path**：`/home/lsy/cuda/cuda-10.1/lib`
 
 
 
@@ -95,7 +95,7 @@ b. 配置 **Library install path**：`/home/lsy/cuda/lib`
 ```bash
 # 解压 cudnn 文件夹，解压出来的文件夹名字为 cuda
 # 为了不要和我们的 cuda 文件夹冲突了，最好在别的地方解压
-tar -zvxf cudnn-10.1-linux-x64-v7.6.4.38.tgz
+tar -zvxf cudnn-10.1-linux-x64-v7.6.5.32.tgz
 
 # 将 cudnn 解压出来的东西移动到 cuda 中
 mv cuda/include/cudnn.h ~/cuda/cuda-10.1/include/
@@ -121,7 +121,7 @@ export LD_LIBRARY_PATH="$CUDA_HOME/lib64:$LD_LIBRARY_PATH"
 第四步：激活环境变量
 
 ```bash
-source ~/.bashrc
+source ~/.profile
 ```
 
 
