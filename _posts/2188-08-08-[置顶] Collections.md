@@ -143,6 +143,15 @@ tags:
 
 
 
+### 《Reinforcement Learning: An Introduction》
+
+- [英文版](http://incompleteideas.net/book/the-book-2nd.html)
+- [中文版](https://rl.qiwihui.com/zh_CN/latest/chapter1/introduction.html)
+- [代码实现](https://github.com/ShangtongZhang/reinforcement-learning-an-introduction)
+- [习题解答](https://github.com/LyWangPX/Reinforcement-Learning-2nd-Edition-by-Sutton-Exercise-Solutions)
+
+
+
 ## 网课及其笔记
 
 ### 线性代数
@@ -272,6 +281,27 @@ tags:
 
 
 
+**David Silver《Reinforcement Learning》**
+
+- 网课：
+  - [David Silver《Reinforcement Learning》](https://www.bilibili.com/video/av45357759?from=search&seid=1640804946649840154)
+  - [UCL Course on RL](https://www.davidsilver.uk/teaching/)
+- 笔记：
+  - [叶强 - David Silver强化学习公开课中文讲解及实践](https://zhuanlan.zhihu.com/reinforce)
+  - [搬砖的旺财 - David Silver 增强学习——笔记合集](https://zhuanlan.zhihu.com/p/50478310)
+
+
+
+**Sergey Levine《Deep Reinforcement Learning》**
+
+- 网课：
+  - [CS294-112（2018秋季）](https://www.bilibili.com/video/av45975902?from=search&seid=1854745179172802758)
+  - [Deep Reinforcement Learning](http://rail.eecs.berkeley.edu/deeprlcourse/)
+- 笔记：
+  - [谢天 - Berkeley CS294-112 深度增强学习 笔记](https://zhuanlan.zhihu.com/p/32575824)
+
+
+
 ## Other blogs
 
 ### 数学
@@ -290,3 +320,8 @@ tags:
 - [Spinning Up](https://spinningup.openai.com/en/latest/index.html)
 - [Gym](https://gym.openai.com/)
 
+
+
+### 算法≥≥
+
+- [labuladong/fucking-algorithm](https://github.com/labuladong/fucking-algorithm)
