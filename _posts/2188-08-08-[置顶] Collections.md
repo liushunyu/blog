@@ -322,6 +322,6 @@ tags:
 
 
 
-### 算法≥≥
+### 算法
 
 - [labuladong/fucking-algorithm](https://github.com/labuladong/fucking-algorithm)
