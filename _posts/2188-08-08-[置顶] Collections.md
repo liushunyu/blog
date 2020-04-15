@@ -126,6 +126,7 @@ tags:
 ### 《The Elements of Statistical Learning》
 
 - [英文版](https://web.stanford.edu/~hastie/ElemStatLearn//printings/ESLII_print10.pdf)
+- [中文版](https://github.com/szcf-weiya/ESL-CN)
 
 
 

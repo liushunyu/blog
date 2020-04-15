@@ -10,6 +10,7 @@ catalog: true
 tags:
     - python
     - matplotlib
+    - documentation
 ---
 
 
