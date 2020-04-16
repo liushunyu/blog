@@ -1,7 +1,7 @@
 ---
 layout:      post
 title:       "服务器配置 jupyter notebook"
-subtitle:    "linux 服务器配置 jupyter notebook"
+subtitle:    "linux 服务器配置 jupyter notebook 或 jupyter lab"
 date:        2020-01-14 09:00:00
 author:      Shunyu
 header-img:  img/post-bg-2015.jpg
@@ -9,12 +9,32 @@ header-mask: 0.1
 catalog:     true
 tags:
     - linux
-    - notebook
+    - jupyter
 ---
 
 
 
-希望实现在本地访问服务器上的 jupyter notebook。
+希望实现在本地访问服务器上的 jupyter notebook / lab，目前远程使用 jupyter lab 加载较慢，而且插件还不够丰富，待以后再补充详细使用。
+
+
+
+## 安装 jupyter
+
+安装 jupyter notebook
+
+```bash
+pip install jupyter
+```
+
+
+
+安装 jupyter lab（如果不想用 jupyter lab 可以不安装）
+
+```bash
+pip install jupyterlab
+# 如果需要安装扩展包需要安装 nodejs
+conda install -c conda-forge nodejs
+```
 
 
 
@@ -114,9 +134,57 @@ python -m ipykernel install --user --name [env name] --display-name "[name in no
 
 
 
+## Jupyter Notebook 配置 Nbextensions
+
+安装
+
+```bash
+pip install jupyter_contrib_nbextensions
+```
+
+配置
+
+```bash
+jupyter contrib nbextension install --user
+```
+
+启动 Jupyter Notebook，点开 Nbextensions 的选项勾选设置：
+
+- Hinterland：代码提示
+- Table of Contents：形成目录栏
+- Variable Inspector：显示所有构建的变量信息
+- ExcecuteTime：计算每一个模块的时间和运行结束时间
+- Codefolding：实现代码折叠
+- Highlight selected word：高亮选择的单词
+
+
+
+## 启动 Jupyter
+
+启动 Jupyter Notebook
+
+```bash
+jupyter notebook
+```
+
+启动 Jupyter Lab
+
+```bash
+jupyter lab
+```
+
+
+
+
+
 ## 参考资料及致谢
 
 [设置 jupyter notebook 可远程访问](sdn.net/simple_the_best/article/details/77005400)
 
 [jupyter notebook 支持多conda环境](https://blog.csdn.net/u011622208/article/details/90379584)
 
+[Jupyter Notebook 添加代码自动补全功能](https://www.jianshu.com/p/0ab80f63af8a)
+
+[python -- Jupyter Notebook 扩展插件nbextensions几个功能的介绍](https://blog.csdn.net/August1226/article/details/86526858)
+
+[JupyterLab](https://jupyterlab.readthedocs.io/en/stable/index.html)
