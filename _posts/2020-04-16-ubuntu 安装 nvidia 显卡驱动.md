@@ -143,3 +143,6 @@ nvidia-smi
 [简单一步在ubuntu18.04下nvidia driver的安装](https://www.jianshu.com/p/4366ed27add9)
 
 [Ubuntu 18.04安装NVIDIA显卡驱动教程](https://www.linuxidc.com/Linux/2019-02/157170.htm)
+
+[Linux(CentOS)下安装NVIDIA GPU驱动](https://www.cnblogs.com/YSPXIZHEN/p/11466145.html)
+
