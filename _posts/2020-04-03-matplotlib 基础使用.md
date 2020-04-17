@@ -19,6 +19,17 @@ tags:
 
 
 
+使用 jupyter 时需要 `%matplotlib inline`，以便直接在 python console 里面生成图像。
+
+```
+import matplotlib.pyplot as plt
+%matplotlib inline
+```
+
+
+
+
+
 ## scatter 散点图
 
 ```python
