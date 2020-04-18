@@ -37,7 +37,7 @@ wget -c http://developer.download.nvidia.com/compute/cuda/10.1/Prod/local_instal
 ```bash
 # 必须先创建文件夹，不然会报错
 mkdir ~/cuda
-mkdir ~/cuda/lib
+mkdir ~/cuda/cuda-10.1_Library
 sh cuda_10.1.243_418.87.00_linux.run
 ```
 
@@ -74,7 +74,10 @@ a. 配置 **Toolkit Options**：
 
 
 
-b. 配置 **Library install path**：`/home/lsy/cuda/cuda-10.1/lib`
+b. 配置 **Library install path**：`/home/lsy/cuda/cuda-10.1_Library`
+
+- 不太清楚这个路径到底为什么好，系统默认路径会定位到哪里也没试过
+- 安装成功后会有一个 `cuda-10.1/lib64` 跟这个有什么关系也不太了解，目前先分开放吧
 
 
 
