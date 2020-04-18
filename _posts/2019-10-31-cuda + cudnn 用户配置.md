@@ -77,7 +77,8 @@ a. 配置 **Toolkit Options**：
 b. 配置 **Library install path**：`/home/lsy/cuda/cuda-10.1_Library`
 
 - 不太清楚这个路径到底为什么好，系统默认路径会定位到哪里也没试过
-- 安装成功后会有一个 `cuda-10.1/lib64` 跟这个有什么关系也不太了解，目前先分开放吧
+- 安装成功后会有这三个目录：`/lib64`、`/include`、`/src` ，而且发现 `cuda-10.1` 下也有这三个目录，内容部分重复
+- 经过对比 cuda-10.0 的内容，个人觉得这里填 `/home/lsy/cuda/cuda-10.1` 可能 OK
 
 
 
