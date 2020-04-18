@@ -93,3 +93,5 @@ exit
 [linux screen 命令 ：离线运行程序](https://www.cnblogs.com/lifegoesonitself/p/3516718.html)
 
 [linux 技巧：使用 screen 管理你的远程会话](https://www.ibm.com/developerworks/cn/linux/l-cn-screen/)
+
+[Linux 守护进程的启动方法](http://www.ruanyifeng.com/blog/2016/02/linux-daemon.html)

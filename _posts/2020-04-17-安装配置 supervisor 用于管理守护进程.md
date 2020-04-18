@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "安装配置 supervisor 用于管理进程"
-subtitle:    "安装配置 supervisor 用于管理进程"
+title:      "安装配置 supervisor 用于管理守护进程"
+subtitle:    "安装配置 supervisor 用于管理守护进程"
 date:       2020-04-16 09:00:00
 author:     Shunyu
 header-img: img/post-bg-2015.jpg
@@ -10,11 +10,16 @@ catalog: true
 tags:
     - linux
     - supervisor
+
 ---
 
 
 
-记录一下安装配置 supervisor 用于管理进程流程，该软件比较好的功能是可以在进程挂掉时重启进程，还可以通过网页端进行管理。
+Supervisor 是用 Python 开发的一套通用的进程管理程序，能将一个普通的命令行进程变为后台 daemon，并监控进程状态，异常退出时能自动重启。
+
+记录一下安装配置 supervisor 用于管理守护进程的流程，该软件比较好的功能是可以在进程挂掉时重启进程，还可以通过网页端进行管理。
+
+目前看资料好像说系统自带的 systemd 基本可以替代 supervisor，最下面附带了一些参考资料后面有空研究一下。
 
 
 
@@ -22,7 +27,7 @@ tags:
 
 ### 安装 supervisor
 
-```
+```bash
 apt-get install supervisor
 ```
 
@@ -30,9 +35,7 @@ apt-get install supervisor
 
 ### 配置 supervisor
 
-```
-vim /etc/supervisor/supervisord.conf
-```
+要使用 gpu 需要安装 [nvidia-container-runtime](https://github.com/NVIDIA/nvidia-container-runtime/)
 
 修改配置文件如下：
 
@@ -40,7 +43,7 @@ vim /etc/supervisor/supervisord.conf
 - [inet_http_server]：填写 port、username、password
 - [supervisorctl]：使用 http 的 serverurl，填写 serverurl、username、password
 
-```
+```config
 ; supervisor config file
   
 ;[unix_http_server]
@@ -87,22 +90,26 @@ files = /etc/supervisor/conf.d/*.conf
 
 1、创建具体进程的配置文件
 
-```
-vim /etc/supervisor/conf.d/process_name.conf
+```bash
+vim /etc/supervisor/conf.d/program_name.conf
 ```
 
 2、修改配置文件
 
-```
-[program:process_name]
+- 启动程序命令用绝对路径（如使用不同 python 虚拟环境）
+
+- 部分程序需要关闭守护进程（nginx、redis 等）
+
+```config
+[program:program_name]
 command=/root/anaconda3/envs/process_name/bin/gunicorn -c config_gunicorn.py wsgi:app
-directory=/root/process_name
+directory=/root/program_name
 startsecs=0
 stopwaitsecs=0
 autostart=false
 autorestart=true
-stdout_logfile=/root/process_name/log/supervisor_gunicorn_stdout.log
-stderr_logfile=/root/process_name/log/supervisor_gunicorn_stderr.log
+stdout_logfile=/root/program_name/log/supervisor_stdout.log
+stderr_logfile=/root/program_name/log/supervisor_stderr.log
 ```
 
 
@@ -111,7 +118,7 @@ stderr_logfile=/root/process_name/log/supervisor_gunicorn_stderr.log
 
 supervisor 启动
 
-```
+```bash
 # 根据配置文件启动 supervisord
 supervisord -c /etc/supervisor/supervisord.conf
 
@@ -126,9 +133,9 @@ supervisorctl reload
 
 管理具体进程
 
-```
+```bash
 # 启动某个进程
-# program_name 为 [program:x] 里的 x
+# program_name 为 [program:program_name] 里的 program_name
 supervisorctl start program_name
 
 # 停止某个进程
@@ -156,3 +163,6 @@ web 页面访问管理
 
 [supervisord安装使用简记](https://www.cnblogs.com/wswang/p/5795766.html)
 
+[Supervisor使用详解](https://www.jianshu.com/p/0b9054b33db3)
+
+[Systemd 入门教程：命令篇](http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html)

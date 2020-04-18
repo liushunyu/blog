@@ -19,6 +19,7 @@ tags:
 
 - [Python教程 - 廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/1016959663602400)
 - [Python 基础教程 - 菜鸟教程](https://www.runoob.com/python/python-tutorial.html)
+- [莫烦PYTHON](https://morvanzhou.github.io/)
 
 
 
@@ -50,6 +51,7 @@ tags:
 ### Git
 
 - [Git教程 - 廖雪峰的官方网站](http://www.baidu.com/link?url=W6VLdBMd4AupkHr-im3AghSLYQKcl7WCj-H3y4gdCf1W4uf6SAdJVbu3ToeU16sFtvWOSztC1chrbAqFZnQfbBxnsOuraEoJVpJDZho0eOA7h_scdQlSPZZxC8-raRB2&ck=6612.2.0.0.0.253.142.0&shh=www.baidu.com&sht=baiduhome_pg)
+- [Learn Git Branching](https://learngitbranching.js.org/)
 
 
 
@@ -326,3 +328,10 @@ tags:
 ### 算法
 
 - [labuladong/fucking-algorithm](https://github.com/labuladong/fucking-algorithm)
+
+
+
+### 计算机
+
+- [阮一峰的网络日志](http://www.ruanyifeng.com/blog/developer/)
+
