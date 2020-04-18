@@ -15,7 +15,7 @@ tags:
 
 
 
-为了使用 gpu 跑程序，配置 python 虚拟环境进行隔离外，最好为用户配置单独的 cuda 和 cudnn 进行隔离，同时要注意 [tensorflow 版本和 cuda 的对应关系](https://tensorflow.google.cn/install/source)，[pytorch 版本和 cuda 的对应关系](https://pytorch.org/get-started/locally/)。
+为了使用 gpu 跑程序，配置 python 虚拟环境进行隔离外，最好为用户配置单独的 cuda 和 cudnn 进行隔离，同时要注意 [tensorflow 版本和 cuda 的对应关系](https://tensorflow.google.cn/install/source)，[pytorch 版本和 cuda 的对应关系](https://pytorch.org/get-started/locally/)，此外参考官方教程 [NVIDIA CUDA Installation Guide for Linux](https://docs.nvidia.com/cuda/archive/10.1/cuda-installation-guide-linux/index.html#abstract)。
 
 
 
@@ -138,6 +138,8 @@ which nvcc
 
 
 ## 参考资料及致谢
+
+[NVIDIA CUDA Installation Guide for Linux](https://docs.nvidia.com/cuda/archive/10.1/cuda-installation-guide-linux/index.html#abstract)
 
 [非root用户在linux下安装多个版本的CUDA和cuDNN](https://blog.csdn.net/hizengbiao/article/details/88625044)
 

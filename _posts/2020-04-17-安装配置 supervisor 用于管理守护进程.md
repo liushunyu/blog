@@ -102,8 +102,8 @@ vim /etc/supervisor/conf.d/program_name.conf
 
 ```config
 [program:program_name]
-command=/root/anaconda3/envs/process_name/bin/gunicorn -c config_gunicorn.py wsgi:app
-directory=/root/program_name
+command=your_program_command
+directory=/your_directory
 startsecs=0
 stopwaitsecs=0
 autostart=false
