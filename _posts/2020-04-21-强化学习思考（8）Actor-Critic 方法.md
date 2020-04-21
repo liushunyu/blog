@@ -252,7 +252,13 @@ $$
 
 1、take action $\mathbf{a} \sim \pi_{\theta}(\mathbf{a} \mid \mathbf{s}),$ get $\left(\mathbf{s}, \mathbf{a}, \mathbf{s}^{\prime}, r\right)$
 
-2、update using target $\hat{V}_{\phi}^{\pi} \leftarrow r+\gamma\hat{V}_{\phi}^{\pi}(\mathbf{s}^{\prime})$.
+2、update using target
+
+
+$$
+\hat{V}_{\phi}^{\pi} \leftarrow r+\gamma\hat{V}_{\phi}^{\pi}(\mathbf{s}^{\prime})
+$$
+
 
 3、evaluate 
 $$
