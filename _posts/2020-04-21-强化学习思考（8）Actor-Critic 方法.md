@@ -224,7 +224,7 @@ $$
 
 #### Batch Actor-critic algorithms
 
-1、sample $\mathbf{s}_{i}, \mathbf{a}_{i}$ from $\pi_{\theta}(\mathbf{a} \mid \mathbf{s})$ (run it on the robot)
+1、sample $\mathbf{s}_{i}, \mathbf{a}_{i} \text{   from   } $\pi_{\theta}(\mathbf{a} \mid \mathbf{s})$ (run it on the robot)
 
 2、fit $\hat{V}_{\phi}^{\pi}(\mathbf{s})$ to sampled reward sums
 
