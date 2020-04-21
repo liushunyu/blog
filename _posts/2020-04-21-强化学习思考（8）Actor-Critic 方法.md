@@ -492,6 +492,30 @@ $$
 $$
 
 
+## Summary of Policy Gradient Algorithms
+
+The policy gradient has many equivalent forms
+
+
+$$
+\begin{aligned}
+\nabla_{\theta} J(\theta)&=\mathbb{E}_{\pi_{\theta}}\left[\nabla_{\theta} \log \pi_{\theta}(s, a) v_{t}\right] \quad\quad\;\;\;\quad \text { REINFORCE }  \\
+&=\mathbb{E}_{\pi_{\theta}}\left[\nabla_{\theta} \log \pi_{\theta}(s, a) Q^{w}(s, a)\right] \quad \text { Q Actor-Critic } \\
+&=\mathbb{E}_{\pi_{\theta}}\left[\nabla_{\theta} \log \pi_{\theta}(s, a) A^{w}(s, a)\right] \quad \text { Advantage Actor-Critic } \\
+&=\mathbb{E}_{\pi_{\theta}}\left[\nabla_{\theta} \log \pi_{\theta}(s, a) \delta\right] \quad \quad \quad \;\;\;\;\text { TD Actor-Critic } \\
+&=\mathbb{E}_{\pi_{\theta}}\left[\nabla_{\theta} \log \pi_{\theta}(s, a) \delta e\right] \quad \quad \quad \;\;\text { TD($\lambda$) Actor-Critic } 
+\\
+G_{\theta}^{-1} \nabla_{\theta} J(\theta)&=w \quad \quad \quad \quad\quad \quad \quad \quad \quad \quad \quad  \quad \;\text { NAtural Actor-Critic } 
+\end{aligned}
+$$
+
+
+Each leads a stochastic gradient ascent algorithm
+
+Critic uses policy evaluation (e.g. MC or TD learning) to estimate $Q^{\pi}(s, a), A^{\pi}(s, a)$ or $V^{\pi}(s)$
+
+
+
 ## 参考资料及致谢
 
 所有参考资料在前言中已列出，再次向强化学习的大佬前辈们表达衷心的感谢！
