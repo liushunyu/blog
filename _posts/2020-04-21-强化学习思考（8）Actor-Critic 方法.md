@@ -224,7 +224,7 @@ $$
 
 #### Batch Actor-critic algorithms
 
-1、sample $\left\{\mathbf{s}_{i}, \mathbf{a}_{i}\right\}$ from $\pi_{\theta}(\mathbf{a} \mid \mathbf{s})$ (run it on the robot)
+1、sample $\mathbf{s}_{i}, \mathbf{a}_{i}$ from $\pi_{\theta}(\mathbf{a} \mid \mathbf{s})$ (run it on the robot)
 
 2、fit $\hat{V}_{\phi}^{\pi}(\mathbf{s})$ to sampled reward sums
 
@@ -236,7 +236,13 @@ $$
 $$
 
 
-4、$\nabla_{\theta} J(\theta) \approx \sum_{i} \nabla_{\theta} \log \pi_{\theta}\left(\mathbf{a}_{i} \mid \mathbf{s}_{i}\right) \hat{A}^{\pi}\left(\mathbf{s}_{i}, \mathbf{a}_{i}\right)$
+4、compute the gradient
+
+
+$$
+\nabla_{\theta} J(\theta) \approx \sum_{i} \nabla_{\theta} \log \pi_{\theta}\left(\mathbf{a}_{i} \mid \mathbf{s}_{i}\right) \hat{A}^{\pi}\left(\mathbf{s}_{i}, \mathbf{a}_{i}\right)
+$$
+
 
 5、$\theta \leftarrow \theta+\alpha \nabla_{\theta} J(\theta)$
 
@@ -246,7 +252,7 @@ $$
 
 1、take action $\mathbf{a} \sim \pi_{\theta}(\mathbf{a} \mid \mathbf{s}),$ get $\left(\mathbf{s}, \mathbf{a}, \mathbf{s}^{\prime}, r\right)$
 
-2、update $\hat{V}_{\phi}^{\pi}$ using target $r+\gamma \hat{V}_{\phi}^{\pi}\left(\mathbf{s}^{\prime}\right)$
+2、update $\hat{V}_{\phi}^{\pi}$ using target $r+\gamma \hat{V}_{\phi}^{\pi}(\mathbf{s}^{\prime})$
 
 3、evaluate 
 
@@ -256,7 +262,13 @@ $$
 $$
 
 
-4、$\nabla_{\theta} J(\theta) \approx \nabla_{\theta} \log \pi_{\theta}(\mathbf{a} \mid \mathbf{s}) \hat{A}^{\pi}(\mathbf{s}, \mathbf{a})$
+4、compute the gradient
+
+
+$$
+\nabla_{\theta} J(\theta) \approx \nabla_{\theta} \log \pi_{\theta}(\mathbf{a} \mid \mathbf{s}) \hat{A}^{\pi}(\mathbf{s}, \mathbf{a})
+$$
+
 
 5、$\theta \leftarrow \theta+\alpha \nabla_{\theta} J(\theta)$
 
