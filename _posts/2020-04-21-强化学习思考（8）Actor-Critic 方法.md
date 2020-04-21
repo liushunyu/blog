@@ -260,18 +260,23 @@ $$
 $$
 
 
-3、evaluate 
+3、evaluate
+
+
 $$
 \hat{A}^{\pi}(\mathbf{s}, \mathbf{a})=r(\mathbf{s}, \mathbf{a})+\gamma \hat{V}_{\phi}^{\pi}\left(\mathbf{s}^{\prime}\right)-\hat{V}_{\phi}^{\pi}(\mathbf{s})
 $$
 
 
+
 4、compute the gradient
+
 
 
 $$
 \nabla_{\theta} J(\theta) \approx \nabla_{\theta} \log \pi_{\theta}(\mathbf{a} \mid \mathbf{s}) \hat{A}^{\pi}(\mathbf{s}, \mathbf{a})
 $$
+
 
 
 5、$\theta \leftarrow \theta+\alpha \nabla_{\theta} J(\theta)$
