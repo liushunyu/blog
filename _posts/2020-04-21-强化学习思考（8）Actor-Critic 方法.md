@@ -252,10 +252,9 @@ $$
 
 1、take action $\mathbf{a} \sim \pi_{\theta}(\mathbf{a} \mid \mathbf{s}),$ get $\left(\mathbf{s}, \mathbf{a}, \mathbf{s}^{\prime}, r\right)$
 
-2、update $\hat{V}_{\phi}^{\pi} \text{  using target  }  r+\gamma\hat{V}_{\phi}^{\pi}(\mathbf{s}^{\prime})$
+2、update $\hat{V}_{\phi}^{\pi}$ using target $r+\gamma\hat{V}_{\phi}^{\pi}(\mathbf{s}^{\prime})$
 
 3、evaluate 
-
 $$
 \hat{A}^{\pi}(\mathbf{s}, \mathbf{a})=r(\mathbf{s}, \mathbf{a})+\gamma \hat{V}_{\phi}^{\pi}\left(\mathbf{s}^{\prime}\right)-\hat{V}_{\phi}^{\pi}(\mathbf{s})
 $$
