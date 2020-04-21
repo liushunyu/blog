@@ -224,13 +224,19 @@ $$
 
 #### Batch Actor-critic algorithms
 
-1、sample $\left\{\mathbf{s}_{i}, \mathbf{a}_{i}\right\}$ from $\pi_{\theta}(\mathbf{a} | \mathbf{s})$ (run it on the robot)
+1、sample $\left\{\mathbf{s}_{i}, \mathbf{a}_{i}\right\}$ from $\pi_{\theta}(\mathbf{a} \mid \mathbf{s})$ (run it on the robot)
 
 2、fit $\hat{V}_{\phi}^{\pi}(\mathbf{s})$ to sampled reward sums
 
-3、evaluate $\hat{A}^{\pi}\left(\mathbf{s}_{i}, \mathbf{a}_{i}\right)=r\left(\mathbf{s}_{i}, \mathbf{a}_{i}\right)+\gamma \hat{V}_{\phi}^{\pi}\left(\mathbf{s}_{i}^{\prime}\right)-\hat{V}_{\phi}^{\pi}\left(\mathbf{s}_{i}\right)$
+3、evaluate
 
-4、$\nabla_{\theta} J(\theta) \approx \sum_{i} \nabla_{\theta} \log \pi_{\theta}\left(\mathbf{a}_{i} | \mathbf{s}_{i}\right) \hat{A}^{\pi}\left(\mathbf{s}_{i}, \mathbf{a}_{i}\right)$
+
+$$
+\hat{A}^{\pi}\left(\mathbf{s}_{i}, \mathbf{a}_{i}\right)=r\left(\mathbf{s}_{i}, \mathbf{a}_{i}\right)+\gamma \hat{V}_{\phi}^{\pi}\left(\mathbf{s}_{i}^{\prime}\right)-\hat{V}_{\phi}^{\pi}\left(\mathbf{s}_{i}\right)
+$$
+
+
+4、$\nabla_{\theta} J(\theta) \approx \sum_{i} \nabla_{\theta} \log \pi_{\theta}\left(\mathbf{a}_{i} \mid \mathbf{s}_{i}\right) \hat{A}^{\pi}\left(\mathbf{s}_{i}, \mathbf{a}_{i}\right)$
 
 5、$\theta \leftarrow \theta+\alpha \nabla_{\theta} J(\theta)$
 
@@ -238,13 +244,19 @@ $$
 
 #### Online Actor-critic algorithms
 
-1、take action $\mathbf{a} \sim \pi_{\theta}(\mathbf{a} | \mathbf{s}),$ get $\left(\mathbf{s}, \mathbf{a}, \mathbf{s}^{\prime}, r\right)$
+1、take action $\mathbf{a} \sim \pi_{\theta}(\mathbf{a} \mid \mathbf{s}),$ get $\left(\mathbf{s}, \mathbf{a}, \mathbf{s}^{\prime}, r\right)$
 
 2、update $\hat{V}_{\phi}^{\pi}$ using target $r+\gamma \hat{V}_{\phi}^{\pi}\left(\mathbf{s}^{\prime}\right)$
 
-3、evaluate $\hat{A}^{\pi}(\mathbf{s}, \mathbf{a})=r(\mathbf{s}, \mathbf{a})+\gamma \hat{V}_{\phi}^{\pi}\left(\mathbf{s}^{\prime}\right)-\hat{V}_{\phi}^{\pi}(\mathbf{s})$
+3、evaluate 
 
-4、$\nabla_{\theta} J(\theta) \approx \nabla_{\theta} \log \pi_{\theta}(\mathbf{a} | \mathbf{s}) \hat{A}^{\pi}(\mathbf{s}, \mathbf{a})$
+
+$$
+\hat{A}^{\pi}(\mathbf{s}, \mathbf{a})=r(\mathbf{s}, \mathbf{a})+\gamma \hat{V}_{\phi}^{\pi}\left(\mathbf{s}^{\prime}\right)-\hat{V}_{\phi}^{\pi}(\mathbf{s})
+$$
+
+
+4、$\nabla_{\theta} J(\theta) \approx \nabla_{\theta} \log \pi_{\theta}(\mathbf{a} \mid \mathbf{s}) \hat{A}^{\pi}(\mathbf{s}, \mathbf{a})$
 
 5、$\theta \leftarrow \theta+\alpha \nabla_{\theta} J(\theta)$
 
