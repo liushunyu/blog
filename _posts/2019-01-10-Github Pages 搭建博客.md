@@ -325,6 +325,7 @@ author:     作者名
 header-img: img/post-bg-2015.jpg
 header-mask: 0.1
 catalog: true
+mathjax: true
 tags:
     - 标签1
     - 标签2
