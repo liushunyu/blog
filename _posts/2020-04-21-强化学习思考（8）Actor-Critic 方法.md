@@ -296,7 +296,21 @@ $$
 
 
 
-2、synchronized parallel actor-critic & asynchronous parallel actor-critic
+2、使用 output entropy 作为 $\pi(s)$ 的正则项的时候，entropy 越大，不同动作的概率越接近，越鼓励探索。
+
+
+
+3、synchronized parallel actor-critic & asynchronous parallel actor-critic
+
+<img width="480" src="/img/in-post/2020-04-21-强化学习思考（8）Actor-Critic 方法.assets/image-20190820121007989.png"/>
+
+step 1：每个 worker 都会 copy 全局参数
+
+step 2：每个 worker 都与环境进行互动，并得到 sample data
+
+step 3：每个 worker 计算梯度
+
+step 4：每个 worker 将计算得到的梯度返回给 global network 用于更新全局参数，即使全局参数已被其他 worker 更新也没有关系。
 
 
 
