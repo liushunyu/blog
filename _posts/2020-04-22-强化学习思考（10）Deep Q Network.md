@@ -30,7 +30,7 @@ tags:
 - [强化学习思考（7）策略梯度](https://liushunyu.github.io/2020/04/18/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E6%80%9D%E8%80%83-7-%E7%AD%96%E7%95%A5%E6%A2%AF%E5%BA%A6/)
 - [强化学习思考（8）Actor-Critic 方法](https://liushunyu.github.io/2020/04/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E6%80%9D%E8%80%83-8-Actor-Critic-%E6%96%B9%E6%B3%95/)
 - [强化学习思考（9）值函数方法](https://liushunyu.github.io/2020/04/22/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E6%80%9D%E8%80%83-9-%E5%80%BC%E5%87%BD%E6%95%B0%E6%96%B9%E6%B3%95/)
-- 强化学习思考（10）Deep Q Network
+- [强化学习思考（10）Deep Q Network](https://liushunyu.github.io/2020/04/22/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E6%80%9D%E8%80%83-10-Deep-Q-Network/)
 
 
 
