@@ -587,7 +587,7 @@ J_{P P O}^{\theta^{k}}(\theta)=J^{\theta^{k}}(\theta)-\beta K L\left(\theta, \th
 $$
 
 $$
-J^{\theta^{k}}(\theta) \approx \sum_{\left(s_{t}, a_{t}\right)} \frac{\pi_{\theta}\left(a_{t} | s_{t}\right)}{\pi_{\theta^{k}}\left(a_{t} | s_{t}\right)} A^{\theta^{k}}\left(s_{t}, a_{t}\right)
+J^{\theta^{k}}(\theta) \approx \sum_{\left(s_{t}, a_{t}\right)} \frac{\pi_{\theta}\left(a_{t} | s_{t}\right)}{\pi_{\theta^{k}}\left(a_{t} | s_{t}\right)} A^{\pi_{\theta^{k}}}\left(s_{t}, a_{t}\right)
 $$
 
 
