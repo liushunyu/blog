@@ -92,6 +92,7 @@ b=V(s_t) = E_{a_t \sim \pi_{\theta}}Q(s_{t},a_{t})
 $$
 
 
+
 ### Advantage function
 
 state-action value function: total reward from taking action $a_{t}$ in state $s_{t}$
@@ -116,6 +117,7 @@ Advantage function: how much better action $a_{t}$ is
 $$
 A^\pi(s_t,a_t) = Q^\pi(s_t,a_t) - V^\pi(s_t)
 $$
+
 
 
 ## Actor-Critic 方法
@@ -177,6 +179,7 @@ $$
 $$
 
 
+
 #### Monte Carlo evaluation with function approximation
 
 use sampled reward sums to train network
@@ -197,6 +200,7 @@ target
 $$
 y_{i,t} = \sum_{t'=t}^{T}   r\left({s}_{t'}, {a}_{t'}\right)
 $$
+
 
 
 #### Temporal difference evaluation with function approximation
@@ -222,15 +226,16 @@ y_{i,t} = r(s_t,a_t) + V^\pi_{\phi}(s_{t+1})
 $$
 
 
+
 ### Actor-critic algorithms
 
 #### Batch Actor-critic algorithms
 
-1、sample $(s_i,a_i)$ from $\pi_\theta(a \mid s)$
+- step 1、sample $(s_i,a_i)$ from $\pi_\theta(a \mid s)$
 
-2、fit $\hat{V}_{\phi}^{\pi}(\mathbf{s})$ to sampled reward sums
+- step 2、fit $\hat{V}_{\phi}^{\pi}(\mathbf{s})$ to sampled reward sums
 
-3、evaluate
+- step 3、evaluate
 
 
 $$
@@ -238,7 +243,7 @@ $$
 $$
 
 
-4、compute the gradient
+- step 4、compute the gradient
 
 
 $$
@@ -246,15 +251,15 @@ $$
 $$
 
 
-5、$\theta \leftarrow \theta+\alpha \nabla_{\theta} J(\theta)$
+- step 5、$\theta \leftarrow \theta+\alpha \nabla_{\theta} J(\theta)$
 
 
 
 #### Online Actor-critic algorithms
 
-1、take action $\mathbf{a} \sim \pi_{\theta}(\mathbf{a} \mid \mathbf{s}),$ get $\left(\mathbf{s}, \mathbf{a}, \mathbf{s}^{\prime}, r\right)$
+- step 1、take action $\mathbf{a} \sim \pi_{\theta}(\mathbf{a} \mid \mathbf{s}),$ get $\left(\mathbf{s}, \mathbf{a}, \mathbf{s}^{\prime}, r\right)$
 
-2、update using target
+- step 2、update using target
 
 
 $$
@@ -262,7 +267,7 @@ $$
 $$
 
 
-3、evaluate
+- step 3、evaluate
 
 
 $$
@@ -271,7 +276,7 @@ $$
 
 
 
-4、compute the gradient
+- step 4、compute the gradient
 
 
 
@@ -281,7 +286,7 @@ $$
 
 
 
-5、$\theta \leftarrow \theta+\alpha \nabla_{\theta} J(\theta)$
+- step 5、$\theta \leftarrow \theta+\alpha \nabla_{\theta} J(\theta)$
 
 
 
@@ -306,13 +311,13 @@ $$
 
 <img width="480" src="/img/in-post/2020-04-21-强化学习思考（8）Actor-Critic 方法.assets/image-20190820121007989.png"/>
 
-step 1：每个 worker 都会 copy 全局参数
+- step 1：每个 worker 都会 copy 全局参数
 
-step 2：每个 worker 都与环境进行互动，并得到 sample data
+- step 2：每个 worker 都与环境进行互动，并得到 sample data
 
-step 3：每个 worker 计算梯度
+- step 3：每个 worker 计算梯度
 
-step 4：每个 worker 将计算得到的梯度返回给 global network 用于更新全局参数，即使全局参数已被其他 worker 更新也没有关系。
+- step 4：每个 worker 将计算得到的梯度返回给 global network 用于更新全局参数，即使全局参数已被其他 worker 更新也没有关系。
 
 
 
