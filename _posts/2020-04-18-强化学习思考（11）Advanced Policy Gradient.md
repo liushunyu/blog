@@ -189,7 +189,7 @@ $$
 
 希望证明 Claim: 
 
-- $p_{\theta}\left(\mathbf{s}_{t}\right)$ is close to $p_{\theta^{\prime}}\left(\mathbf{s}_{t}\right)$ when $\pi_{\theta}$ is close to $\pi_{\theta^{\prime}}$
+- $p_{\theta}(s_{t})$ is close to $p_{\theta^{\prime}}(s_{t})$ when $\pi_{\theta}$ is close to $\pi_{\theta^{\prime}}$
 
 
 
@@ -197,7 +197,7 @@ $$
 
 **assume**
 
-- assume $\pi_{\theta}$ is a deterministic policy $\mathbf{a}_{t}=\pi_{\theta}\left(\mathbf{s}_{t}\right)$
+- assume $\pi_{\theta}$ is a deterministic policy $a_{t}=\pi_{\theta}(s_{t})$
 - assume $\pi_{\theta^{\prime}}$ is close to $\pi_{\theta}$ if 
 
 
@@ -232,7 +232,7 @@ useful identity: $(1-\epsilon)^{t} \geq 1-\epsilon t$ for $\epsilon \in[0,1]$
 **assume**
 
 - assume $\pi_{\theta}$ is an arbitrary distribution
-- assume $\pi_{\theta^{\prime}}$ is close to $\pi_{\theta}$  for all $\mathbf{s}_{t}$ if 
+- assume $\pi_{\theta^{\prime}}$ is close to $\pi_{\theta}$  for all $s_{t}$ if 
 
 
 $$
@@ -244,7 +244,7 @@ $$
 
 - if $\left|p_{X}(x)-p_{Y}(x)\right|=\epsilon$, exists $p(x, y)$ such that $p(x)=p_{X}(x)$ and $p(y)=p_{Y}(y)$ and $p(x=y)=1-\epsilon$ 
 - $\Rightarrow p_{X}(x)$ "agrees" with $p_{Y}(y)$ with probability $\epsilon$ 
-- $\Rightarrow \pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)$ takes a different action than $\pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)$ with probability at most $\epsilon$
+- $\Rightarrow \pi_{\theta^{\prime}}\left(a_{t} \mid s_{t}\right)$ takes a different action than $\pi_{\theta}\left(a_{t} \mid s_{t}\right)$ with probability at most $\epsilon$
 
 
 
@@ -259,14 +259,14 @@ $$
 
 根据前面的证明可以得到
 
-- when $\pi_{\theta^{\prime}}$ is close to $\pi_{\theta}$  for all $\mathbf{s}_{t}$ if 
+- when $\pi_{\theta^{\prime}}$ is close to $\pi_{\theta}$  for all $s_{t}$ if 
 
 
 $$
 \left|\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)-\pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)\right| \leq \epsilon
 $$
 
-- $p_{\theta}\left(\mathbf{s}_{t}\right)$ is close to $p_{\theta^{\prime}}\left(\mathbf{s}_{t}\right)$
+- $p_{\theta}(s_{t})$ is close to $p_{\theta^{\prime}}(s_{t})$
 
 
 $$
@@ -329,7 +329,7 @@ D_{\mathrm{KL}}\left(p_{1}(x) \| p_{2}(x)\right)=E_{x \sim p_{1}(x)}\left[\log \
 $$
 
 
-- when $\pi_{\theta^{\prime}}$ is close to $\pi_{\theta}$  for all $\mathbf{s}_{t}$ if 
+- when $\pi_{\theta^{\prime}}$ is close to $\pi_{\theta}$  for all $s_{t}$ if 
 
 
 $$
@@ -347,7 +347,7 @@ $$
 
 所以仍然可证明得
 
-- $p_{\theta}\left(\mathbf{s}_{t}\right)$ is close to $p_{\theta^{\prime}}\left(\mathbf{s}_{t}\right)$
+- $p_{\theta}(s_{t})$ is close to $p_{\theta^{\prime}}(s_{t})$
 
 
 
@@ -390,7 +390,7 @@ $$
 
 - step 1、Maximize $\mathcal{L}\left(\theta^{\prime}, \lambda\right)$ with respect to $\theta^{\prime}$ (can do this incompletely for a few grad steps)
 
-- step 2、$\lambda \leftarrow \lambda+\alpha\left(D_{\mathrm{KL}}\left(\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right) \| \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)\right)-\epsilon\right)$
+- step 2、$\lambda \leftarrow \lambda+\alpha\left(D_{\mathrm{KL}}\left(\pi_{\theta^{\prime}}\left(a_{t} \mid s_{t}\right) \mid\mid \pi_{\theta}\left(a_{t} \mid s_{t}\right)\right)-\epsilon\right)$
 
 
 
@@ -416,7 +416,13 @@ $$
 $$
 
 
-such that $D_{\mathrm{KL}}\left(\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right) \| \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)\right) \leq \epsilon$
+such that
+
+
+$$
+D_{\mathrm{KL}}\left(\pi_{\theta^{\prime}}\left(a_{t} \mid s_{t}\right) \mid\mid \pi_{\theta}\left(a_{t} \mid s_{t}\right)\right) \leq \epsilon
+$$
+
 
 
 
@@ -570,7 +576,7 @@ TRPO 与 PPO 之间的差别在于它使用了 KL divergence 作为约束。但�
 - step 1：初始化 policy 的参数 $\theta^0$
 
 - step 2：在每一次迭代中：
-  - 使用 $\theta^k$ 来和环境互动，收集 $\left\{s_{t}, a_{t}\right\}$ 并计算对应的 advantage function $A^{\pi_{\theta^{k}}}\left(s_{t}, a_{t}\right)$
+  - 使用 $\theta^k$ 来和环境互动，收集 $s_{t}, a_{t}$ 并计算对应的 advantage function $A^{\pi_{\theta^{k}}}\left(s_{t}, a_{t}\right)$
   - 不断更新参数，找到目标函数最优值对应的参数 $\theta$
 
 
@@ -613,7 +619,7 @@ $$
 
 
 
-这种方法可以有效约束 $\theta$ 不能与 $\theta′$ 差别过大，比如因为是最大化目标函数，所以当 $A>0$ 时则会一直更新增大 $\frac{p_{\theta}\left(a_{t} | s_{t}\right)}{p_{\theta^{k}}\left(a_{t} | s_{t}\right)}$ 的值，当增大到 $\frac{p_{\theta}\left(a_{t} | s_{t}\right)}{p_{\theta^{k}}\left(a_{t} | s_{t}\right)} > 1+\varepsilon$ 时目标函数不再变化便不再增大。而当 $A<0$ 时则会一直更新减小 $\frac{p_{\theta}\left(a_{t} | s_{t}\right)}{p_{\theta^{k}}\left(a_{t} | s_{t}\right)}$ 的值，当减小到 $\frac{p_{\theta}\left(a_{t} | s_{t}\right)}{p_{\theta^{k}}\left(a_{t} | s_{t}\right)} < 1-\varepsilon$ 时目标函数不再变化便不再减小。
+这种方法可以有效约束 $\theta$ 不能与 $\theta′$ 差别过大，比如因为是最大化目标函数，所以当 $A>0$ 时则会一直更新增大 $\frac{p_{\theta}\left(a_{t} \mid s_{t}\right)}{p_{\theta^{k}}\left(a_{t} \mid s_{t}\right)}$ 的值，当增大到 $\frac{p_{\theta}\left(a_{t} \mid s_{t}\right)}{p_{\theta^{k}}\left(a_{t} \mid s_{t}\right)} > 1+\varepsilon$ 时目标函数不再变化便不再增大。而当 $A<0$ 时则会一直更新减小 $\frac{p_{\theta}\left(a_{t} \mid s_{t}\right)}{p_{\theta^{k}}\left(a_{t} \mid s_{t}\right)}$ 的值，当减小到 $\frac{p_{\theta}\left(a_{t} \mid s_{t}\right)}{p_{\theta^{k}}\left(a_{t} \mid s_{t}\right)} < 1-\varepsilon$ 时目标函数不再变化便不再减小。
 
 
 
