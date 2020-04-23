@@ -621,7 +621,7 @@ $$
 
 
 
-这种方法可以有效约束 $\theta$ 不能与 $\theta′$ 差别过大，比如因为是最大化目标函数，所以当 $A>0$ 时则会一直更新增大 $\frac{\pi_{\theta}\left(a_{t} \mid s_{t}\right)}{\pi_{\theta^{k}}\left(a_{t} \mid s_{t}\right)}$ 的值，当增大到 $\frac{\pi_{\theta}\left(a_{t} \mid s_{t}\right)}{\pi_{\theta^{k}}\left(a_{t} \mid s_{t}\right)} > 1+\varepsilon$ 时目标函数不再变化便不再增大。而当 $A<0$ 时则会一直更新减小 $\frac{\pi_{\theta}\left(a_{t} \mid s_{t}\right)}{\pi_{\theta^{k}}\left(a_{t} \mid s_{t}\right)}$ 的值，当减小到 $\frac{\pi_{\theta}\left(a_{t} \mid s_{t}\right)}{\pi_{\theta^{k}}\left(a_{t} \mid s_{t}\right)} < 1-\varepsilon$ 时目标函数不再变化便不再减小。
+这种方法可以有效约束 $\pi_\theta$ 不能与 $\pi_{\theta′}$ 差别过大，比如因为是最大化目标函数，所以当 $A>0$ 时则会一直更新增大 $\frac{\pi_{\theta}\left(a_{t} \mid s_{t}\right)}{\pi_{\theta^{k}}\left(a_{t} \mid s_{t}\right)}$ 的值，当增大到 $\frac{\pi_{\theta}\left(a_{t} \mid s_{t}\right)}{\pi_{\theta^{k}}\left(a_{t} \mid s_{t}\right)} > 1+\varepsilon$ 时目标函数不再变化便不再增大。而当 $A<0$ 时则会一直更新减小 $\frac{\pi_{\theta}\left(a_{t} \mid s_{t}\right)}{\pi_{\theta^{k}}\left(a_{t} \mid s_{t}\right)}$ 的值，当减小到 $\frac{\pi_{\theta}\left(a_{t} \mid s_{t}\right)}{\pi_{\theta^{k}}\left(a_{t} \mid s_{t}\right)} < 1-\varepsilon$ 时目标函数不再变化便不再减小。
 
 
 
