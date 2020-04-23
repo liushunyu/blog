@@ -37,23 +37,7 @@ tags:
 
 ## From on-policy to off-policy
 
-### 基本术语
-
-#### On-policy
-
-学习的 agent 以及和环境进行互动的 agent 是**同一个agent**。
-
-
-
-#### Off-policy
-
-学习的 agent 以及和环境进行互动的 agent 是**不同的agent**。
-
-
-
-**为什么要引入 Off-policy**
-
-如果我们使用 $\pi_\theta$  来收集数据，那么参数 $\theta$ 被更新后，我们需要重新对训练数据进行采样，这样会造成巨大的时间消耗。而利用 $\pi_{\theta'}$ 来进行采样，将采集的样本拿来训练 $\theta$，$\theta'$是固定的，采集的样本可以被重复使用。
+如果我们使用 $\pi_\theta$  来收集数据，那么参数 $\theta$ 被更新后，我们需要重新对训练数据进行采样，这样会造成巨大的时间消耗。而利用 $\pi_{\theta'}$ 来进行采样，将采集的样本拿来训练 $\theta$，$\theta'$ 是固定的，采集的样本可以被重复使用。
 
 
 
@@ -62,12 +46,15 @@ tags:
 我们可以使用 $q$ 分布来计算 $p$ 分布期望值。
 
 
+
 $$
 E_{x \sim p}[f(x)] =\int f(x) p(x) d x=\int f(x) \frac{p(x)}{q(x)} q(x) d x=E_{x \sim q}[f(x) \frac{p(x)}{q(x)}]
 $$
 
 
+
 需要注意的是，两个分布 $p$，$q$ 之间的差别不能太大，否则方差会出现较大的差别。
+
 
 
 $$
@@ -88,9 +75,10 @@ $$
 
 
 
-### 目标函数
+### 策略梯度目标函数
 
 使用 $\pi_{\theta'}$ 来采样多个回合的 $\tau$ 作为模型输入，然后对 Important sampling 后的 Expected Reward  进行求导。
+
 
 
 $$
@@ -100,6 +88,7 @@ $$
 
 
 其中
+
 
 
 $$
@@ -113,9 +102,10 @@ $$
 
 
 
-### 梯度更新
+### 策略梯度梯度更新
 
 对目标函数求梯度得
+
 
 
 $$
@@ -125,80 +115,49 @@ $$
 $$
 
 
-如果 $\pi_{\theta}(\tau) = \pi_{\theta^{\prime}}(\tau)$，则与 on-policy 的策略梯度一致。
 
-目前存在一个问题便是重要性采样中的累乘可能会导致该值特别的小，下面介绍两种方法：
-
-
-
-#### 修改累乘计算方式
-
-同修改累积奖赏 reward 计算方式类似，在时间 $t$ 采取的行动 action 与 $t$ 时期之前的奖赏 reward 无关，在时间 $t$ 的重要性采样权重与 $t$ 时期之后的动作 action 无关。
-
-
-$$
-\require{cancel}
-\nabla_{\theta} J(\theta)
-=E_{\tau \sim \pi_{\theta^{\prime}}(\tau)}\left[ \left( \frac{\prod_{t=1}^{T} \pi_{\theta}\left(a_{t} | s_{t}\right) }{\prod_{t=1}^{T} \pi_{\theta'}\left(a_{t} | s_{t}\right) } \right)  \left(\sum_{t=1}^{T} \nabla_\theta \log \pi_{\theta}\left(a_{i,t} | s_{i,t}\right) \right) \left(\sum_{t=1}^{T}   r\left({s}_{i,t}, {a}_{i,t}\right) \right) \right]
-\\
-\to E_{\tau \sim \pi_{\theta^{\prime}}(\tau)}\left[   \sum_{t=1}^{T} \left(\nabla_\theta \log \pi_{\theta}\left(a_{t} | s_{t}\right) \left( \prod_{t'=1}^{t}\frac{ \pi_{\theta}\left(a_{t'} | s_{t'}\right) }{ \pi_{\theta'}\left(a_{t'} | s_{t'}\right) } \right)\left(\sum_{t'=t}^{T}   r\left({s}_{t'}, {a}_{t'}\right) \cancel{\left( \prod_{t''=t}^{t'} \frac{ \pi_{\theta}\left(a_{t''} | s_{t''}\right) }{\pi_{\theta'}\left(a_{t''} | s_{t''}\right) } \right)} \right)\right)\right]
-$$
-
-
-忽略后一项可以得到策略迭代算法，这在后面会讲。
+其中存在一个问题便是重要性采样中的累乘可能会导致该值特别的小。
 
 
 
-#### A first-order approximation for IS
+## Policy gradient as policy iteration
 
-**on-policy**
+注意这里的符号与上面的相反，用于采样的是 $\pi_{\theta}$，需要更新的是 $\theta'$。
 
-目标函数为
+### policy improvement
+
+策略梯度目标函数为：
 
 
 $$
-J(\theta) = \sum_{t=1}^{T} E_{\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right) \sim p_{\theta}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)}\left[r\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]
+\quad J(\theta)=E_{\tau \sim p_{\theta}(\tau)}\left[\sum_{t} \gamma^{t} r\left(s_{t}, a_{t}\right)\right]
+$$
+
+
+希望证明 claim
+
+
+$$
+J\left(\theta^{\prime}\right)-J(\theta)=E_{\tau \sim p_{\theta^{\prime}}(\tau)} \left[\sum_{t} \gamma^{t} A^{\pi_{\theta}}\left(s_{t}, a_{t}\right)\right]
+$$
+
+
+policy improvement 求解目标便可表示为
+
+
+$$
+\theta' \leftarrow \arg \max_{\theta'} J\left(\theta^{\prime}\right)-J(\theta)
 $$
 
 
 
-求导结果如下
+
+证明流程如下：
 
 
-$$
-\nabla_{\theta} J_{PG}(\theta) \approx \frac{1}{N} \sum_{i=1}^{N}  \sum_{t=1}^{T} \left[\nabla_\theta \log \pi_{\theta}\left(a_{i,t} | s_{i,t}\right) \sum_{t'=t}^{T}   r\left({s}_{i,t'}, {a}_{i,t'}\right) \right]
-$$
-
-
-**off-policy**
-
-在两个层面上做重要性抽样
-
-
-$$
-J(\theta) = \sum_{t=1}^{T} E_{\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right) \sim p_{\theta}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)}\left[r\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]
-\\ = \sum_{t=1}^{T} E_{\mathbf{s}_{t} \sim p_{\theta}\left(\mathbf{s}_{t}\right)}[E_{\mathbf{a}_{t} \sim \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t} \right)}\left[r\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]]
-\\ = \sum_{t=1}^{T} E_{\mathbf{s}_{t} \sim p_{\theta'}\left(\mathbf{s}_{t}\right)}\left[\frac{ p_{\theta}\left(s_{t}\right) }{p_{\theta'}\left(s_{t}\right) }E_{\mathbf{a}_{t} \sim \pi_{\theta'}\left(\mathbf{a}_{t} | \mathbf{s}_{t} \right)}\left[\frac{ \pi_{\theta}\left(a_{t} | s_{t}\right) }{\pi_{\theta'}\left(a_{t} | s_{t}\right) }r\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]\right]
-$$
-
-
-求导结果如下
-
-
-$$
-\require{cancel}
-\nabla_{\theta} J_{PG}(\theta) \approx \frac{1}{N} \sum_{i=1}^{N}  \sum_{t=1}^{T} \left[\cancel{\frac{ p_{\theta}\left(s_{i,t}\right) }{p_{\theta'}\left(s_{i,t}\right) }}\frac{ \pi_{\theta}\left(a_{i,t} | s_{i,t}\right) }{\pi_{\theta'}\left(a_{i,t} | s_{i,t}\right) } \nabla_\theta \log \pi_{\theta}\left(a_{i,t} | s_{i,t}\right)  \sum_{t'=t}^{T}   r\left({s}_{i,t'}, {a}_{i,t'}\right) \right]
-$$
-
-
-虽然删除第一层重要性采样会引入一定的偏差，当两个策略非常接近的情况下，某一个状态 state 出现的概率几乎没有差别，因此可以将这一项近似地消掉。
-
-
-
-Policy gradient as policy iteration $\quad J(\theta)=E_{\tau \sim p_{\theta}(\tau)}\left[\sum_{t} \gamma^{t} r\left(s_{t}, \mathbf{a}_{t}\right)\right]$
-$\begin{aligned} J\left(\theta^{\prime}\right)-J(\theta) &=J\left(\theta^{\prime}\right)-E_{\mathrm{s}_{0} \sim p\left(\mathbf{s}_{0}\right)}\left[V^{\pi_{\theta}}\left(\mathbf{s}_{0}\right)\right] & & \\ &=J\left(\theta^{\prime}\right)-E_{\tau \sim p_{\theta^{\prime}}(\tau)}\left[V^{\pi_{\theta}}\left(\mathbf{s}_{0}\right)\right] & & \text { claim: } J\left(\theta^{\prime}\right)-J(\theta)=E_{\tau \sim p_{\theta^{\prime}}(\tau)} &\left[\sum_{t} \gamma^{t} A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right] \end{aligned}$
 $$
 \begin{aligned}
+J\left(\theta^{\prime}\right)-J(\theta) &=J\left(\theta^{\prime}\right)-E_{\mathrm{s}_{0} \sim p\left(\mathbf{s}_{0}\right)}\left[V^{\pi_{\theta}}\left(\mathbf{s}_{0}\right)\right] & & \\ &=J\left(\theta^{\prime}\right)-E_{\tau \sim p_{\theta^{\prime}}(\tau)}\left[V^{\pi_{\theta}}\left(\mathbf{s}_{0}\right)\right] \\
 &=J\left(\theta^{\prime}\right)-E_{\tau \sim p_{\theta^{\prime}}(\tau)}\left[\sum_{t=0}^{\infty} \gamma^{t} V^{\pi_{\theta}}\left(\mathbf{s}_{t}\right)-\sum_{t=1}^{\infty} \gamma^{t} V^{\pi_{\theta}}\left(\mathbf{s}_{t}\right)\right] \\
 &=J\left(\theta^{\prime}\right)+E_{\tau \sim p_{\theta^{\prime}}(\tau)}\left[\sum_{t=0}^{\infty} \gamma^{t}\left(\gamma V^{\pi_{\theta}}\left(\mathbf{s}_{t+1}\right)-V^{\pi_{\theta}}\left(\mathbf{s}_{t}\right)\right)\right] \\
 &=E_{\tau \sim p_{\theta^{\prime}}(\tau)}\left[\sum_{t=0}^{\infty} \gamma^{t} r\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]+E_{\tau \sim p_{\theta^{\prime}}(\tau)}\left[\sum_{t=0}^{\infty} \gamma^{t}\left(\gamma V^{\pi_{\theta}}\left(\mathbf{s}_{t+1}\right)-V^{\pi_{\theta}}\left(\mathbf{s}_{t}\right)\right)\right] \\
@@ -206,6 +165,335 @@ $$
 &=E_{\tau \sim p_{\theta^{\prime}}(\tau)}\left[\sum_{t=0}^{\infty} \gamma^{t} A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]
 \end{aligned}
 $$
+
+
+## Policy gradient with Important sampling
+
+我们希望去求解 policy improvement 目标，因为是 off-policy 的方法，所以需要重要性采样，我们在两个层面上做重要性抽样
+
+
+
+$$
+J\left(\theta^{\prime}\right)-J(\theta) = E_{\tau \sim p_{\theta^{\prime}}(\tau)}\left[\sum_{t=0}^{\infty} \gamma^{t} A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]\\ 
+= \sum_{t} E_{\mathbf{s}_{t} \sim p_{\theta'}\left(\mathbf{s}_{t}\right)}\left[E_{\mathbf{a}_{t} \sim \pi_{\theta'}\left(\mathbf{a}_{t} | \mathbf{s}_{t} \right)}\left[\gamma^{t} A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]\right]\\ 
+= \sum_{t} E_{\mathbf{s}_{t} \sim p_{\theta}\left(\mathbf{s}_{t}\right)}\left[\frac{ p_{\theta'}\left(s_{t}\right) }{p_{\theta}\left(s_{t}\right) }E_{\mathbf{a}_{t} \sim \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t} \right)}\left[\frac{ \pi_{\theta'}\left(a_{t} | s_{t}\right) }{\pi_{\theta}\left(a_{t} | s_{t}\right) }\gamma^{t} A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]\right]\\
+$$
+
+
+
+其中 $\frac{ p_{\theta'}\left(s_{t}\right) }{p_{\theta}\left(s_{t}\right) }$ 是比较难求的，我们希望能直接将这一项消除，下面进行证明
+
+
+
+### Bounding the distribution change
+
+希望证明 Claim: 
+
+- $p_{\theta}\left(\mathbf{s}_{t}\right)$ is close to $p_{\theta^{\prime}}\left(\mathbf{s}_{t}\right)$ when $\pi_{\theta}$ is close to $\pi_{\theta^{\prime}}$
+
+
+
+#### Simple case
+
+**assume**
+
+- assume $\pi_{\theta}$ is a deterministic policy $\mathbf{a}_{t}=\pi_{\theta}\left(\mathbf{s}_{t}\right)$
+- assume $\pi_{\theta^{\prime}}$ is close to $\pi_{\theta}$ if 
+
+
+$$
+\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} \neq \pi_{\theta}\left(\mathbf{s}_{t}\right) | \mathbf{s}_{t}\right) \leq \epsilon
+$$
+
+
+可以得到
+
+
+$$
+\left.p_{\theta^{\prime}}\left(\mathbf{s}_{t}\right)=(1-\epsilon)^{t} p_{\theta}\left(\mathbf{s}_{t}\right)+\left(1-(1-\epsilon)^{t}\right)\right) p_{\text {mistake }}\left(\mathbf{s}_{t}\right)
+$$
+
+
+可证明两个分布之间足够小
+
+
+$$
+\left|p_{\theta^{\prime}}\left(\mathbf{s}_{t}\right)-p_{\theta}\left(\mathbf{s}_{t}\right)\right|=\left(1-(1-\epsilon)^{t}\right)\left|p_{\text {mistake }}\left(\mathbf{s}_{t}\right)-p_{\theta}\left(\mathbf{s}_{t}\right)\right| 
+\\ \leq 2\left(1-(1-\epsilon)^{t}\right) \leq 2 \epsilon t
+$$
+
+
+useful identity: $(1-\epsilon)^{t} \geq 1-\epsilon t$ for $\epsilon \in[0,1]$
+
+
+
+#### General case
+
+**assume**
+
+- assume $\pi_{\theta}$ is an arbitrary distribution
+- assume $\pi_{\theta^{\prime}}$ is close to $\pi_{\theta}$  for all $\mathbf{s}_{t}$ if 
+
+
+$$
+\left|\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)-\pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)\right| \leq \epsilon
+$$
+
+
+**lemma**
+
+- if $\left|p_{X}(x)-p_{Y}(x)\right|=\epsilon$, exists $p(x, y)$ such that $p(x)=p_{X}(x)$ and $p(y)=p_{Y}(y)$ and $p(x=y)=1-\epsilon$ 
+- $\Rightarrow p_{X}(x)$ "agrees" with $p_{Y}(y)$ with probability $\epsilon$ 
+- $\Rightarrow \pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)$ takes a different action than $\pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)$ with probability at most $\epsilon$
+
+
+
+同理可以得到
+$$
+\left|p_{\theta^{\prime}}\left(\mathbf{s}_{t}\right)-p_{\theta}\left(\mathbf{s}_{t}\right)\right|=\left(1-(1-\epsilon)^{t}\right)\left|p_{\text {mistake }}\left(\mathbf{s}_{t}\right)-p_{\theta}\left(\mathbf{s}_{t}\right)\right| 
+\\ \leq 2\left(1-(1-\epsilon)^{t}\right) \leq 2 \epsilon t
+$$
+
+
+### Bounding the objective value
+
+根据前面的证明可以得到
+
+- when $\pi_{\theta^{\prime}}$ is close to $\pi_{\theta}$  for all $\mathbf{s}_{t}$ if 
+
+
+$$
+\left|\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)-\pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)\right| \leq \epsilon
+$$
+
+- $p_{\theta}\left(\mathbf{s}_{t}\right)$ is close to $p_{\theta^{\prime}}\left(\mathbf{s}_{t}\right)$
+
+
+$$
+\left|p_{\theta^{\prime}}\left(\mathbf{s}_{t}\right)-p_{\theta}\left(\mathbf{s}_{t}\right)\right| \leq 2 \epsilon t
+$$
+
+
+首先可以证明
+
+
+$$
+\begin{aligned}
+E_{p_{\theta^{\prime}}\left(\mathbf{s}_{t}\right)}\left[f\left(\mathbf{s}_{t}\right)\right]&=\sum_{\mathbf{s}_{t}} p_{\theta^{\prime}}\left(\mathbf{s}_{t}\right) f\left(\mathbf{s}_{t}\right) 
+\\&=\sum_{\mathbf{s}_{t}} (p_{\theta^{\prime}}\left(\mathbf{s}_{t}\right) + p_{\theta}\left(\mathbf{s}_{t}\right) - p_{\theta}\left(\mathbf{s}_{t}\right))f\left(\mathbf{s}_{t}\right) 
+\\& \geq \sum_{\mathbf{s}_{t}} p_{\theta}\left(\mathbf{s}_{t}\right) f\left(\mathbf{s}_{t}\right)-\left|p_{\theta}\left(\mathbf{s}_{t}\right)-p_{\theta^{\prime}}\left(\mathbf{s}_{t}\right)\right| \max _{\mathbf{s}_{t}} f\left(\mathbf{s}_{t}\right) \\
+& \geq E_{p_{\theta}\left(\mathbf{s}_{t}\right)}\left[f\left(\mathbf{s}_{t}\right)\right]-2 \epsilon t \max _{\mathbf{s}_{t}} f\left(\mathbf{s}_{t}\right)
+\end{aligned}
+$$
+
+
+因此可得
+
+
+$$
+\sum_{t} E_{s_{t} \sim p_{\theta^{\prime}}\left(s_{t}\right)}\left[E_{\mathbf{a}_{t} \sim \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)}\left[\frac{\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)}{\pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)} \gamma^{t} A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]\right] \geq 
+\\
+\sum_{t} E_{s_{t} \sim p_{\theta}\left(s_{t}\right)}\left[E_{\mathbf{a}_{t} \sim \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)}\left[\frac{\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)}{\pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)} \gamma^{t} A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]\right]-\underbrace{\sum_{t} 2 \epsilon t C}_{O\left(T r_{\max }\right) \text { or } O\left(\frac{r_{\max }}{1-\gamma}\right)}
+$$
+
+
+### Final Objective
+
+求解函数如下
+
+
+$$
+\theta^{\prime} \leftarrow \arg \max _{\theta^{\prime}} \sum_{t} E_{\mathbf{s}_{t} \sim p_{\theta}\left(\mathbf{s}_{t}\right)}\left[E_{\mathbf{a}_{t} \sim \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)}\left[\frac{\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)}{\pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)} \gamma^{t} A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]\right]
+$$
+
+
+such that
+
+
+$$
+\left|\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)-\pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)\right| \leq \epsilon
+$$
+
+
+for small enough $\epsilon,$ this is guaranteed to improve $J\left(\theta^{\prime}\right)-J(\theta)$
+
+
+
+## KL divergence Bounding
+
+我们使用 KL divergence 替换原来的相似度度量方法
+
+
+$$
+D_{\mathrm{KL}}\left(p_{1}(x) \| p_{2}(x)\right)=E_{x \sim p_{1}(x)}\left[\log \frac{p_{1}(x)}{p_{2}(x)}\right]
+$$
+
+
+- when $\pi_{\theta^{\prime}}$ is close to $\pi_{\theta}$  for all $\mathbf{s}_{t}$ if 
+
+
+$$
+D_{\mathrm{KL}}\left(\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right) \| \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)\right) \leq \epsilon
+$$
+
+
+因为
+
+
+$$
+\left|\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)-\pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)\right| \leq \sqrt{\frac{1}{2} D_{\mathrm{KL}}\left(\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right) \| \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)\right)}
+$$
+
+
+所以仍然可证明得
+
+- $p_{\theta}\left(\mathbf{s}_{t}\right)$ is close to $p_{\theta^{\prime}}\left(\mathbf{s}_{t}\right)$
+
+
+
+### New Objective
+
+求解函数如下
+
+
+$$
+\theta^{\prime} \leftarrow \arg \max _{\theta^{\prime}} \sum_{t} E_{\mathbf{s}_{t} \sim p_{\theta}\left(\mathbf{s}_{t}\right)}\left[E_{\mathbf{a}_{t} \sim \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)}\left[\frac{\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)}{\pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)} \gamma^{t} A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]\right]
+$$
+
+
+such that
+
+
+$$
+D_{\mathrm{KL}}\left(\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right) \| \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)\right) \leq \epsilon
+$$
+
+
+for small enough $\epsilon,$ this is guaranteed to improve $J\left(\theta^{\prime}\right)-J(\theta)$
+
+
+
+### optimize the objective
+
+#### Dual gradient descent
+
+使用拉格朗日乘子法修改目标函数为
+
+
+$$
+\mathcal{L}\left(\theta^{\prime}, \lambda\right)=\sum_{t} E_{\mathrm{s}_{t} \sim p_{\theta}\left(\mathrm{s}_{t}\right)}\left[E_{\mathrm{a}_{t} \sim \pi_{\theta}\left(\mathrm{a}_{t} | \mathrm{s}_{t}\right)}\left[\frac{\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{S}_{t}\right)}{\pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)} \gamma^{t} A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]\right]
+\\-\lambda\left(D_{\mathrm{KL}}\left(\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right) \| \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)\right)-\epsilon\right)
+$$
+
+
+
+
+- step 1、Maximize $\mathcal{L}\left(\theta^{\prime}, \lambda\right)$ with respect to $\theta^{\prime}$ (can do this incompletely for a few grad steps)
+
+- step 2、$\lambda \leftarrow \lambda+\alpha\left(D_{\mathrm{KL}}\left(\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right) \| \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)\right)-\epsilon\right)$
+
+
+
+Intuition: raise $\lambda$ if constraint violated too much, else lower it an instance of dual gradient descent
+
+
+
+#### first order Taylor approximation
+
+定义
+
+
+$$
+\bar{A}(\theta') = \sum_{t} E_{\mathrm{s}_{t} \sim p_{\theta}\left(\mathrm{s}_{t}\right)}\left[E_{\mathrm{a}_{t} \sim \pi_{\theta}\left(\mathrm{a}_{t} | \mathrm{s}_{t}\right)}\left[\frac{\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{S}_{t}\right)}{\pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)} \gamma^{t} A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]\right]
+$$
+
+
+求 $\bar{A}(\theta')$ 在 $\theta$ 初的一阶泰勒展开，修改目标函数为
+
+
+$$
+\theta^{\prime} \leftarrow \arg \max _{\theta^{\prime}} \nabla_{\theta'} \bar{A}(\theta)^{T}\left(\theta^{\prime}-\theta\right)
+$$
+
+
+such that $D_{\mathrm{KL}}\left(\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right) \| \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)\right) \leq \epsilon$
+
+
+
+#### Policy Gradient
+
+定义
+
+
+$$
+\bar{A}(\theta') = \sum_{t} E_{\mathrm{s}_{t} \sim p_{\theta}\left(\mathrm{s}_{t}\right)}\left[E_{\mathrm{a}_{t} \sim \pi_{\theta}\left(\mathrm{a}_{t} | \mathrm{s}_{t}\right)}\left[\frac{\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{S}_{t}\right)}{\pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)} \gamma^{t} A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]\right]
+$$
+
+
+求解梯度得
+
+
+$$
+\nabla_{\theta^{\prime}} \bar{A}\left(\theta^{\prime}\right)=\sum_{t} E_{\mathbf{s}_{t} \sim p_{\theta}\left(\mathbf{s}_{t}\right)}\left[E_{\mathbf{a}_{t} \sim \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)}\left[\frac{\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)}{\pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)} \gamma^{t} \nabla_{\theta^{\prime}} \log \pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right) A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]\right]
+$$
+
+
+由于 $\theta$ 和 $\theta'$ 的差距非常小，所以在参数对应的位置可以进行整体性的替换得到
+
+
+$$
+\nabla_{\theta} \bar{A}(\theta)=\sum_{t} E_{\mathbf{s}_{t} \sim p_{\theta}\left(\mathbf{s}_{t}\right)}\left[E_{\mathbf{a}_{t} \sim \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)}\left[\frac{\pi_{\mathrm{g}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)}{\pi_{\theta}\left(\mathbf{a}_{t} \mathbf{s}_{t}\right)} \gamma^{t} \nabla_{\theta} \log \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right) A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]\right]
+\\
+=\sum_{t} E_{\mathbf{s}_{t} \sim p_{\theta}\left(\mathbf{s}_{t}\right)}\left[E_{\mathbf{a}_{t} \sim \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)}\left[\gamma^{t} \nabla_{\theta} \log \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right) A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]\right]=\nabla_{\theta} J(\theta)
+$$
+
+
+这个其实也就是 policy gradient 的梯度公式，除了约束的部分，整体和 policy gradient 没有差别了。
+
+
+$$
+\theta^{\prime} \leftarrow \arg \max _{\theta^{\prime}} \nabla_{\theta} J(\theta)^{T}\left(\theta^{\prime}-\theta\right)
+$$
+
+
+such that
+
+
+$$
+D_{\mathrm{KL}}\left(\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right) \| \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)\right) \leq \epsilon
+$$
+
+
+这里我们希望将它当作一个正常的 policy gradient 进行操作，由于 Gradient ascent 的操作其实可以理解为在parameter space 上做一个小的修改，也就是说它相当于在 parameter space 上做约束的优化。
+
+假设 parameter space 上的约束为
+
+
+$$
+\left\|\theta-\theta^{\prime}\right\|^{2} \leq \epsilon
+$$
+
+
+Gradient ascent 算法可以写为
+
+
+$$
+\theta^{\prime}=\theta+\sqrt{\frac{\epsilon}{\left\|\nabla_{\theta} J(\theta)\right\|^{2}}} \nabla_{\theta} J(\theta)
+$$
+
+
+我们重新从 policy iteration 回到了 policy gradient，所以可以认为 policy gradient 也就是相当于对 parameter space 做约束的 policy improvement 过程。
+
+而它的问题也就来自这里，parameter space 上的约束和 policy space 上的约束是不同的，有可能 parameter space 只改变了一点点，就会导致 policy space 上巨大的改变，所以它的优化会比较不稳定。
+
+基于这个问题，下面通过 natural gradient 来解决。
+
+
+
+#### Natural Gradient
+
+
+
 
 
 ## 参考资料及致谢

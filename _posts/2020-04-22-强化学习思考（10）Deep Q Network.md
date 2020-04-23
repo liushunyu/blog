@@ -141,7 +141,7 @@ $$
   - works well when data mostly on-policy, and action space is small
 - importance sampling
 
-For more details, see: “Safe and efficient off-policy reinforcement learning.” Munos et al. ‘16
+> For more details, see: “Safe and efficient off-policy reinforcement learning.” Munos et al. ‘16
 
 
 
