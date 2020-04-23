@@ -596,7 +596,7 @@ $$
 
 
 $$
-\begin{array}{l}{\text { If } D_{\mathrm{KL}}\left(\pi_{\theta^{\prime}} \| \pi_{\theta}\right)>K L_{\max }, \text { increase } \beta} \\ {\text { If } D_{\mathrm{KL}}\left(\pi_{\theta^{\prime}} \| \pi_{\theta}\right)<K L_{\min }, \text { decrease } \beta}\end{array}
+\begin{array}{l}{\text { If } D_{\mathrm{KL}}\left(\pi_{\theta^{k}} \| \pi_{\theta}\right)>K L_{\max }, \text { increase } \beta} \\ {\text { If } D_{\mathrm{KL}}\left(\pi_{\theta^{k}} \| \pi_{\theta}\right)<K L_{\min }, \text { decrease } \beta}\end{array}
 $$
 
 
