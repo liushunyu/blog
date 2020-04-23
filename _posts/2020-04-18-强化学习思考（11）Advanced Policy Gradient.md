@@ -157,12 +157,12 @@ $$
 
 $$
 \begin{aligned}
-J\left(\theta^{\prime}\right)-J(\theta) &=J\left(\theta^{\prime}\right)-E_{\mathrm{s}_{0} \sim p\left(\mathbf{s}_{0}\right)}\left[V^{\pi_{\theta}}\left(\mathbf{s}_{0}\right)\right] & & \\ &=J\left(\theta^{\prime}\right)-E_{\tau \sim p_{\theta^{\prime}}(\tau)}\left[V^{\pi_{\theta}}\left(\mathbf{s}_{0}\right)\right] \\
-&=J\left(\theta^{\prime}\right)-E_{\tau \sim p_{\theta^{\prime}}(\tau)}\left[\sum_{t=0}^{\infty} \gamma^{t} V^{\pi_{\theta}}\left(\mathbf{s}_{t}\right)-\sum_{t=1}^{\infty} \gamma^{t} V^{\pi_{\theta}}\left(\mathbf{s}_{t}\right)\right] \\
-&=J\left(\theta^{\prime}\right)+E_{\tau \sim p_{\theta^{\prime}}(\tau)}\left[\sum_{t=0}^{\infty} \gamma^{t}\left(\gamma V^{\pi_{\theta}}\left(\mathbf{s}_{t+1}\right)-V^{\pi_{\theta}}\left(\mathbf{s}_{t}\right)\right)\right] \\
-&=E_{\tau \sim p_{\theta^{\prime}}(\tau)}\left[\sum_{t=0}^{\infty} \gamma^{t} r\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]+E_{\tau \sim p_{\theta^{\prime}}(\tau)}\left[\sum_{t=0}^{\infty} \gamma^{t}\left(\gamma V^{\pi_{\theta}}\left(\mathbf{s}_{t+1}\right)-V^{\pi_{\theta}}\left(\mathbf{s}_{t}\right)\right)\right] \\
-&=E_{\tau \sim p_{\theta^{\prime}}(\tau)}\left[\sum_{t=0}^{\infty} \gamma^{t}\left(r\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)+\gamma V^{\pi_{\theta}}\left(\mathbf{s}_{t+1}\right)-V^{\pi_{\theta}}\left(\mathbf{s}_{t}\right)\right)\right] \\
-&=E_{\tau \sim p_{\theta^{\prime}}(\tau)}\left[\sum_{t=0}^{\infty} \gamma^{t} A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]
+J\left(\theta^{\prime}\right)-J(\theta) &=J\left(\theta^{\prime}\right)-E_{\mathrm{s}_{0} \sim p\left(s_{0}\right)}\left[V^{\pi_{\theta}}\left(s_{0}\right)\right] & & \\ &=J\left(\theta^{\prime}\right)-E_{\tau \sim p_{\theta^{\prime}}(\tau)}\left[V^{\pi_{\theta}}\left(s_{0}\right)\right] \\
+&=J\left(\theta^{\prime}\right)-E_{\tau \sim p_{\theta^{\prime}}(\tau)}\left[\sum_{t=0}^{\infty} \gamma^{t} V^{\pi_{\theta}}\left(s_{t}\right)-\sum_{t=1}^{\infty} \gamma^{t} V^{\pi_{\theta}}\left(s_{t}\right)\right] \\
+&=J\left(\theta^{\prime}\right)+E_{\tau \sim p_{\theta^{\prime}}(\tau)}\left[\sum_{t=0}^{\infty} \gamma^{t}\left(\gamma V^{\pi_{\theta}}\left(s_{t+1}\right)-V^{\pi_{\theta}}\left(s_{t}\right)\right)\right] \\
+&=E_{\tau \sim p_{\theta^{\prime}}(\tau)}\left[\sum_{t=0}^{\infty} \gamma^{t} r\left(s_{t}, a_{t}\right)\right]+E_{\tau \sim p_{\theta^{\prime}}(\tau)}\left[\sum_{t=0}^{\infty} \gamma^{t}\left(\gamma V^{\pi_{\theta}}\left(s_{t+1}\right)-V^{\pi_{\theta}}\left(s_{t}\right)\right)\right] \\
+&=E_{\tau \sim p_{\theta^{\prime}}(\tau)}\left[\sum_{t=0}^{\infty} \gamma^{t}\left(r\left(s_{t}, a_{t}\right)+\gamma V^{\pi_{\theta}}\left(s_{t+1}\right)-V^{\pi_{\theta}}\left(s_{t}\right)\right)\right] \\
+&=E_{\tau \sim p_{\theta^{\prime}}(\tau)}\left[\sum_{t=0}^{\infty} \gamma^{t} A^{\pi_{\theta}}\left(s_{t}, a_{t}\right)\right]
 \end{aligned}
 $$
 
@@ -174,9 +174,9 @@ $$
 
 
 $$
-J\left(\theta^{\prime}\right)-J(\theta) = E_{\tau \sim p_{\theta^{\prime}}(\tau)}\left[\sum_{t=0}^{\infty} \gamma^{t} A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]\\ 
-= \sum_{t} E_{\mathbf{s}_{t} \sim p_{\theta'}\left(\mathbf{s}_{t}\right)}\left[E_{\mathbf{a}_{t} \sim \pi_{\theta'}\left(\mathbf{a}_{t} | \mathbf{s}_{t} \right)}\left[\gamma^{t} A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]\right]\\ 
-= \sum_{t} E_{\mathbf{s}_{t} \sim p_{\theta}\left(\mathbf{s}_{t}\right)}\left[\frac{ p_{\theta'}\left(s_{t}\right) }{p_{\theta}\left(s_{t}\right) }E_{\mathbf{a}_{t} \sim \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t} \right)}\left[\frac{ \pi_{\theta'}\left(a_{t} | s_{t}\right) }{\pi_{\theta}\left(a_{t} | s_{t}\right) }\gamma^{t} A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]\right]\\
+J\left(\theta^{\prime}\right)-J(\theta) = E_{\tau \sim p_{\theta^{\prime}}(\tau)}\left[\sum_{t=0}^{\infty} \gamma^{t} A^{\pi_{\theta}}\left(s_{t}, a_{t}\right)\right]\\ 
+= \sum_{t} E_{s_{t} \sim p_{\theta'}\left(s_{t}\right)}\left[E_{a_{t} \sim \pi_{\theta'}\left(a_{t} | s_{t} \right)}\left[\gamma^{t} A^{\pi_{\theta}}\left(s_{t}, a_{t}\right)\right]\right]\\ 
+= \sum_{t} E_{s_{t} \sim p_{\theta}\left(s_{t}\right)}\left[\frac{ p_{\theta'}\left(s_{t}\right) }{p_{\theta}\left(s_{t}\right) }E_{a_{t} \sim \pi_{\theta}\left(a_{t} | s_{t} \right)}\left[\frac{ \pi_{\theta'}\left(a_{t} | s_{t}\right) }{\pi_{\theta}\left(a_{t} | s_{t}\right) }\gamma^{t} A^{\pi_{\theta}}\left(s_{t}, a_{t}\right)\right]\right]\\
 $$
 
 
@@ -202,7 +202,7 @@ $$
 
 
 $$
-\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} \neq \pi_{\theta}\left(\mathbf{s}_{t}\right) | \mathbf{s}_{t}\right) \leq \epsilon
+\pi_{\theta^{\prime}}\left(a_{t} \neq \pi_{\theta}\left(s_{t}\right) | s_{t}\right) \leq \epsilon
 $$
 
 
@@ -210,7 +210,7 @@ $$
 
 
 $$
-\left.p_{\theta^{\prime}}\left(\mathbf{s}_{t}\right)=(1-\epsilon)^{t} p_{\theta}\left(\mathbf{s}_{t}\right)+\left(1-(1-\epsilon)^{t}\right)\right) p_{\text {mistake }}\left(\mathbf{s}_{t}\right)
+\left.p_{\theta^{\prime}}\left(s_{t}\right)=(1-\epsilon)^{t} p_{\theta}\left(s_{t}\right)+\left(1-(1-\epsilon)^{t}\right)\right) p_{\text {mistake }}\left(s_{t}\right)
 $$
 
 
@@ -218,7 +218,7 @@ $$
 
 
 $$
-\left|p_{\theta^{\prime}}\left(\mathbf{s}_{t}\right)-p_{\theta}\left(\mathbf{s}_{t}\right)\right|=\left(1-(1-\epsilon)^{t}\right)\left|p_{\text {mistake }}\left(\mathbf{s}_{t}\right)-p_{\theta}\left(\mathbf{s}_{t}\right)\right| 
+\left|p_{\theta^{\prime}}\left(s_{t}\right)-p_{\theta}\left(s_{t}\right)\right|=\left(1-(1-\epsilon)^{t}\right)\left|p_{\text {mistake }}\left(s_{t}\right)-p_{\theta}\left(s_{t}\right)\right| 
 \\ \leq 2\left(1-(1-\epsilon)^{t}\right) \leq 2 \epsilon t
 $$
 
@@ -236,7 +236,7 @@ useful identity: $(1-\epsilon)^{t} \geq 1-\epsilon t$ for $\epsilon \in[0,1]$
 
 
 $$
-\left|\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)-\pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)\right| \leq \epsilon
+\left|\pi_{\theta^{\prime}}\left(a_{t} | s_{t}\right)-\pi_{\theta}\left(a_{t} | s_{t}\right)\right| \leq \epsilon
 $$
 
 
@@ -252,7 +252,7 @@ $$
 
 
 $$
-\left|p_{\theta^{\prime}}\left(\mathbf{s}_{t}\right)-p_{\theta}\left(\mathbf{s}_{t}\right)\right|=\left(1-(1-\epsilon)^{t}\right)\left|p_{\text {mistake }}\left(\mathbf{s}_{t}\right)-p_{\theta}\left(\mathbf{s}_{t}\right)\right| 
+\left|p_{\theta^{\prime}}\left(s_{t}\right)-p_{\theta}\left(s_{t}\right)\right|=\left(1-(1-\epsilon)^{t}\right)\left|p_{\text {mistake }}\left(s_{t}\right)-p_{\theta}\left(s_{t}\right)\right| 
 \\ \leq 2\left(1-(1-\epsilon)^{t}\right) \leq 2 \epsilon t
 $$
 
@@ -265,14 +265,14 @@ $$
 
 
 $$
-\left|\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)-\pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)\right| \leq \epsilon
+\left|\pi_{\theta^{\prime}}\left(a_{t} | s_{t}\right)-\pi_{\theta}\left(a_{t} | s_{t}\right)\right| \leq \epsilon
 $$
 
 - $p_{\theta}(s_{t})$ is close to $p_{\theta^{\prime}}(s_{t})$
 
 
 $$
-\left|p_{\theta^{\prime}}\left(\mathbf{s}_{t}\right)-p_{\theta}\left(\mathbf{s}_{t}\right)\right| \leq 2 \epsilon t
+\left|p_{\theta^{\prime}}\left(s_{t}\right)-p_{\theta}\left(s_{t}\right)\right| \leq 2 \epsilon t
 $$
 
 
@@ -281,10 +281,10 @@ $$
 
 $$
 \begin{aligned}
-E_{p_{\theta^{\prime}}\left(\mathbf{s}_{t}\right)}\left[f\left(\mathbf{s}_{t}\right)\right]&=\sum_{\mathbf{s}_{t}} p_{\theta^{\prime}}\left(\mathbf{s}_{t}\right) f\left(\mathbf{s}_{t}\right) 
-\\&=\sum_{\mathbf{s}_{t}} (p_{\theta^{\prime}}\left(\mathbf{s}_{t}\right) + p_{\theta}\left(\mathbf{s}_{t}\right) - p_{\theta}\left(\mathbf{s}_{t}\right))f\left(\mathbf{s}_{t}\right) 
-\\& \geq \sum_{\mathbf{s}_{t}} p_{\theta}\left(\mathbf{s}_{t}\right) f\left(\mathbf{s}_{t}\right)-\left|p_{\theta}\left(\mathbf{s}_{t}\right)-p_{\theta^{\prime}}\left(\mathbf{s}_{t}\right)\right| \max _{\mathbf{s}_{t}} f\left(\mathbf{s}_{t}\right) \\
-& \geq E_{p_{\theta}\left(\mathbf{s}_{t}\right)}\left[f\left(\mathbf{s}_{t}\right)\right]-2 \epsilon t \max _{\mathbf{s}_{t}} f\left(\mathbf{s}_{t}\right)
+E_{p_{\theta^{\prime}}\left(s_{t}\right)}\left[f\left(s_{t}\right)\right]&=\sum_{s_{t}} p_{\theta^{\prime}}\left(s_{t}\right) f\left(s_{t}\right) 
+\\&=\sum_{s_{t}} (p_{\theta^{\prime}}\left(s_{t}\right) + p_{\theta}\left(s_{t}\right) - p_{\theta}\left(s_{t}\right))f\left(s_{t}\right) 
+\\& \geq \sum_{s_{t}} p_{\theta}\left(s_{t}\right) f\left(s_{t}\right)-\left|p_{\theta}\left(s_{t}\right)-p_{\theta^{\prime}}\left(s_{t}\right)\right| \max _{s_{t}} f\left(s_{t}\right) \\
+& \geq E_{p_{\theta}\left(s_{t}\right)}\left[f\left(s_{t}\right)\right]-2 \epsilon t \max _{s_{t}} f\left(s_{t}\right)
 \end{aligned}
 $$
 
@@ -293,9 +293,9 @@ $$
 
 
 $$
-\sum_{t} E_{s_{t} \sim p_{\theta^{\prime}}\left(s_{t}\right)}\left[E_{\mathbf{a}_{t} \sim \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)}\left[\frac{\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)}{\pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)} \gamma^{t} A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]\right] \geq 
+\sum_{t} E_{s_{t} \sim p_{\theta^{\prime}}\left(s_{t}\right)}\left[E_{a_{t} \sim \pi_{\theta}\left(a_{t} | s_{t}\right)}\left[\frac{\pi_{\theta^{\prime}}\left(a_{t} | s_{t}\right)}{\pi_{\theta}\left(a_{t} | s_{t}\right)} \gamma^{t} A^{\pi_{\theta}}\left(s_{t}, a_{t}\right)\right]\right] \geq 
 \\
-\sum_{t} E_{s_{t} \sim p_{\theta}\left(s_{t}\right)}\left[E_{\mathbf{a}_{t} \sim \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)}\left[\frac{\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)}{\pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)} \gamma^{t} A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]\right]-\underbrace{\sum_{t} 2 \epsilon t C}_{O\left(T r_{\max }\right) \text { or } O\left(\frac{r_{\max }}{1-\gamma}\right)}
+\sum_{t} E_{s_{t} \sim p_{\theta}\left(s_{t}\right)}\left[E_{a_{t} \sim \pi_{\theta}\left(a_{t} | s_{t}\right)}\left[\frac{\pi_{\theta^{\prime}}\left(a_{t} | s_{t}\right)}{\pi_{\theta}\left(a_{t} | s_{t}\right)} \gamma^{t} A^{\pi_{\theta}}\left(s_{t}, a_{t}\right)\right]\right]-\underbrace{\sum_{t} 2 \epsilon t C}_{O\left(T r_{\max }\right) \text { or } O\left(\frac{r_{\max }}{1-\gamma}\right)}
 $$
 
 
@@ -305,7 +305,7 @@ $$
 
 
 $$
-\theta^{\prime} \leftarrow \arg \max _{\theta^{\prime}} \sum_{t} E_{\mathbf{s}_{t} \sim p_{\theta}\left(\mathbf{s}_{t}\right)}\left[E_{\mathbf{a}_{t} \sim \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)}\left[\frac{\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)}{\pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)} \gamma^{t} A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]\right]
+\theta^{\prime} \leftarrow \arg \max _{\theta^{\prime}} \sum_{t} E_{s_{t} \sim p_{\theta}\left(s_{t}\right)}\left[E_{a_{t} \sim \pi_{\theta}\left(a_{t} | s_{t}\right)}\left[\frac{\pi_{\theta^{\prime}}\left(a_{t} | s_{t}\right)}{\pi_{\theta}\left(a_{t} | s_{t}\right)} \gamma^{t} A^{\pi_{\theta}}\left(s_{t}, a_{t}\right)\right]\right]
 $$
 
 
@@ -313,7 +313,7 @@ such that
 
 
 $$
-\left|\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)-\pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)\right| \leq \epsilon
+\left|\pi_{\theta^{\prime}}\left(a_{t} | s_{t}\right)-\pi_{\theta}\left(a_{t} | s_{t}\right)\right| \leq \epsilon
 $$
 
 
@@ -335,7 +335,7 @@ $$
 
 
 $$
-D_{\mathrm{KL}}\left(\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right) \| \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)\right) \leq \epsilon
+D_{\mathrm{KL}}\left(\pi_{\theta^{\prime}}\left(a_{t} | s_{t}\right) \| \pi_{\theta}\left(a_{t} | s_{t}\right)\right) \leq \epsilon
 $$
 
 
@@ -343,7 +343,7 @@ $$
 
 
 $$
-\left|\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)-\pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)\right| \leq \sqrt{\frac{1}{2} D_{\mathrm{KL}}\left(\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right) \| \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)\right)}
+\left|\pi_{\theta^{\prime}}\left(a_{t} | s_{t}\right)-\pi_{\theta}\left(a_{t} | s_{t}\right)\right| \leq \sqrt{\frac{1}{2} D_{\mathrm{KL}}\left(\pi_{\theta^{\prime}}\left(a_{t} | s_{t}\right) \| \pi_{\theta}\left(a_{t} | s_{t}\right)\right)}
 $$
 
 
@@ -359,7 +359,7 @@ $$
 
 
 $$
-\theta^{\prime} \leftarrow \arg \max _{\theta^{\prime}} \sum_{t} E_{\mathbf{s}_{t} \sim p_{\theta}\left(\mathbf{s}_{t}\right)}\left[E_{\mathbf{a}_{t} \sim \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)}\left[\frac{\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)}{\pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)} \gamma^{t} A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]\right]
+\theta^{\prime} \leftarrow \arg \max _{\theta^{\prime}} \sum_{t} E_{s_{t} \sim p_{\theta}\left(s_{t}\right)}\left[E_{a_{t} \sim \pi_{\theta}\left(a_{t} | s_{t}\right)}\left[\frac{\pi_{\theta^{\prime}}\left(a_{t} | s_{t}\right)}{\pi_{\theta}\left(a_{t} | s_{t}\right)} \gamma^{t} A^{\pi_{\theta}}\left(s_{t}, a_{t}\right)\right]\right]
 $$
 
 
@@ -367,7 +367,7 @@ such that
 
 
 $$
-D_{\mathrm{KL}}\left(\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right) \| \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)\right) \leq \epsilon
+D_{\mathrm{KL}}\left(\pi_{\theta^{\prime}}\left(a_{t} | s_{t}\right) \| \pi_{\theta}\left(a_{t} | s_{t}\right)\right) \leq \epsilon
 $$
 
 
@@ -383,8 +383,8 @@ for small enough $\epsilon,$ this is guaranteed to improve $J\left(\theta^{\prim
 
 
 $$
-\mathcal{L}\left(\theta^{\prime}, \lambda\right)=\sum_{t} E_{\mathrm{s}_{t} \sim p_{\theta}\left(\mathrm{s}_{t}\right)}\left[E_{\mathrm{a}_{t} \sim \pi_{\theta}\left(\mathrm{a}_{t} | \mathrm{s}_{t}\right)}\left[\frac{\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{S}_{t}\right)}{\pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)} \gamma^{t} A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]\right]
-\\-\lambda\left(D_{\mathrm{KL}}\left(\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right) \| \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)\right)-\epsilon\right)
+\mathcal{L}\left(\theta^{\prime}, \lambda\right)=\sum_{t} E_{\mathrm{s}_{t} \sim p_{\theta}\left(\mathrm{s}_{t}\right)}\left[E_{\mathrm{a}_{t} \sim \pi_{\theta}\left(\mathrm{a}_{t} | \mathrm{s}_{t}\right)}\left[\frac{\pi_{\theta^{\prime}}\left(a_{t} | s_{t}\right)}{\pi_{\theta}\left(a_{t} | s_{t}\right)} \gamma^{t} A^{\pi_{\theta}}\left(s_{t}, a_{t}\right)\right]\right]
+\\-\lambda\left(D_{\mathrm{KL}}\left(\pi_{\theta^{\prime}}\left(a_{t} | s_{t}\right) \| \pi_{\theta}\left(a_{t} | s_{t}\right)\right)-\epsilon\right)
 $$
 
 
@@ -406,7 +406,7 @@ Intuition: raise $\lambda$ if constraint violated too much, else lower it an ins
 
 
 $$
-\bar{A}(\theta') = \sum_{t} E_{\mathrm{s}_{t} \sim p_{\theta}\left(\mathrm{s}_{t}\right)}\left[E_{\mathrm{a}_{t} \sim \pi_{\theta}\left(\mathrm{a}_{t} | \mathrm{s}_{t}\right)}\left[\frac{\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{S}_{t}\right)}{\pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)} \gamma^{t} A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]\right]
+\bar{A}(\theta') = \sum_{t} E_{\mathrm{s}_{t} \sim p_{\theta}\left(\mathrm{s}_{t}\right)}\left[E_{\mathrm{a}_{t} \sim \pi_{\theta}\left(\mathrm{a}_{t} | \mathrm{s}_{t}\right)}\left[\frac{\pi_{\theta^{\prime}}\left(a_{t} | s_{t}\right)}{\pi_{\theta}\left(a_{t} | s_{t}\right)} \gamma^{t} A^{\pi_{\theta}}\left(s_{t}, a_{t}\right)\right]\right]
 $$
 
 
@@ -434,7 +434,7 @@ $$
 
 
 $$
-\bar{A}(\theta') = \sum_{t} E_{\mathrm{s}_{t} \sim p_{\theta}\left(\mathrm{s}_{t}\right)}\left[E_{\mathrm{a}_{t} \sim \pi_{\theta}\left(\mathrm{a}_{t} | \mathrm{s}_{t}\right)}\left[\frac{\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{S}_{t}\right)}{\pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)} \gamma^{t} A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]\right]
+\bar{A}(\theta') = \sum_{t} E_{\mathrm{s}_{t} \sim p_{\theta}\left(\mathrm{s}_{t}\right)}\left[E_{\mathrm{a}_{t} \sim \pi_{\theta}\left(\mathrm{a}_{t} | \mathrm{s}_{t}\right)}\left[\frac{\pi_{\theta^{\prime}}\left(a_{t} | s_{t}\right)}{\pi_{\theta}\left(a_{t} | s_{t}\right)} \gamma^{t} A^{\pi_{\theta}}\left(s_{t}, a_{t}\right)\right]\right]
 $$
 
 
@@ -442,7 +442,7 @@ $$
 
 
 $$
-\nabla_{\theta^{\prime}} \bar{A}\left(\theta^{\prime}\right)=\sum_{t} E_{\mathbf{s}_{t} \sim p_{\theta}\left(\mathbf{s}_{t}\right)}\left[E_{\mathbf{a}_{t} \sim \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)}\left[\frac{\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)}{\pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)} \gamma^{t} \nabla_{\theta^{\prime}} \log \pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right) A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]\right]
+\nabla_{\theta^{\prime}} \bar{A}\left(\theta^{\prime}\right)=\sum_{t} E_{s_{t} \sim p_{\theta}\left(s_{t}\right)}\left[E_{a_{t} \sim \pi_{\theta}\left(a_{t} | s_{t}\right)}\left[\frac{\pi_{\theta^{\prime}}\left(a_{t} | s_{t}\right)}{\pi_{\theta}\left(a_{t} | s_{t}\right)} \gamma^{t} \nabla_{\theta^{\prime}} \log \pi_{\theta^{\prime}}\left(a_{t} | s_{t}\right) A^{\pi_{\theta}}\left(s_{t}, a_{t}\right)\right]\right]
 $$
 
 
@@ -450,9 +450,9 @@ $$
 
 
 $$
-\nabla_{\theta} \bar{A}(\theta)=\sum_{t} E_{\mathbf{s}_{t} \sim p_{\theta}\left(\mathbf{s}_{t}\right)}\left[E_{\mathbf{a}_{t} \sim \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)}\left[\frac{\pi_{\mathrm{g}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)}{\pi_{\theta}\left(\mathbf{a}_{t} \mathbf{s}_{t}\right)} \gamma^{t} \nabla_{\theta} \log \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right) A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]\right]
+\nabla_{\theta} \bar{A}(\theta)=\sum_{t} E_{s_{t} \sim p_{\theta}\left(s_{t}\right)}\left[E_{a_{t} \sim \pi_{\theta}\left(a_{t} | s_{t}\right)}\left[\frac{\pi_{\mathrm{g}}\left(a_{t} | s_{t}\right)}{\pi_{\theta}\left(a_{t} s_{t}\right)} \gamma^{t} \nabla_{\theta} \log \pi_{\theta}\left(a_{t} | s_{t}\right) A^{\pi_{\theta}}\left(s_{t}, a_{t}\right)\right]\right]
 \\
-=\sum_{t} E_{\mathbf{s}_{t} \sim p_{\theta}\left(\mathbf{s}_{t}\right)}\left[E_{\mathbf{a}_{t} \sim \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)}\left[\gamma^{t} \nabla_{\theta} \log \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right) A^{\pi_{\theta}}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)\right]\right]=\nabla_{\theta} J(\theta)
+=\sum_{t} E_{s_{t} \sim p_{\theta}\left(s_{t}\right)}\left[E_{a_{t} \sim \pi_{\theta}\left(a_{t} | s_{t}\right)}\left[\gamma^{t} \nabla_{\theta} \log \pi_{\theta}\left(a_{t} | s_{t}\right) A^{\pi_{\theta}}\left(s_{t}, a_{t}\right)\right]\right]=\nabla_{\theta} J(\theta)
 $$
 
 
@@ -468,7 +468,7 @@ such that
 
 
 $$
-D_{\mathrm{KL}}\left(\pi_{\theta^{\prime}}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right) \| \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{t}\right)\right) \leq \epsilon
+D_{\mathrm{KL}}\left(\pi_{\theta^{\prime}}\left(a_{t} | s_{t}\right) \| \pi_{\theta}\left(a_{t} | s_{t}\right)\right) \leq \epsilon
 $$
 
 
@@ -512,7 +512,7 @@ $$
 
 
 $$
-\mathbf{F}=E_{\pi_{\theta}}\left[\nabla_{\theta} \log \pi_{\theta}(\mathbf{a} | \mathbf{s}) \nabla_{\theta} \log \pi_{\theta}(\mathbf{a} | \mathbf{s})^{T}\right]
+\mathbf{F}=E_{\pi_{\theta}}\left[\nabla_{\theta} \log \pi_{\theta}(a | s) \nabla_{\theta} \log \pi_{\theta}(a | s)^{T}\right]
 $$
 
 
