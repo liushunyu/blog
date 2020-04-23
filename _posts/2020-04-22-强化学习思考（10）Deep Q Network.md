@@ -233,9 +233,35 @@ $$
 
 ### Option 3: learn an approximate maximizer
 
-- DDPG
-  - “deterministic” actor-critic
-  - 参考[强化学习思考（8）Actor-Critic 方法](https://liushunyu.github.io/2020/04/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E6%80%9D%E8%80%83-8-Actor-Critic-%E6%96%B9%E6%B3%95/)中的 Pathwise Derivative Policy Gradient
+#### DDPG: Pathwise Derivative Policy Gradient
+
+- “deterministic” actor-critic
+
+对于最原始的 actor-critic，critic 只会告诉 actor 动作的价值，不会告诉 actor 应该采取哪一个action。
+
+Pathwise Derivative Policy Gradient 训练一个 actor $\pi$，如果给这个 actor 输入 state，会返回一个使得 $Q$ 值最大的 action $a$。然后将这个 actor 返回的 action 和 state 一起输入到一个固定的 $Q$ 中，计算出来的 $Q$ 值一定会增大，然后使用梯度上升更新 actor，重复上述步骤。
+
+<img width="480" src="/img/in-post/2020-04-21-强化学习思考（8）Actor-Critic 方法.assets/image-20190820121719895.png"/>
+
+以上网络实际上是两个网络的叠加，类似于 conditional GAN，其中 actor 是 generator，$Q$ 是 discriminator。
+
+
+
+具体算法如下：
+
+<img width="480" src="/img/in-post/2020-04-21-强化学习思考（8）Actor-Critic 方法.assets/image-20190820121940466.png"/>
+
+1、当前采取的 action 由训练的 actor $\pi$ 决定。
+
+2、计算 $Q$ 值是用 target Q-function $\hat{Q}$ 以及 target actor $\hat{\pi}$ 采取的 action 来计算的。
+
+3、不仅需要更新 $Q$，也需要更新 $\pi$。
+
+
+
+由于该方法与 GAN 类似，可以根据已有的研究进行两个领域的研究方向迁移，为之后的研究提供一定的思路。
+
+<img width="480" src="/img/in-post/2020-04-21-强化学习思考（8）Actor-Critic 方法.assets/image-20190820122603754.png"/>
 
 
 

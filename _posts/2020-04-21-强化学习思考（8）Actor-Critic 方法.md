@@ -233,13 +233,13 @@ $$
 
 - step 1、sample $(s_i,a_i)$ from $\pi_\theta(a \mid s)$
 
-- step 2、fit $\hat{V}_{\phi}^{\pi}(\mathbf{s})$ to sampled reward sums
+- step 2、fit $\hat{V}_{\phi}^{\pi}(s)$ to sampled reward sums
 
 - step 3、evaluate
 
 
 $$
-\hat{A}^{\pi}\left(\mathbf{s}_{i}, \mathbf{a}_{i}\right)=r\left(\mathbf{s}_{i}, \mathbf{a}_{i}\right)+\gamma \hat{V}_{\phi}^{\pi}\left(\mathbf{s}_{i}^{\prime}\right)-\hat{V}_{\phi}^{\pi}\left(\mathbf{s}_{i}\right)
+\hat{A}^{\pi}\left(s_{i}, a_{i}\right)=r\left(s_{i}, a_{i}\right)+\gamma \hat{V}_{\phi}^{\pi}\left(s_{i}^{\prime}\right)-\hat{V}_{\phi}^{\pi}\left(s_{i}\right)
 $$
 
 
@@ -247,7 +247,7 @@ $$
 
 
 $$
-\nabla_{\theta} J(\theta) \approx \sum_{i} \nabla_{\theta} \log \pi_{\theta}\left(\mathbf{a}_{i} \mid \mathbf{s}_{i}\right) \hat{A}^{\pi}\left(\mathbf{s}_{i}, \mathbf{a}_{i}\right)
+\nabla_{\theta} J(\theta) \approx \sum_{i} \nabla_{\theta} \log \pi_{\theta}\left(a_{i} \mid s_{i}\right) \hat{A}^{\pi}\left(s_{i}, a_{i}\right)
 $$
 
 
@@ -257,13 +257,13 @@ $$
 
 #### Online Actor-critic algorithms
 
-- step 1、take action $\mathbf{a} \sim \pi_{\theta}(\mathbf{a} \mid \mathbf{s}),$ get $\left(\mathbf{s}, \mathbf{a}, \mathbf{s}^{\prime}, r\right)$
+- step 1、take action $a \sim \pi_{\theta}(a \mid s),$ get $\left(s, a, s^{\prime}, r\right)$
 
 - step 2、update using target
 
 
 $$
-\hat{V}_{\phi}^{\pi} \leftarrow r+\gamma\hat{V}_{\phi}^{\pi}(\mathbf{s}^{\prime})
+\hat{V}_{\phi}^{\pi} \leftarrow r+\gamma\hat{V}_{\phi}^{\pi}(s^{\prime})
 $$
 
 
@@ -271,7 +271,7 @@ $$
 
 
 $$
-\hat{A}^{\pi}(\mathbf{s}, \mathbf{a})=r(\mathbf{s}, \mathbf{a})+\gamma \hat{V}_{\phi}^{\pi}\left(\mathbf{s}^{\prime}\right)-\hat{V}_{\phi}^{\pi}(\mathbf{s})
+\hat{A}^{\pi}(s, a)=r(s, a)+\gamma \hat{V}_{\phi}^{\pi}\left(s^{\prime}\right)-\hat{V}_{\phi}^{\pi}(s)
 $$
 
 
@@ -281,7 +281,7 @@ $$
 
 
 $$
-\nabla_{\theta} J(\theta) \approx \nabla_{\theta} \log \pi_{\theta}(\mathbf{a} \mid \mathbf{s}) \hat{A}^{\pi}(\mathbf{s}, \mathbf{a})
+\nabla_{\theta} J(\theta) \approx \nabla_{\theta} \log \pi_{\theta}(a \mid s) \hat{A}^{\pi}(s, a)
 $$
 
 
@@ -321,9 +321,11 @@ $$
 
 
 
-##  discount factors
+## 算法分析及改进
 
-### Temporal difference policy gradient
+###  discount factors
+
+#### Temporal difference policy gradient
 
 
 $$
@@ -358,7 +360,7 @@ $$
 
 
 
-### Monte Carlo policy gradient
+#### Monte Carlo policy gradient
 
 
 $$
@@ -372,38 +374,37 @@ Further reading: Philip Thomas, Bias in natural actor-critic algorithms. ICML 20
 
 
 
-#### option 1
+**option 1**
 
 一般选择 option 1
 
 
 $$
 \begin{aligned}
-&\nabla_{\theta} J(\theta) \approx \frac{1}{N} \sum_{i=1}^{N} \sum_{t=1}^{T} \nabla_{\theta} \log \pi_{\theta}\left(\mathbf{a}_{i, t} | \mathbf{s}_{i, t}\right)\left(\sum_{t^{\prime}=t}^{T} \gamma^{t^{\prime}-t} r\left(\mathbf{s}_{i, t^{\prime}}, \mathbf{a}_{i, t^{\prime}}\right)\right)\\
+&\nabla_{\theta} J(\theta) \approx \frac{1}{N} \sum_{i=1}^{N} \sum_{t=1}^{T} \nabla_{\theta} \log \pi_{\theta}\left(a_{i, t} | s_{i, t}\right)\left(\sum_{t^{\prime}=t}^{T} \gamma^{t^{\prime}-t} r\left(s_{i, t^{\prime}}, a_{i, t^{\prime}}\right)\right)\\
 \end{aligned}
 $$
 
-
-#### option 2
+**option 2**
 
 option 2 不仅对 reward 的计算进行 dicount，也对梯度的计算进行了 discount，会使得越往后的步骤的梯度影响力越小。
 
 
 $$
 \begin{aligned}
-\nabla_{\theta} J(\theta) &\approx \frac{1}{N} \sum_{i=1}^{N}\left(\sum_{t=1}^{T} \nabla_{\theta} \log \pi_{\theta}\left(\mathbf{a}_{i, t} | \mathbf{s}_{i, t}\right)\right)\left(\sum_{t=1}^{T} \gamma^{t-1} r\left(\mathbf{s}_{i, t^{\prime}}, \mathbf{a}_{i, t^{\prime}}\right)\right)\\
-&\approx \frac{1}{N} \sum_{i=1}^{N} \sum_{t=1}^{T} \nabla_{\theta} \log \pi_{\theta}\left(\mathbf{a}_{i, t} | \mathbf{s}_{i, t}\right)\left(\sum_{t'=t}^{T} \gamma^{t^{\prime}-1} r\left(\mathbf{s}_{i, t^{\prime}}, \mathbf{a}_{i, t^{\prime}}\right)\right)\\
-&= \frac{1}{N} \sum_{i=1}^{N} \sum_{t=1}^{T} \gamma^{t-1} \nabla_{\theta} \log \pi_{\theta}\left(\mathbf{a}_{i, t} | \mathbf{s}_{i, t}\right)\left(\sum_{t^{\prime}=t}^{T} \gamma^{t^{\prime}-t} r\left(\mathbf{s}_{i, t^{\prime}}, \mathbf{a}_{i, t^{\prime}}\right)\right)
+\nabla_{\theta} J(\theta) &\approx \frac{1}{N} \sum_{i=1}^{N}\left(\sum_{t=1}^{T} \nabla_{\theta} \log \pi_{\theta}\left(a_{i, t} | s_{i, t}\right)\right)\left(\sum_{t=1}^{T} \gamma^{t-1} r\left(s_{i, t^{\prime}}, a_{i, t^{\prime}}\right)\right)\\
+&\approx \frac{1}{N} \sum_{i=1}^{N} \sum_{t=1}^{T} \nabla_{\theta} \log \pi_{\theta}\left(a_{i, t} | s_{i, t}\right)\left(\sum_{t'=t}^{T} \gamma^{t^{\prime}-1} r\left(s_{i, t^{\prime}}, a_{i, t^{\prime}}\right)\right)\\
+&= \frac{1}{N} \sum_{i=1}^{N} \sum_{t=1}^{T} \gamma^{t-1} \nabla_{\theta} \log \pi_{\theta}\left(a_{i, t} | s_{i, t}\right)\left(\sum_{t^{\prime}=t}^{T} \gamma^{t^{\prime}-t} r\left(s_{i, t^{\prime}}, a_{i, t^{\prime}}\right)\right)
 \end{aligned}
 $$
 
 
-## baselines
 
-### state-dependent baselines
+### baselines
+
+#### state-dependent baselines
 
 **policy gradient**
-
 
 $$
 \nabla_{\theta} J(\theta) \approx \frac{1}{N} \sum_{i=1}^{N}  \sum_{t=1}^{T} \left[\nabla_\theta \log \pi_{\theta}\left(a_{i,t} | s_{i,t}\right) \left(\sum_{t'=t}^{T}   \gamma^{t'-t}r\left({s}_{i,t'}, {a}_{i,t'}\right) - b\right) \right]
@@ -442,7 +443,7 @@ $$
 
 
 
-### action-dependent baselines
+#### action-dependent baselines
 
 use a critic without the bias (still unbiased), provided second term can be evaluated Gu et al. 2016 (Q-Prop)
 
@@ -457,18 +458,18 @@ $$
 
 
 $$
-\nabla_{\theta} J(\theta) \approx \frac{1}{N} \sum_{i=1}^{N} \sum_{t=1}^{T} \nabla_{\theta} \log \pi_{\theta}\left(\mathbf{a}_{i, t} | \mathbf{s}_{i, t}\right)\left(\hat{Q}_{i, t}-Q_{\phi}^{\pi}\left(\mathbf{s}_{i, t}, \mathbf{a}_{i, t}\right)\right)+\frac{1}{N} \sum_{i=1}^{N} \sum_{t=1}^{T} \nabla_{\theta} E_{\mathbf{a} \sim \pi_{\theta}\left(\mathbf{a}_{t} | \mathbf{s}_{i, t}\right)}\left[Q_{\phi}^{\pi}\left(\mathbf{s}_{i, t}, \mathbf{a}_{t}\right)\right]
+\nabla_{\theta} J(\theta) \approx \frac{1}{N} \sum_{i=1}^{N} \sum_{t=1}^{T} \nabla_{\theta} \log \pi_{\theta}\left(a_{i, t} | s_{i, t}\right)\left(\hat{Q}_{i, t}-Q_{\phi}^{\pi}\left(s_{i, t}, a_{i, t}\right)\right)\\+\frac{1}{N} \sum_{i=1}^{N} \sum_{t=1}^{T} \nabla_{\theta} E_{a \sim \pi_{\theta}\left(a_{t} | s_{i, t}\right)}\left[Q_{\phi}^{\pi}\left(s_{i, t}, a_{t}\right)\right]
 $$
 
 
 
-## Generalized advantage estimation
+### Generalized advantage estimation
 
 **n-step returns**
 
 
 $$
-\hat{A}_{n}^{\pi}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)=\sum_{t^{\prime}=t}^{t+n} \gamma^{t^{\prime}-t} r\left(\mathbf{s}_{t^{\prime}}, \mathbf{a}_{t^{\prime}}\right)-\hat{V}_{\phi}^{\pi}\left(\mathbf{s}_{t}\right)+\gamma^{n} \hat{V}_{\phi}^{\pi}\left(\mathbf{s}_{t+n}\right)
+\hat{A}_{n}^{\pi}\left(s_{t}, a_{t}\right)=\sum_{t^{\prime}=t}^{t+n} \gamma^{t^{\prime}-t} r\left(s_{t^{\prime}}, a_{t^{\prime}}\right)-\hat{V}_{\phi}^{\pi}\left(s_{t}\right)+\gamma^{n} \hat{V}_{\phi}^{\pi}\left(s_{t+n}\right)
 $$
 
 
@@ -476,7 +477,7 @@ $$
 
 
 $$
-\hat{A}_{\mathrm{GAE}}^{\pi}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)=\sum_{n=1}^{\infty} w_{n} \hat{A}_{n}^{\pi}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)
+\hat{A}_{\mathrm{GAE}}^{\pi}\left(s_{t}, a_{t}\right)=\sum_{n=1}^{\infty} w_{n} \hat{A}_{n}^{\pi}\left(s_{t}, a_{t}\right)
 $$
 
 
@@ -484,9 +485,9 @@ where $w_{n} \propto \lambda^{n-1}$
 
 
 $$
-\hat{A}_{\mathrm{GAE}}^{\pi}\left(\mathbf{s}_{t}, \mathbf{a}_{t}\right)=\sum_{t^{\prime}=t}^{\infty}(\gamma \lambda)^{t^{\prime}-t} \delta_{t^{\prime}}
+\hat{A}_{\mathrm{GAE}}^{\pi}\left(s_{t}, a_{t}\right)=\sum_{t^{\prime}=t}^{\infty}(\gamma \lambda)^{t^{\prime}-t} \delta_{t^{\prime}}
 \\
-\delta_{t^{\prime}}=r\left(\mathbf{s}_{t^{\prime}}, \mathbf{a}_{t^{\prime}}\right)+\gamma \hat{V}_{\phi}^{\pi}\left(\mathbf{s}_{t^{\prime}+1}\right)-\hat{V}_{\phi}^{\pi}\left(\mathbf{s}_{t^{\prime}}\right)
+\delta_{t^{\prime}}=r\left(s_{t^{\prime}}, a_{t^{\prime}}\right)+\gamma \hat{V}_{\phi}^{\pi}\left(s_{t^{\prime}+1}\right)-\hat{V}_{\phi}^{\pi}\left(s_{t^{\prime}}\right)
 $$
 
 
@@ -502,23 +503,22 @@ $(\gamma \lambda)$ similar effect as discount, and discount = variance reduction
 >
 > 1、Value function approximator is compatible to the policy
 >
-> 
 > $$
 > \nabla_{w} Q_{w}(s, a)=\nabla_{\theta} \log \pi_{\theta}(s, a)
 > $$
 > 
->
-> 2、Value function parameters $w$ minimise the mean-squared error
->
 > 
+>2、Value function parameters $w$ minimise the mean-squared error
+> 
+>
 > $$
 > \varepsilon=\mathbb{E}_{\pi_{\theta}}\left[\left(Q^{\pi_{\theta}}(s, a)-Q_{w}(s, a)\right)^{2}\right]
 > $$
 > 
->
-> Then the policy gradient is exact,
->
 > 
+>Then the policy gradient is exact,
+> 
+>
 > $$
 > \nabla_{\theta} J(\theta)=\mathbb{E}_{\pi_{\theta}}\left[\nabla_{\theta} \log \pi_{\theta}(s, a) Q_{w}(s, a)\right]
 > $$
@@ -569,40 +569,6 @@ $$
 Each leads a stochastic gradient ascent algorithm
 
 Critic uses policy evaluation (e.g. MC or TD learning) to estimate $Q^{\pi}(s, a), A^{\pi}(s, a)$ or $V^{\pi}(s)$
-
-
-
-## Pathwise Derivative Policy Gradient
-
-对于最原始的 actor-critic，critic 只会告诉 actor 动作的价值，不会告诉 actor 应该采取哪一个action。
-
-Pathwise Derivative Policy Gradient 训练一个 actor $\pi$，如果给这个 actor 输入 state，会返回一个使得 $Q$ 值最大的 action $a$。然后将这个 actor 返回的 action 和 state 一起输入到一个固定的 $Q$ 中，计算出来的 $Q$ 值一定会增大，然后使用梯度上升更新 actor，重复上述步骤。
-
-<img width="480" src="/img/in-post/2020-04-21-强化学习思考（8）Actor-Critic 方法.assets/image-20190820121719895.png"/>
-
-以上网络实际上是两个网络的叠加，类似于 conditional GAN，其中 actor 是 generator，$Q$ 是 discriminator。
-
-
-
-具体算法如下：
-
-<img width="480" src="/img/in-post/2020-04-21-强化学习思考（8）Actor-Critic 方法.assets/image-20190820121940466.png"/>
-
-1、当前采取的 action 由训练的 actor $\pi$ 决定。
-
-2、计算 $Q$ 值是用 target Q-function $\hat{Q}$ 以及 target actor $\hat{\pi}$ 采取的 action 来计算的。
-
-3、不仅需要更新 $Q$，也需要更新 $\pi$。
-
-
-
-由于该方法与 GAN 类似，可以根据已有的研究进行两个领域的研究方向迁移，为之后的研究提供一定的思路。
-
-<img width="480" src="/img/in-post/2020-04-21-强化学习思考（8）Actor-Critic 方法.assets/image-20190820122603754.png"/>
-
-
-
-
 
 
 
