@@ -302,6 +302,7 @@ tags:
   - [Deep Reinforcement Learning](http://rail.eecs.berkeley.edu/deeprlcourse/)
 - 笔记：
   - [谢天 - Berkeley CS294-112 深度增强学习 笔记](https://zhuanlan.zhihu.com/p/32575824)
+  - [中原一点红 - CS285](https://www.zhihu.com/people/he-ju-jie-39/posts)
 
 
 
