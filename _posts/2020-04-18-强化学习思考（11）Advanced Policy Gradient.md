@@ -607,7 +607,7 @@ $$
 
 
 $$
-J_{P P O 2}^{\ell}(\theta) \approx \sum_{\left(s_{t}, a_{t}\right)} \min \left(\frac{\pi_{\theta}\left(a_{t} | s_{t}\right)}{\pi_{\theta^{k}}\left(a_{t} | s_{t}\right)} A^{\pi_{\theta^{k}}}\left(s_{t}, a_{t}\right), \operatorname{clip}\left(\frac{\pi_{\theta}\left(a_{t} | s_{t}\right)}{\pi_{\pi_{\theta^{k}}}\left(a_{t} | s_{t}\right)}, 1-\varepsilon, 1+\varepsilon\right) A^{\pi_{\theta^{k}}}\left(s_{t}, a_{t}\right)\right)
+J_{P P O 2}(\theta) \approx \sum_{\left(s_{t}, a_{t}\right)} \min \left(\frac{\pi_{\theta}\left(a_{t} | s_{t}\right)}{\pi_{\theta^{k}}\left(a_{t} | s_{t}\right)} A^{\pi_{\theta^{k}}}\left(s_{t}, a_{t}\right), \operatorname{clip}\left(\frac{\pi_{\theta}\left(a_{t} | s_{t}\right)}{\pi_{\pi_{\theta^{k}}}\left(a_{t} | s_{t}\right)}, 1-\varepsilon, 1+\varepsilon\right) A^{\pi_{\theta^{k}}}\left(s_{t}, a_{t}\right)\right)
 $$
 
 $$
