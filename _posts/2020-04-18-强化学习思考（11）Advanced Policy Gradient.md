@@ -490,7 +490,130 @@ $$
 
 
 
-#### Natural Gradient
+## Natural Gradient
+
+对 KL 散度进行 second order Taylor expansion 可以写为
+
+
+$$
+D_{\mathrm{KL}}\left(\pi_{\theta^{\prime}} \| \pi_{\theta}\right) \approx \frac{1}{2}\left(\theta^{\prime}-\theta\right)^{T} \mathbf{F}\left(\theta^{\prime}-\theta\right)
+$$
+
+
+其中 Fisher-information matrix can be estimated with samples
+
+
+$$
+\mathbf{F}=E_{\pi_{\theta}}\left[\nabla_{\theta} \log \pi_{\theta}(\mathbf{a} | \mathbf{s}) \nabla_{\theta} \log \pi_{\theta}(\mathbf{a} | \mathbf{s})^{T}\right]
+$$
+
+
+
+
+Natural gradient 算法如下
+
+
+$$
+\theta^{\prime}=\theta+\alpha \mathbf{F}^{-1} \nabla_{\theta} J(\theta)
+\\
+\alpha=\sqrt{\frac{2 \epsilon}{\nabla_{\theta} J(\theta)^{T} \mathbf{F} \nabla_{\theta} J(\theta)}}
+$$
+
+
+- Generally a good choice to stabilize policy gradient training
+- Practical implementation: requires efficient Fisher-vector products, a bit non-trivial to do without computing the full matrix
+
+> See this paper for details: Peters, Schaal. Reinforcement learning of motor skills with policy gradients.
+
+
+
+
+
+## Trust Region Policy Optimization (TRPO)
+
+> See: Schulman et al Trust region policy optimization
+
+
+
+TRPO主要针对NPG存在的两个问题提出了解决方案：
+
+- 第一个就是求逆矩阵的高复杂度问题
+  - TRPO 将它转化为求解线性方程组，并利用 conjugate gradient algorithm 进行近似求解。
+- 第二个则是对 KL divergence 做的 approximation 中可能存在的约束违反的问题做了预防。
+  - 使用 exponential decay line search 的方式，也就是对于一个样本，如果某次更新违反了约束，那么就把它的系数进行指数衰减，从而减少更新的幅度，直到它不再违反约束或者超过一定次数衰减则抛弃这次的数据。
+
+
+
+## Proximal Policy Optimization (PPO)
+
+目标函数定义如下：
+
+
+$$
+J_{P P O}(\theta')=J(\theta')-\beta D_{\mathrm{KL}}\left(\pi_{\theta^{\prime}} \| \pi_{\theta}\right)
+$$
+
+$$
+J(\theta')=E_{\left(s_{t}, a_{t}\right) \sim \pi_{\theta}}\left[\frac{p_{\theta'}\left(a_{t} | s_{t}\right)}{p_{\theta}\left(a_{t} | s_{t}\right)} A^{\pi_\theta}\left(s_{t}, a_{t}\right)\right]
+$$
+
+
+
+PPO 在原目标函数的基础上添加了 KL divergence 的 regularization 部分，用来表示两个分布之前的差别，差别越大则该值越大。那么施加在目标函数上的惩罚也就越大，因此要尽量使得两个分布之间的差距小，才能保证较大的目标函数。
+
+TRPO 与 PPO 之间的差别在于它使用了 KL divergence 作为约束。但是这使得 TRPO 相对而言更难计算，因此较少使用。
+
+
+
+### PPO 算法
+
+- step 1：初始化 policy 的参数 $\theta^0$
+
+- step 2：在每一次迭代中：
+  - 使用 $\theta^k$ 来和环境互动，收集 $\left\{s_{t}, a_{t}\right\}$ 并计算对应的 advantage function $A^{\pi_{\theta^{k}}}\left(s_{t}, a_{t}\right)$
+  - 不断更新参数，找到目标函数最优值对应的参数 $\theta$
+
+
+$$
+J_{P P O}^{\theta^{k}}(\theta)=J^{\theta^{k}}(\theta)-\beta K L\left(\theta, \theta^{k}\right)
+$$
+
+$$
+J^{\theta^{k}}(\theta) \approx \sum_{\left(s_{t}, a_{t}\right)} \frac{\pi_{\theta}\left(a_{t} | s_{t}\right)}{\pi_{\theta^{k}}\left(a_{t} | s_{t}\right)} A^{\theta^{k}}\left(s_{t}, a_{t}\right)
+$$
+
+
+
+其中使用 Adaptive KL Penalty：
+
+
+$$
+\begin{array}{l}{\text { If } D_{\mathrm{KL}}\left(\pi_{\theta^{\prime}} \| \pi_{\theta}\right)>K L_{\max }, \text { increase } \beta} \\ {\text { If } D_{\mathrm{KL}}\left(\pi_{\theta^{\prime}} \| \pi_{\theta}\right)<K L_{\min }, \text { decrease } \beta}\end{array}
+$$
+
+
+
+### PPO2 算法
+
+目标函数定义如下：
+
+
+$$
+J_{P P O 2}^{\ell}(\theta) \approx \sum_{\left(s_{t}, a_{t}\right)} \min \left(\frac{\pi_{\theta}\left(a_{t} | s_{t}\right)}{\pi_{\theta^{k}}\left(a_{t} | s_{t}\right)} A^{\theta^{k}}\left(s_{t}, a_{t}\right), \operatorname{clip}\left(\frac{\pi_{\theta}\left(a_{t} | s_{t}\right)}{\pi_{\theta^{k}}\left(a_{t} | s_{t}\right)}, 1-\varepsilon, 1+\varepsilon\right) A^{\theta^{k}}\left(s_{t}, a_{t}\right)\right)
+$$
+
+$$
+\operatorname{clip}\left(\frac{\pi_{\theta}\left(a_{t} | s_{t}\right)}{\pi_{\theta^{k}}\left(a_{t} | s_{t}\right)}, 1-\varepsilon, 1+\varepsilon\right)
+ = \begin{cases}
+1-\varepsilon, & \frac{\pi_{\theta}\left(a_{t} | s_{t}\right)}{\pi_{\theta^{k}}\left(a_{t} | s_{t}\right)} < 1-\varepsilon \\
+1+\varepsilon, &\frac{\pi_{\theta}\left(a_{t} | s_{t}\right)}{\pi_{\theta^{k}}\left(a_{t} | s_{t}\right)} > 1+\varepsilon  \\
+\frac{\pi_{\theta}\left(a_{t} | s_{t}\right)}{\pi_{\theta^{k}}\left(a_{t} | s_{t}\right)}, &otherwise \\
+ \end{cases}
+$$
+
+
+
+这种方法可以有效约束 $\theta$ 不能与 $\theta′$ 差别过大，比如因为是最大化目标函数，所以当 $A>0$ 时则会一直更新增大 $\frac{p_{\theta}\left(a_{t} | s_{t}\right)}{p_{\theta^{k}}\left(a_{t} | s_{t}\right)}$ 的值，当增大到 $\frac{p_{\theta}\left(a_{t} | s_{t}\right)}{p_{\theta^{k}}\left(a_{t} | s_{t}\right)} > 1+\varepsilon$ 时目标函数不再变化便不再增大。而当 $A<0$ 时则会一直更新减小 $\frac{p_{\theta}\left(a_{t} | s_{t}\right)}{p_{\theta^{k}}\left(a_{t} | s_{t}\right)}$ 的值，当减小到 $\frac{p_{\theta}\left(a_{t} | s_{t}\right)}{p_{\theta^{k}}\left(a_{t} | s_{t}\right)} < 1-\varepsilon$ 时目标函数不再变化便不再减小。
 
 
 
