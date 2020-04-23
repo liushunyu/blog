@@ -242,7 +242,7 @@ $$
 
 **lemma**
 
-- if $\left|p_{X}(x)-p_{Y}(x)\right|=\epsilon$, exists $p(x, y)$ such that $p(x)=p_{X}(x)$ and $p(y)=p_{Y}(y)$ and $p(x=y)=1-\epsilon$ 
+- if $\mid p_{X}(x)-p_{Y}(x) \mid=\epsilon$, exists $p(x, y)$ such that $p(x)=p_{X}(x)$ and $p(y)=p_{Y}(y)$ and $p(x=y)=1-\epsilon$ 
 - $\Rightarrow p_{X}(x)$ "agrees" with $p_{Y}(y)$ with probability $\epsilon$ 
 - $\Rightarrow \pi_{\theta^{\prime}}\left(a_{t} \mid s_{t}\right)$ takes a different action than $\pi_{\theta}\left(a_{t} \mid s_{t}\right)$ with probability at most $\epsilon$
 
