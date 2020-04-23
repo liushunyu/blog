@@ -249,6 +249,8 @@ $$
 
 
 同理可以得到
+
+
 $$
 \left|p_{\theta^{\prime}}\left(\mathbf{s}_{t}\right)-p_{\theta}\left(\mathbf{s}_{t}\right)\right|=\left(1-(1-\epsilon)^{t}\right)\left|p_{\text {mistake }}\left(\mathbf{s}_{t}\right)-p_{\theta}\left(\mathbf{s}_{t}\right)\right| 
 \\ \leq 2\left(1-(1-\epsilon)^{t}\right) \leq 2 \epsilon t
