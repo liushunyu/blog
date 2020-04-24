@@ -159,7 +159,7 @@ $$
 
 在每个 episode 开始时，在 Q-function 的参数上引入噪声，但在每一个 episode 内，参数不会发生改变，所以给定同样的 state，agent 会采取同一个 action，这保证了探索的相对稳定性。
 $$
-a=\arg \max _{a} \tilde{Q}(s, a)
+a=\arg \max _{a} Q(s, a)
 $$
 
 
