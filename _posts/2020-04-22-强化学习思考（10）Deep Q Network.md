@@ -148,9 +148,13 @@ $$
 ### Noisy Net
 
 **Epsilon Greedy: 在行动上加噪声**
+
+
 $$
 a=\left\{\begin{array}{cc}{\arg \max _{a} Q(s, a),} & {\text { with probability } 1-\varepsilon} \\ {\text { random, }} & {\text { otherwise }}\end{array}\right.
 $$
+
+
 即便给定相同的状态 state，agent 也有可能采取不同的行动，因此不符合实际上意义上的 policy。
 
 
@@ -158,6 +162,8 @@ $$
 **Noisy Net: 在参数上加噪声**
 
 在每个 episode 开始时，在 Q-function 的参数上引入噪声，但在每一个 episode 内，参数不会发生改变，所以给定同样的 state，agent 会采取同一个 action，这保证了探索的相对稳定性。
+
+
 $$
 a=\arg \max _{a} Q(s, a)
 $$
