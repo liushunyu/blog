@@ -167,6 +167,7 @@ J\left(\theta^{\prime}\right)-J(\theta) &=J\left(\theta^{\prime}\right)-E_{\math
 $$
 
 
+
 ## Policy gradient with Important sampling
 
 我们希望去求解 policy improvement 目标，因为是 off-policy 的方法，所以需要重要性采样，我们在两个层面上做重要性抽样
