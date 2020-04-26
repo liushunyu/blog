@@ -298,7 +298,7 @@ tags:
 **Sergey Levine《Deep Reinforcement Learning》**
 
 - 网课：
-  - [CS285（2019 秋 | 英字）](https://www.bilibili.com/video/BV15441127ua)
+  - [CS285（2019 秋 英字）](https://www.bilibili.com/video/BV15441127ua)
   - [Deep Reinforcement Learning](http://rail.eecs.berkeley.edu/deeprlcourse/)
 - 笔记：
   - [谢天 - Berkeley CS294-112 深度增强学习 笔记](https://zhuanlan.zhihu.com/p/32575824)
