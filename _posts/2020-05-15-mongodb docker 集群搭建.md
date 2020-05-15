@@ -2,7 +2,7 @@
 layout:     post
 title:      "mongodb docker 集群搭建"
 subtitle:    "Replica Set 架构 mongodb docker 集群搭建"
-date:       2020-04-17 09:00:00
+date:       2020-05-15 09:00:00
 author:     Shunyu
 header-img: img/post-bg-2015.jpg
 header-mask: 0.1
