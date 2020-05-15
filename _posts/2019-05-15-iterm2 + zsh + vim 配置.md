@@ -53,7 +53,7 @@ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/theme
 $ vim ~/.zshrc
 # 修改文件如下
 ZSH_THEME="powerlevel9k/powerlevel9k"  # 修@更改主题样式
-POWERLEVEL9K_CONTEXT_TEMPLATE=“lsy”  # 加@更改命令前面的用户名
+POWERLEVEL9K_CONTEXT_TEMPLATE="lsy"  # 加@更改命令前面的用户名
 ```
 
 
