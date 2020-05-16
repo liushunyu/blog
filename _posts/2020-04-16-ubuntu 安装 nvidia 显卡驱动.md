@@ -29,7 +29,7 @@ tags:
 
 查看 GPU 型号
 
-```
+```bash
 lspci | grep -i nvidia
 ```
 
@@ -37,7 +37,7 @@ lspci | grep -i nvidia
 
 查看你可以使用的驱动
 
-```
+```bash
 ubuntu-drivers devices
 ```
 
@@ -47,7 +47,7 @@ ubuntu-drivers devices
 
 卸载 nvidia 显卡驱动
 
-```
+```bash
 sudo apt-get remove --purge nvidia-*
 sudo apt-get autoremove
 sudo apt-get install -f
@@ -62,7 +62,7 @@ sudo reboot
 
 1、添加 ppa 源（这样才会出现最新版的 nvidia 显卡驱动）
 
-```
+```bash
 sudo add-apt-repository ppa:graphics-drivers/ppa
 sudo apt-get update
 ```
