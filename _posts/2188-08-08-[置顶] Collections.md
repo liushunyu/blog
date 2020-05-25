@@ -152,6 +152,9 @@ tags:
 - [中文版](https://rl.qiwihui.com/zh_CN/latest/chapter1/introduction.html)
 - [代码实现](https://github.com/ShangtongZhang/reinforcement-learning-an-introduction)
 - [习题解答](https://github.com/LyWangPX/Reinforcement-Learning-2nd-Edition-by-Sutton-Exercise-Solutions)
+- 笔记：
+  - [强化学习入门（第二版）读书笔记](https://zhuanlan.zhihu.com/p/60973392)
+  - [机器学习读书笔记汇总 - 强化学习篇](https://zhuanlan.zhihu.com/p/48320594)
 
 
 
