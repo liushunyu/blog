@@ -323,6 +323,12 @@ tags:
 - [刘建平博客](https://www.cnblogs.com/pinard/)
 - [零基础学习入门深度学习](https://www.zybuluo.com/hanbingtao/note/433855)
 - [Andrew Ng ufldl 教程](http://ufldl.stanford.edu/wiki/index.php/UFLDL%E6%95%99%E7%A8%8B)
+- [AI算法工程师手册](http://www.huaxiaozhuan.com/)
+
+
+
+### 强化学习
+
 - [强化学习知识大讲堂](https://zhuanlan.zhihu.com/sharerl)
 - [Spinning Up](https://spinningup.openai.com/en/latest/index.html)
 - [Gym](https://gym.openai.com/)
