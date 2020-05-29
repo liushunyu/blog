@@ -73,7 +73,7 @@ tags:
 ### 数学公式符号
 
 - [markdown数学公式符号记录](https://blog.csdn.net/deepinC/article/details/81103326#10%E5%A6%82%E4%BD%95%E8%BE%93%E5%85%A5%E7%B4%AF%E5%8A%A0%E7%B4%AF%E4%B9%98%E8%BF%90%E7%AE%97)
-- [Latex常用数学符号输入方法](https://jingyan.baidu.com/article/4b52d702df537efc5c774bc9.html)
+- [LaTex字体、符号汇总](https://blog.csdn.net/cclethe/article/details/79022216)
 
 
 
