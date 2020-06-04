@@ -329,9 +329,12 @@ tags:
 
 ### 强化学习
 
+- [OpenAI - Key Papers in Deep RL](https://spinningup.openai.com/en/latest/spinningup/keypapers.html#id106)
+- [ECKai - 多智能体强化学习入门](https://zhuanlan.zhihu.com/c_1061939147282915328)
+- [SJTU Multi-Agent Reinforcement Learning Tutorial](http://wnzhang.net/tutorials/marl2018/index.html)
+- [刘建平 - 强化学习](https://www.cnblogs.com/pinard/category/1254674.html)
 - [强化学习知识大讲堂](https://zhuanlan.zhihu.com/sharerl)
-- [Spinning Up](https://spinningup.openai.com/en/latest/index.html)
-- [Gym](https://gym.openai.com/)
+- [强化学习前沿](https://zhuanlan.zhihu.com/reinforcementlearning)
 
 
 
