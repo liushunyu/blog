@@ -136,6 +136,7 @@ tags:
 
 - [中文版](https://github.com/exacity/deeplearningbook-chinese)
 - [英文版](https://github.com/janishar/mit-deep-learning-book-pdf/blob/master/complete-book-bookmarked-pdf/deeplearningbook.pdf)
+- [代码实现](https://github.com/MingchaoZhu/DeepLearning)
 
 
 
@@ -341,6 +342,7 @@ tags:
 ### 算法
 
 - [labuladong/fucking-algorithm](https://github.com/labuladong/fucking-algorithm)
+- [LeetCode All in One 题目讲解汇总](https://github.com/grandyang/leetcode)
 
 
 

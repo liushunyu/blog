@@ -18,7 +18,11 @@ tags:
 
 **标签：**
 
-DCC-MD; MADDPG-MD; value-based; actor-critic; off-policy; model-free; continuous communication channel; discrete action space; continuous action space; continuous state space; cooperative task;
+DCC-MD; value-based; discrete action space; 
+
+MADDPG-MD; actor-critic; continuous action space; 
+
+off-policy; model-free; communication; continuous communication channel; continuous state space; cooperative task;
 
 
 
