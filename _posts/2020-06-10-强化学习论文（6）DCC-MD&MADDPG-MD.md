@@ -18,11 +18,11 @@ tags:
 
 **标签：**
 
-DCC-MD; value-based; discrete action space; 
+DCC-MD; value-based; discrete action space; decentralized approach; 
 
-MADDPG-MD; actor-critic; continuous action space; 
+MADDPG-MD; actor-critic; continuous action space; centralized training with decentralized execution; 
 
-off-policy; model-free; communication; continuous communication channel; continuous state space; cooperative task;
+off-policy; model-free; communication; continuous communication channel; continuous state space; cooperative task; 
 
 
 
