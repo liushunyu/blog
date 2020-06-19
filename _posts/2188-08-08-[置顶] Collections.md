@@ -189,8 +189,9 @@ tags:
 **Andrew Ng《Machine Learning》**
 
 - 网课：
-  - [Andrew Ng《Machine Learning》](https://study.163.com/course/courseMain.htm?courseId=1004570029)（网课强推）
-
+  - [Andrew Ng《Machine Learning》](https://www.bilibili.com/video/BV164411b7dx)（网课强推）
+- [Machine Learning 专项课程 coursera](https://www.coursera.org/learn/machine-learning)
+  
 - 笔记 ：
   - [吴恩达老师的机器学习课程个人笔记](https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes)
 
@@ -226,6 +227,15 @@ tags:
 
 
 
+**shuhuai008《机器学习——白板推导系列》**
+
+- 网课：
+  - [【机器学习】【白板推导系列】](https://www.bilibili.com/video/BV1aE411o7qd)
+- 笔记：
+  - [Bilibili-机器学习白板系列](https://www.yuque.com/books/share/f4031f65-70c1-4909-ba01-c47c31398466)
+
+
+
 ### 深度学习
 
 **Andrew Ng 《深度学习专项课程》**
@@ -244,8 +254,8 @@ tags:
 **李宏毅《Machine Learning》**
 
 - 网课：
-  - [李宏毅 Machine Learning 2019](https://www.bilibili.com/video/av48285039/?spm_id_from=333.788.b_7265636f5f6c697374.2)
-  - [Machine Learning (2019,Spring)](http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML19.html)
+  - [李宏毅 Machine Learning 2020](https://www.bilibili.com/video/BV1JE411g7XF)
+  - [Machine Learning (2020,Spring)](http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html)
 
 - 笔记：
   - [李宏毅机器学习笔记(LeeML-Notes)](https://datawhalechina.github.io/leeml-notes/#/?id=李宏毅机器学习笔记leeml-notes)
@@ -279,8 +289,8 @@ tags:
 **李宏毅《Deep Reinforcement Learning》**
 
 - 网课：
-  - [李宏毅深度强化学习(国语)课程(2018)](https://www.bilibili.com/video/av24724071)
-  - [Machine Learning and having it deep and structured (2018,Spring)](http://speech.ee.ntu.edu.tw/~tlkagk/courses_MLDS18.html)
+  - [李宏毅 Machine Learning 2020](https://www.bilibili.com/video/BV1JE411g7XF)
+  - [Machine Learning (2020,Spring)](http://speech.ee.ntu.edu.tw/~tlkagk/courses_ML20.html)
 
 - 笔记：
 
