@@ -54,13 +54,13 @@ Fingerprints; value-based; off-policy; model-free; discrete action space; contin
 
 1、首先在多智能体环境下某个智能体的动作价值函数可以写成下式
 
-- 注意到其中的 $\boldsymbol{\pi}_{-a}\left(\mathbf{u}_{-a} \mid s\right)=\Pi_{i \in-a} \pi_{i}\left(u_{i} \mid s\right)$ 便是非平稳部分，它会随着其他智能体的策略改变而改变。
+- 注意到其中的 $\pi_{-a}(\mathbf{u}_{-a} \mid s)=\Pi_{i \in-a} \pi_{i}(u_{i} \mid s)$ 便是非平稳部分，它会随着其他智能体的策略改变而改变。
 
 <img width="70%" src="/img/in-post/2020-06-28-强化学习论文（13）Fingerprints.assets/image-20200628215031656.png"/>
 
 
 
-2、因此我们在每个时刻存储经验到经验池中的时候，加多一项额外项 $\boldsymbol{\pi}_{-a}\left(\mathbf{u}_{-a} \mid s\right)$，即每个时刻 $t_c$ 存储如下五元组
+2、因此我们在每个时刻存储经验到经验池中的时候，加多一项额外项 $\pi_{-a}(\mathbf{u}_{-a} \mid s)$，即每个时刻 $t_c$ 存储如下五元组
 
 <img width="30%" src="/img/in-post/2020-06-28-强化学习论文（13）Fingerprints.assets/image-20200628215428817.png"/>
 
@@ -88,7 +88,7 @@ Fingerprints; value-based; off-policy; model-free; discrete action space; contin
 
 
 
-3、可以看到在部分可观察环境中 $\boldsymbol{\pi}_{-a}\left(\mathbf{u}_{-a} \mid s\right)$ 依旧是导致非平稳性的原因，但与完全可观察不同，还有其他项也会导致非平稳，因此这里使用上述的重要性采样只是一种估计。
+3、可以看到在部分可观察环境中 $\pi_{-a}(\mathbf{u}_{-a} \mid s)$ 依旧是导致非平稳性的原因，但与完全可观察不同，还有其他项也会导致非平稳，因此这里使用上述的重要性采样只是一种估计。
 
 
 
@@ -96,7 +96,7 @@ Fingerprints; value-based; off-policy; model-free; discrete action space; contin
 
 1、在 IQL 中如果将其他智能体的策略作为其动作价值函数的条件，那么动作价值函数就可以稳定。
 
-- 在 hyper Q-learning 中提出一种思想是将每个智能体的状态空间用通过贝叶斯推断的其他智能体的策略进行增广，即 $O^{\prime}(s)=\left\{O(s), \boldsymbol{\theta}_{-a}\right\}$。
+- 在 hyper Q-learning 中提出一种思想是将每个智能体的状态空间用通过贝叶斯推断的其他智能体的策略进行增广，即 $O^{\prime}(s)=\{O(s), \boldsymbol{\theta}_{-a}\}$。
 - 但该方法在其他智能体也采用神经网络时，会导致输入空间的参数过多。
 
 
