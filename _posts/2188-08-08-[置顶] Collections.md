@@ -113,7 +113,7 @@ tags:
 
 - [英文版](https://www.microsoft.com/en-us/research/uploads/prod/2006/01/Bishop-Pattern-Recognition-and-Machine-Learning-2006.pdf)
 - [代码实现](https://github.com/ctgk/PRML)
-- [中文版](https://github.com/wwkenwong/book/blob/master/PRML%E4%B8%AD%E6%96%87%E7%89%88_%E6%A8%A1%E5%BC%8F%E8%AF%86%E5%88%AB%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.pdf)
+- [中文版](https://pan.baidu.com/s/1slSwEpJ)
 - [PRML中文版（马春鹏）勘误表](https://www.cnblogs.com/milaohu/p/7041014.html)
 
 
