@@ -54,7 +54,7 @@ Fingerprints; value-based; off-policy; model-free; discrete action space; contin
 
 1、首先在多智能体环境下某个智能体的动作价值函数可以写成下式
 
-- 注意到其中的 $\pi_{-a}(\mathbf{u}_{-a} \mid s)=\Pi_{i \in-a} \pi_{i}(u_{i} \mid s)$ 便是非平稳部分，它会随着其他智能体的策略改变而改变。
+- 注意到其中的 $\pi_{-a}(\mathbf{u}_{-a} \mid s)$ 便是非平稳部分，它会随着其他智能体的策略改变而改变。
 
 <img width="70%" src="/img/in-post/2020-06-28-强化学习论文（13）Fingerprints.assets/image-20200628215031656.png"/>
 
