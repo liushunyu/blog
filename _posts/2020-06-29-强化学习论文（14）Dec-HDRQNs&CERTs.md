@@ -1,7 +1,7 @@
 ---
 
 layout:     post
-title:      "强化学习论文（13）Dec-HDRQNs&CERTs"
+title:      "强化学习论文（14）Dec-HDRQNs&CERTs"
 subtitle:   "Deep Decentralized Multi-task Multi-Agent Reinforcement Learning under Partial Observability"
 date:       2020-06-29 09:00:00
 author:     Shunyu
