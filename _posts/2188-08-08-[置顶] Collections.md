@@ -153,9 +153,8 @@ tags:
 - [中文版](https://rl.qiwihui.com/zh_CN/latest/chapter1/introduction.html)
 - [代码实现](https://github.com/ShangtongZhang/reinforcement-learning-an-introduction)
 - [习题解答](https://github.com/LyWangPX/Reinforcement-Learning-2nd-Edition-by-Sutton-Exercise-Solutions)
-- 笔记：
-  - [强化学习入门（第二版）读书笔记](https://zhuanlan.zhihu.com/p/60973392)
-  - [机器学习读书笔记汇总 - 强化学习篇](https://zhuanlan.zhihu.com/p/48320594)
+- [强化学习入门（第二版）读书笔记](https://zhuanlan.zhihu.com/p/60973392)
+- [机器学习读书笔记汇总 - 强化学习篇](https://zhuanlan.zhihu.com/p/48320594)
 
 
 
@@ -262,21 +261,6 @@ tags:
 
 
 
-**李飞飞《视觉识别深度学习》CS231**
-
-- 网课：
-  - [斯坦福李飞飞视觉识别深度学习 CS231-2017](https://study.163.com/course/introduction/1004697005.htm)
-  - [斯坦福李飞飞视觉识别深度学习 CS231-2016](https://study.163.com/course/introduction/1003223001.htm)
-
-
-
-**Chris Manning & Richard Socher《自然语言处理课程》CS224n**
-
-- 网课：
-  - [斯坦福 2017 季 CS224n 深度学习自然语言处理课程](https://www.bilibili.com/video/av13383754?from=search&seid=7885912967229647423)
-
-
-
 ### 强化学习
 
 **莫烦《强化学习》**
@@ -341,11 +325,12 @@ tags:
 ### 强化学习
 
 - [OpenAI - Key Papers in Deep RL](https://spinningup.openai.com/en/latest/spinningup/keypapers.html#id106)
-- [ECKai - 多智能体强化学习入门](https://zhuanlan.zhihu.com/c_1061939147282915328)
-- [SJTU Multi-Agent Reinforcement Learning Tutorial](http://wnzhang.net/tutorials/marl2018/index.html)
 - [刘建平 - 强化学习](https://www.cnblogs.com/pinard/category/1254674.html)
 - [强化学习知识大讲堂](https://zhuanlan.zhihu.com/sharerl)
 - [强化学习前沿](https://zhuanlan.zhihu.com/reinforcementlearning)
+- [ECKai - 多智能体强化学习入门](https://zhuanlan.zhihu.com/c_1061939147282915328)
+- [SJTU Multi-Agent Reinforcement Learning Tutorial](http://wnzhang.net/tutorials/marl2018/index.html)
+- [多智能体强化学习（MARL）近年研究概览](https://blog.csdn.net/c9Yv2cf9I06K2A9E/article/details/104889969)
 
 
 
