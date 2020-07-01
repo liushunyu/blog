@@ -18,7 +18,7 @@ tags:
 
 **标签：**
 
-Fingerprints; value-based; off-policy; model-free; discrete action space; continuous state space; cooperative task; decentralized approach;
+Fingerprints; value-based; off-policy; model-free; discrete action space; continuous state space; cooperative task; decentralized approach; multi-agent;
 
 
 
