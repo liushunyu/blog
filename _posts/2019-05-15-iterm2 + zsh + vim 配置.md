@@ -186,6 +186,29 @@ defined POWERLEVEL9K_LEFT_PROMPT_ELEMENTS || POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
 
 
 
+## 中括号
+
+zsh 终端默认无法识别中括号，需要加上转义符号
+
+```bash
+$ pip install gym[atari]
+zsh: no matches found: gym[atari]
+
+$ pip install gym\[atari\]
+```
+
+可以修改默认设置
+
+```bash
+$ vim ~/.zshrc
+# 修改文件如下
+alias rake='noglob rake'
+```
+
+
+
+
+
 ## 参考资料及致谢
 
 [打造Mac下最强终端，iTerm2 + Oh My Zsh + powerlevel9k](https://feeeei.com/archives/27/?utm_source=wechat_session&utm_medium=social&utm_oi=639600489608777728)
@@ -199,3 +222,5 @@ defined POWERLEVEL9K_LEFT_PROMPT_ELEMENTS || POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
 [ITerm2配置-让你的mac命令行更加丰富高效](https://www.jianshu.com/p/405956cdaca6)
 
 [如何解决zsh + oh-my-zsh 使用conda时不显示环境名称的问题](https://www.cnblogs.com/czy-skyline/p/10941546.html)
+
+[Escape square brackets by default in zsh](https://kinopyo.com/en/blog/escape-square-bracket-by-default-in-zsh)
