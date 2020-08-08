@@ -28,8 +28,6 @@ import matplotlib.pyplot as plt
 
 
 
-
-
 ## scatter 散点图
 
 ```python
@@ -325,7 +323,33 @@ color=list(colors.cnames)[i]  # i 为颜色列表下标
 
 
 
+## 强化学习 gym 库渲染显示
 
+1、使用虚拟帧缓冲区打开 notebook
+
+```
+xvfb-run -s "-screen 0 1400x900x24" jupyter notebook
+```
+
+
+
+2、实现在 notebook 中显示 gym 库的渲染显示
+
+```python
+import matplotlib.pyplot as plt
+%matplotlib inline
+from IPython import display
+
+def show_state(env, step=0, info=""):
+    plt.figure(1)
+    plt.clf()
+    plt.imshow(env.render(mode='rgb_array'))
+    plt.title("Step: %d %s" % (step, info))
+    plt.axis('off')
+    
+    display.display(plt.gcf())
+    display.clear_output(wait=True)
+```
 
 
 
@@ -335,3 +359,4 @@ color=list(colors.cnames)[i]  # i 为颜色列表下标
 
 [NumPy Matplotlib](https://www.runoob.com/numpy/numpy-matplotlib.html)
 
+[How to run OpenAI Gym .render() over a server](https://stackoverflow.com/questions/40195740/how-to-run-openai-gym-render-over-a-server)
