@@ -189,7 +189,7 @@ tags:
 
 - 网课：
   - [Andrew Ng《Machine Learning》](https://www.bilibili.com/video/BV164411b7dx)（网课强推）
-- [Machine Learning 专项课程 coursera](https://www.coursera.org/learn/machine-learning)
+  - [Machine Learning 专项课程 coursera](https://www.coursera.org/learn/machine-learning)
   
 - 笔记 ：
   - [吴恩达老师的机器学习课程个人笔记](https://github.com/fengdu78/Coursera-ML-AndrewNg-Notes)
