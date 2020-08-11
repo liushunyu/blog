@@ -28,6 +28,7 @@ tags:
 - [PYTORCH DOCUMENTATION](https://pytorch.org/docs/stable/index.html)
 - [PyTorch 中文文档](https://pytorch-cn.readthedocs.io/zh/latest/)
 - [PyTorch 中文网](https://www.pytorchtutorial.com/pytorch-tutorials-list/)
+- [《动手学深度学习》(PyTorch版)](https://tangshusen.me/Dive-into-DL-PyTorch/)
 
 
 
