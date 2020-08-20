@@ -9,6 +9,7 @@ header-mask: 0.1
 catalog: true
 tags:
     - mac
+    - zsh
 ---
 
 

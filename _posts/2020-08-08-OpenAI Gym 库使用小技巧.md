@@ -61,6 +61,15 @@ for envid in sorted(envids):
 
 
 
+使用某个环境
+
+```python
+import gym
+env = gym.make('CartPole-v0')
+```
+
+
+
 ## 参考资料及致谢
 
 [OpenAI Gym](https://github.com/openai/gym)
