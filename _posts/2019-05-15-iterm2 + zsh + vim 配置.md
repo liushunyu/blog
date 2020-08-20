@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "iterm2 + zsh + vim 配置"
-subtitle:    "macOS 下进行 iterm2 + zsh + vim 配置"
+subtitle:    "macOS/Linux 下进行 iterm2 + zsh + vim 配置"
 date:       2019-05-15 09:00:00
 author:     Shunyu
 header-img: img/post-bg-2015.jpg
@@ -9,6 +9,7 @@ header-mask: 0.1
 catalog: true
 tags:
     - mac
+    - linux
     - zsh
 ---
 
@@ -28,6 +29,11 @@ tags:
 
 ```bash
 chsh -s /bin/zsh
+
+Linux 下重启 shell 出现提示选择 (2)
+(2)  Populate your ~/.zshrc with the configuration recommended
+     by the system administrator and exit (you will need to edit
+     the file by hand, if so desired).
 ```
 
 
@@ -55,6 +61,16 @@ $ vim ~/.zshrc
 # 修改文件如下
 ZSH_THEME="powerlevel9k/powerlevel9k"  # 修@更改主题样式
 POWERLEVEL9K_CONTEXT_TEMPLATE="lsy"  # 加@更改命令前面的用户名
+```
+
+
+
+添加配色设置
+
+```bash
+$ vim ~/.zshrc
+# 修改文件如下（放置在文件顶部）
+export TERM="xterm-256color"
 ```
 
 
@@ -117,8 +133,6 @@ typeset -g ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=10'
 
 
 
-
-
 安装 `zsh-syntax-highlighting` 
 
 ```bash
@@ -141,8 +155,10 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 ```bash
 $ vim ~/.zshrc
-# 修改文件如下
-source ~/.bash_profile # 加 bash 中.bash_profile 全部环境变量加入
+# 修改文件如下（macOS）
+source ~/.bash_profile # 将 .bash_profile 全部环境变量加入
+# 修改文件如下（Linux）
+source ~/.profile # 将 .profile 全部环境变量加入
 ```
 
 
@@ -163,11 +179,11 @@ cp solarized.vim ~/.vim/colors/
 
 ```bash
 $ vim ~/.vimrc
-# 修改文件如下
+# 修改文件如下，注意设置 number 在复制时不方便
 syntax on
 filetype on
-set number
 set ruler
+set number
 colorscheme solarized
 ```
 
