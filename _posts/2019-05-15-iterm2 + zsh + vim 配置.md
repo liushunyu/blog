@@ -21,9 +21,9 @@ tags:
 
 ## 终端配置
 
-下载 [iTerm2](https://www.iterm2.com/downloads.html)
+### shell 配置
 
-
+#### zsh 配置
 
 将 bash 终端切换为 zsh 终端，然后重启 shell
 
@@ -46,6 +46,18 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 
 
 
+添加配色设置
+
+```bash
+$ vim ~/.zshrc
+# 修改文件如下（放置在文件顶部）
+export TERM="xterm-256color"
+```
+
+
+
+#### 主题配置
+
 下载 powerlevel9k 主题样式
 
 ```bash
@@ -65,13 +77,26 @@ POWERLEVEL9K_CONTEXT_TEMPLATE="lsy"  # 加@更改命令前面的用户名
 
 
 
-添加配色设置
+如果仍使用原主题 robbyrussell，需要显示全路径则修改如下
 
 ```bash
-$ vim ~/.zshrc
-# 修改文件如下（放置在文件顶部）
-export TERM="xterm-256color"
+$ vim ~/.oh-my-zsh/themes/robbyrussell.zsh-theme
+# 修改文件如下
+# 将
+PROMPT+=' %{$fg[cyan]%}%c%{$reset_color%} $(git_prompt_info)'
+# 修改为
+PROMPT+=' %{$fg[cyan]%}%d%{$reset_color%} $(git_prompt_info)'
 ```
+
+
+
+> 此外还可以使用主题 agnoster，跟 powerlevel9k 比较像
+
+
+
+### 软件配置
+
+下载 [iTerm2](https://www.iterm2.com/downloads.html)
 
 
 
