@@ -25,7 +25,7 @@ tags:
 
 
 
-将 bash 终端切换为 zsh 终端
+将 bash 终端切换为 zsh 终端，然后重启 shell
 
 ```bash
 chsh -s /bin/zsh
