@@ -10,6 +10,8 @@ catalog: true
 tags:
     - python
     - linux
+    - mac
+    - windows
 ---
 
 

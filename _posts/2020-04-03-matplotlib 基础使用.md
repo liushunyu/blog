@@ -360,3 +360,6 @@ def show_state(env, step=0, info=""):
 [NumPy Matplotlib](https://www.runoob.com/numpy/numpy-matplotlib.html)
 
 [How to run OpenAI Gym .render() over a server](https://stackoverflow.com/questions/40195740/how-to-run-openai-gym-render-over-a-server)
+
+[Python-Matplotlib用户必备的画图速查表](https://zhuanlan.zhihu.com/p/197854613)
+
