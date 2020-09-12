@@ -9,7 +9,7 @@ header-mask: 0.1
 catalog: true
 tags:
     - anaconda
-    - jupyter notebook
+    - jupyter
     - 环境配置
 ---
 
