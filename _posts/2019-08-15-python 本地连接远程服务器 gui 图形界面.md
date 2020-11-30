@@ -12,6 +12,7 @@ tags:
     - linux
     - mac
     - windows
+    - pycharm
 ---
 
 

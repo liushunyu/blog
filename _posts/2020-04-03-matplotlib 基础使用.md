@@ -19,6 +19,10 @@ tags:
 
 
 
+**请注意使用 `plt.show()`**
+
+
+
 使用 jupyter 时需要 `%matplotlib inline`，以便直接在 python console 里面生成图像。
 
 ```
@@ -245,6 +249,17 @@ plt.scatter(X, Y, marker='o', color='r', alpha=0.5, edgecolors='k', linewidths=1
 plt.axis('off')
 
 plt.show()
+```
+
+
+
+## 保存图片
+
+- 需要放在 `plt.show()` 函数之前
+
+```python
+plt.savefig('result.pdf', format='pdf')
+plt.savefig('result.png', format='png')
 ```
 
 
