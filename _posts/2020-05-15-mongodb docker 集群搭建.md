@@ -69,8 +69,8 @@ services:
     networks:
       - mongoNet
     environment:
-      MONGO_INITDB_ROOT_USERNAME: double
-      MONGO_INITDB_ROOT_PASSWORD: ls269031126
+      MONGO_INITDB_ROOT_USERNAME: ***
+      MONGO_INITDB_ROOT_PASSWORD: ***
     command: mongod --dbpath /data/db --replSet qs_mongo --oplogSize 128 --keyFile /data/mongodb.key
     entrypoint:
       - bash
@@ -91,8 +91,8 @@ services:
     networks:
       - mongoNet
     environment:
-      MONGO_INITDB_ROOT_USERNAME: double
-      MONGO_INITDB_ROOT_PASSWORD: ls269031126
+      MONGO_INITDB_ROOT_USERNAME: ***
+      MONGO_INITDB_ROOT_PASSWORD: ***
     command: mongod --dbpath /data/db --replSet qs_mongo --oplogSize 128 --keyFile /data/mongodb.key
     entrypoint:
       - bash
@@ -113,8 +113,8 @@ services:
     networks:
       - mongoNet
     environment:
-      MONGO_INITDB_ROOT_USERNAME: double
-      MONGO_INITDB_ROOT_PASSWORD: ls269031126
+      MONGO_INITDB_ROOT_USERNAME: ***
+      MONGO_INITDB_ROOT_PASSWORD: ***
     command: mongod --dbpath /data/db --replSet qs_mongo --smallfiles --oplogSize 128 --keyFile /data/mongodb.key
     entrypoint:
       - bash
@@ -163,7 +163,7 @@ docker-compose -f mongodb_cluster.yml ps -a
 5、在 master 节点上配置主从仲裁信息
 
 ```bash
-docker-compose -f mongodb_cluster.yml exec master mongo admin -u double -p ls269031126
+docker-compose -f mongodb_cluster.yml exec master mongo admin -u *** -p ***
 ```
 
 ```bash
@@ -194,7 +194,7 @@ exit
 1、在 master 节点上插入信息
 
 ```bash
-docker-compose  -f mongodb_cluster.yml exec master mongo admin -u double -p ls269031126
+docker-compose  -f mongodb_cluster.yml exec master mongo admin -u *** -p ***
 ```
 
 ```bash
@@ -208,7 +208,7 @@ exit
 2、在 slave 中检测信息是否同步
 
 ```bash
-docker-compose -f mongodb_cluster.yml exec slave mongo admin -u double -p ls269031126
+docker-compose -f mongodb_cluster.yml exec slave mongo admin -u *** -p ***
 ```
 
 ```bash
@@ -225,7 +225,7 @@ exit
 3、在 arbiter 中检测信息是否同步
 
 ```bash
-docker-compose -f mongodb_cluster.yml exec arbiter mongo admin -u double -p ls269031126
+docker-compose -f mongodb_cluster.yml exec arbiter mongo admin -u *** -p ***
 ```
 
 （这里会显示读取失败，因为仲裁节点不是用来读的）
@@ -245,15 +245,15 @@ exit
 
 ```bash
 # master 节点是 PRIMARY
-docker-compose  -f mongodb_cluster.yml exec master mongo admin -u double -p ls269031126
+docker-compose  -f mongodb_cluster.yml exec master mongo admin -u *** -p ***
 # 显示 newset:PRIMARY>
 
 # slave 节点是 SECONDARY
-docker-compose -f mongodb_cluster.yml exec slave mongo admin -u double -p ls269031126
+docker-compose -f mongodb_cluster.yml exec slave mongo admin -u *** -p ***
 # 显示 newset:SECONDARY>
 
 # arbiter 节点是 ARBITER
-docker-compose -f mongodb_cluster.yml exec arbiter mongo admin -u double -p ls269031126
+docker-compose -f mongodb_cluster.yml exec arbiter mongo admin -u *** -p ***
 # 显示 newset:ARBITER>
 ```
 
@@ -271,11 +271,11 @@ docker-compose -f mongodb_cluster.yml stop master
 
 ```bash
 # slave 节点是 PRIMARY
-docker-compose -f mongodb_cluster.yml exec slave mongo admin -u double -p ls269031126
+docker-compose -f mongodb_cluster.yml exec slave mongo admin -u *** -p ***
 # 显示 newset:PRIMARY>
 
 # arbiter 节点是 ARBITER
-docker-compose -f mongodb_cluster.yml exec arbiter mongo admin -u double -p ls269031126
+docker-compose -f mongodb_cluster.yml exec arbiter mongo admin -u *** -p ***
 # 显示 newset:ARBITER>
 ```
 
