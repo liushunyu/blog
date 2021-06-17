@@ -140,6 +140,22 @@ which nvcc
 
 
 
+## cuda 报错
+
+错误：
+
+> OSError: libcublas.so.10: cannot open shared object file: No such file or directory
+
+解决：
+
+```bash
+conda install -c anaconda cudatoolkit=10.1
+```
+
+
+
+
+
 ## 参考资料及致谢
 
 [NVIDIA CUDA Installation Guide for Linux](https://docs.nvidia.com/cuda/archive/10.1/cuda-installation-guide-linux/index.html#abstract)

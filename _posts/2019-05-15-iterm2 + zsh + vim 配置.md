@@ -41,7 +41,7 @@ Linux 下重启 shell 出现提示选择 (2)
 下载 oh my zsh
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 
@@ -238,14 +238,6 @@ $ pip install gym[atari]
 zsh: no matches found: gym[atari]
 
 $ pip install gym\[atari\]
-```
-
-可以修改默认设置
-
-```bash
-$ vim ~/.zshrc
-# 修改文件如下
-alias rake='noglob rake'
 ```
 
 

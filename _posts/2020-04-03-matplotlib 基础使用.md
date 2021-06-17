@@ -148,6 +148,20 @@ plt.show()
 
 ## 绘图技巧
 
+### 定制图像大小
+
+```python
+fig = plt.figure(figsize=(12, 7))
+fig = plt.figure(figsize=(8.5, 7))
+fig = plt.figure(figsize=(5, 7))
+
+ax1 = plt.subplot(2, 1, 1)
+ax2 = plt.subplot(12, 1, 8)
+ax3 = plt.subplot(3, 1, 3)
+```
+
+
+
 ### 绘制多幅图像
 
 ```python
@@ -208,8 +222,12 @@ plt.figure()
 plt.scatter(X, Y, marker='o', color='r', alpha=0.5, edgecolors='k', linewidths=1)
 
 # 坐标轴标签
-plt.xlabel("x label")
-plt.ylabel("y label")
+plt.xlabel("x label", fontsize=20)
+plt.ylabel("y label", fontsize=20, labelpad=10)
+
+# 坐标轴字体大小
+plt.xticks(fontsize=20)
+plt.yticks(fontsize=20)
 
 # 自定义坐标轴刻度
 plt.xticks(np.linspace(-1, 1, 6))
@@ -253,13 +271,58 @@ plt.show()
 
 
 
+多个子图对齐 y 坐标轴
+
+```python
+fig.align_ylabels()
+```
+
+
+
+坐标轴科学计数法
+
+```python
+def changex(x, position):
+    return int(x/1000)
+
+plt.gca().xaxis.set_major_formatter(FuncFormatter(changex))
+```
+
+
+
+### 坐标轴截断
+
+```python
+ax1 = plt.subplot(12, 1, 8)
+plt.setp(ax1.get_xticklines(), visible=False)
+ax1.set_yticks([100])
+plt.yticks(fontsize=20)
+ax1.legend_.remove()
+
+ax2 = plt.subplot(3, 1, 3)
+plt.setp(ax2.get_xticklines(), visible=False)
+plt.subplots_adjust(hspace=0.1)
+
+ax1.set_ylim((95, 105))
+ax2.set_ylim((-2, 40))
+ax1.spines['bottom'].set_visible(False)
+ax2.spines['top'].set_visible(False)
+
+plt.xticks(fontsize=20)
+plt.yticks(fontsize=20)
+
+fig.align_ylabels()
+```
+
+
+
 ## 保存图片
 
 - 需要放在 `plt.show()` 函数之前
 
 ```python
-plt.savefig('result.pdf', format='pdf')
-plt.savefig('result.png', format='png')
+plt.savefig('result.pdf', format='pdf', bbox_inches='tight')
+plt.savefig('result.png', format='png', bbox_inches='tight')
 ```
 
 
@@ -368,6 +431,23 @@ def show_state(env, step=0, info=""):
 
 
 
+## Legend 使用
+
+```python
+plt.legend(loc=loc, ncol=ncol)
+
+loc = ['upper left' , 'upper center', 'upper right', 
+       'center left', 'center', 'center right', 
+       'lower left', 'lower center', 'lower right']
+
+fig = plt.gca()
+fig.legend_.remove()
+```
+
+
+
+
+
 ## 参考资料及致谢
 
 [Matplotlib随记2](https://www.cnblogs.com/huanggen/p/7533088.html)
@@ -377,4 +457,8 @@ def show_state(env, step=0, info=""):
 [How to run OpenAI Gym .render() over a server](https://stackoverflow.com/questions/40195740/how-to-run-openai-gym-render-over-a-server)
 
 [Python-Matplotlib用户必备的画图速查表](https://zhuanlan.zhihu.com/p/197854613)
+
+[matplotlib 到底该如何控制legend的位置之一？](https://zhuanlan.zhihu.com/p/99531531)
+
+[Python 作图实现坐标轴截断（打断）](https://blog.csdn.net/maryyu8873/article/details/84313423)
 
