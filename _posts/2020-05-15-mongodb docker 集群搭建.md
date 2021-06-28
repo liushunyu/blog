@@ -281,6 +281,68 @@ docker-compose -f mongodb_cluster.yml exec arbiter mongo admin -u *** -p ***
 
 
 
+## MongoDB 基础使用
+
+1、安装镜像启动容器
+
+```bash
+# 安装 MongoDB 最新版本的镜像
+docker pull mongo
+
+# MongoDB 容器基本创建方法和数据目录挂载
+docker run -itd -p 8030:27017 -v /home/lsy/test_db:/data/db --name test mongo --auth
+```
+
+2、连接创建管理用户
+
+>- mongodb是没有默认管理员账号，所以要先添加管理员账号，在开启权限认证。
+>- 切换到admin数据库，添加的账号才是管理员账号。
+>- 用户只能在用户所在数据库登录，包括管理员账号。
+>- mongo的用户是以数据库为单位来建立的，每个数据库有自己的管理员。
+>- 管理员可以管理所有数据库，但是不能直接管理其他数据库，要先在admin数据库认证后才可以。
+
+```bash
+# 尝试连接
+docker exec -it test mongo admin
+
+# 添加管理用户
+db.createUser({ user:'lsy', pwd:'***', roles:[ { role:'userAdminAnyDatabase', db: 'admin'}]});
+
+db.auth('lsy', '***')
+```
+
+3、创建新数据库
+
+```bash
+# 如果数据库不存在，则创建数据库，否则切换到指定数据库。
+use student
+
+# 为当前数据库添加用户
+db.createUser({ user:'boy', pwd:'***', roles:[ { role:'readWrite', db: 'student'}]})
+
+db.auth('boy', '***')
+
+# 每个数据库都有自己的 user 表
+show users
+exit
+```
+
+4、正常连接
+
+```bash
+docker exec -it test /bin/bash
+mongo
+use admin
+db.auth('lsy', '***')
+exit
+```
+
+补充：可视化工具 [MongoDB Compass](https://www.mongodb.com/try/download/compass)
+
+
+
+
+
 ## 参考资料及致谢
 
 [基于 Docker 的 MongoDB 主从集群](https://zhuanlan.zhihu.com/p/42836964)

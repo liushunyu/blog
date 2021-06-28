@@ -21,6 +21,8 @@ tags:
 
 **请注意使用 `plt.show()`**
 
+**字符串里使用\$\$输入公式时需要使用字符串模式r**
+
 
 
 使用 jupyter 时需要 `%matplotlib inline`，以便直接在 python console 里面生成图像。
