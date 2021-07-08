@@ -167,12 +167,25 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/p
 
 
 
+安装 `autojump` 
+
+```
+git clone https://github.com/wting/autojump.git $ZSH_CUSTOM/plugins/autojump
+cd $ZSH_CUSTOM/plugins/autojump
+./install.py
+```
+
+
+
 添加至 `plugins`
 
 ```bash
 $ vim ~/.zshrc
 # 修改文件如下
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+
+[[ -s /home/lsy/.autojump/etc/profile.d/autojump.sh ]] && source /home/lsy/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u
 ```
 
 
