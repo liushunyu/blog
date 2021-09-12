@@ -50,9 +50,8 @@ def show_state(env, step=0, info=""):
 
 ## gym 库列出所有环境
 
-https://github.com/openai/gym/blob/master/gym/envs/__init__.py
-
 ```python
+# copy from https://github.com/openai/gym/blob/master/gym/envs/__init__.py
 from gym import envs
 envids = [spec.id for spec in envs.registry.all()]
 for envid in sorted(envids):
@@ -67,6 +66,8 @@ for envid in sorted(envids):
 import gym
 env = gym.make('CartPole-v0')
 ```
+
+
 
 
 
