@@ -82,7 +82,7 @@ exit
 
 ## 其他说明
 
-还可以 [使用 `nohub` 实现后台运行服务器]() 的功能，还有一些其他方法可参考 [Linux下让进程在后台可靠运行的几种方法（nohup/&）和前后台运行程序切换](https://blog.csdn.net/u011630575/article/details/51037153)。
+还可以 [使用 `nohub` 实现后台运行服务器]() 的功能，还有一些其他方法可参考 [Linux下让进程在后台可靠运行的几种方法（nohup/&）和前后台运行程序切换](https://blog.csdn.net/u011630575/article/details/51037153)，目前更喜欢使用 tmux 来进行后台进程管理，功能更加强大，可参考[Tmux 配置：打造最适合自己的终端复用工具](https://www.cnblogs.com/zuoruining/p/11074367.html)。
 
 
 
@@ -95,3 +95,5 @@ exit
 [linux 技巧：使用 screen 管理你的远程会话](https://www.ibm.com/developerworks/cn/linux/l-cn-screen/)
 
 [Linux 守护进程的启动方法](http://www.ruanyifeng.com/blog/2016/02/linux-daemon.html)
+
+[Tmux 配置：打造最适合自己的终端复用工具](https://www.cnblogs.com/zuoruining/p/11074367.html)

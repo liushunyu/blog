@@ -58,6 +58,21 @@ export TERM="xterm-256color"
 
 #### 主题配置
 
+修改 zsh 主题样式为 agnoster
+
+``` bash
+$ vim ~/.zshrc
+# 修改文件如下
+ZSH_THEME="agnoster"  # 修@更改主题样式
+
+# 若出现报错 (anon):12: character not in range
+# 在 ~/.zshrc 添加以下两行
+export LC_ALL=C.UTF-8
+export LANG=C.UTF-8
+```
+
+
+
 下载 powerlevel9k 主题样式
 
 ```bash
@@ -71,7 +86,6 @@ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/theme
 ```bash
 $ vim ~/.zshrc
 # 修改文件如下
-# ZSH_THEME="agnoster"  # 修@更改主题样式（备用）
 ZSH_THEME="powerlevel9k/powerlevel9k"  # 修@更改主题样式
 POWERLEVEL9K_CONTEXT_TEMPLATE="lsy"  # 加@更改命令前面的用户名
 ```
