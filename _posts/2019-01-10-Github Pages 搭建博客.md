@@ -65,12 +65,12 @@ Site 设置：一些基本信息设置，需要修改为自己的信息。
 
 ```yml
 # Site settings
-title: Richard's Blog
-SEOTitle: Richard 的博客 | Richard's Blog
+title: Shunyu's Blog
+SEOTitle: Shunyu 的博客 | Shunyu's Blog
 header-img: img/index-bg.jpg
 email: shunyu.liu@foxmail.com
-description: "Richard 的博客"
-keyword: "Richard 的博客, Richard's Blog"
+description: "Shunyu 的博客"
+keyword: "Shunyu 的博客, Shunyu's Blog"
 url: "http://liushunyu.github.io"  # your host, for absolute URL
 baseurl: ""                        # for example, '/blog' if your blog hosted on 'host/blog'
 ```
@@ -178,7 +178,7 @@ header-img: "img/archive-bg.jpg"
 ---
 layout: page
 title: About
-description: "你好啊，这里是 Richard。"
+description: "你好啊，这里是 Shunyu。"
 header-img: "img/about-bg.jpg"
 multilingual: true
 ---
@@ -197,7 +197,7 @@ multilingual: true
 修改 `Powered by` 后面的 `href` 内容和文本，还需要修改 `iframe` 中的 `src`。
 
 ```html
-Powered by <a href="https://github.com/liushunyu/liushunyu.github.io">Richard's Blog</a> |
+Powered by <a href="https://github.com/liushunyu/liushunyu.github.io">Shunyu's Blog</a> |
 <iframe
         style="margin-left: 2px; margin-bottom:-5px;"
         frameborder="0" scrolling="0" width="100px" height="20px"
@@ -218,8 +218,8 @@ Powered by <a href="https://github.com/liushunyu/liushunyu.github.io">Richard's 
 请将 `icon` 里面的图片替换为你自己的头像，还需要修改 `manifest.json` 文件中的 `name`、`short_name` 和 `description`。
 
 ```json
-"name": "Richard's Blog",
-"short_name": "Richard's Blog",
+"name": "Shunyu's Blog",
+"short_name": "Shunyu's Blog",
 "description": "About an tracker who loves world.",
 ```
 

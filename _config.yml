@@ -1,10 +1,10 @@
 # Site settings
-title: Richard's Blog
-SEOTitle: Richard 的博客 | Richard's Blog
+title: Shunyu's Blog
+SEOTitle: Shunyu 的博客 | Shunyu's Blog
 header-img: img/index-bg.jpg
 email: shunyu.liu@foxmail.com
-description: "Richard 的博客"
-keyword: "Richard 的博客, Richard's Blog"
+description: "Shunyu 的博客"
+keyword: "Shunyu 的博客, Shunyu's Blog"
 url: "http://liushunyu.github.io"          # your host, for absolute URL
 baseurl: ""                                # for example, '/blog' if your blog hosted on 'host/blog'
 

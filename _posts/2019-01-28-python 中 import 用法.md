@@ -85,6 +85,8 @@ import mod1
 import lib.mod2
 ```
 
+注意：如果我们希望 `import xxx`，则需要 `xxx` 的上级目录在 `sys.path` 中
+
 
 
 ## sys.path.append() 说明
@@ -115,9 +117,9 @@ print(sys.path)
 ['', 'E:\\Anaconda3\\python35.zip', 'E:\\Anaconda3\\DLLs', 'E:\\Anaconda3\\lib', 'E:\\Anaconda3', 'C:\\Users\\77238\\AppData\\Roaming\\Python\\Python35\\site-packages', 'E:\\Anaconda3\\lib\\site-packages', 'E:\\Anaconda3\\lib\\site-packages\\Sphinx-1.4.6-py3.5.egg', 'E:\\Anaconda3\\lib\\site-packages\\win32', 'E:\\Anaconda3\\lib\\site-packages\\win32\\lib', 'E:\\Anaconda3\\lib\\site-packages\\Pythonwin', 'E:\\Anaconda3\\lib\\site-packages\\setuptools-27.2.0-py3.5.egg', '..']
 ```
 
-sys.path 返回的是一个列表，该列表已经添加到系统的环境变量的路径。当我们要添加自己的搜索目录路径时，可以通过列表的 `sys.path.append()` 方法添加。
+sys.path 返回的是一个列表，该列表已经添加到系统的环境变量的路径。当我们要添加自己的搜索目录路径时，可以通过列表的 `sys.path.append()` 方法添加。其中 `sys.path.append("..")` 为添加上级目录，还有 `sys.path.append("../..")` 为添加上上级目录。
 
-其中 `sys.path.append("..")` 为添加上级目录，还有 `sys.path.append("../..")` 为添加上上级目录。
+
 
 
 
