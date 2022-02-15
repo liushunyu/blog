@@ -140,7 +140,7 @@ which nvcc
 
 
 
-## cuda 报错
+## Cuda 报错
 
 错误：
 
@@ -153,6 +153,44 @@ conda install -c anaconda cudatoolkit=10.1
 ```
 
 
+
+错误：
+
+> NVIDIA-SMI has failed because it couldn't communicate with the NVIDIA driver. Make sure that the latest NVIDIA driver is installed and running.
+
+解决：
+
+```bash
+# 安装 dkms
+sudo apt-get install dkms
+
+# 查看驱动版本号
+ll /usr/src/ 
+
+# 安装对应驱动
+sudo dkms install -m nvidia -v 450.51.06
+```
+
+
+
+错误：
+
+> The current PyTorch install supports CUDA capabilities sm_37 sm_50 sm_60 sm_70.
+>
+> If you want to use the NVIDIA A40 GPU with PyTorch，please check the instructions at https://pytorch.org/get-started/locally/
+>
+> RuntimeError: CUDA error: no kernel image is available for execution on the device
+
+解决：
+
+```bash
+# 查看 torch 对应 cuda 版本，原因是版本相对于 GPU 太落后
+import torch
+torch.version.cuda
+
+# 安装 dkms
+pip install torch==1.8.1+cu111 -f https://download.pytorch.org/whl/torch_stable.html --timeout 6000000
+```
 
 
 

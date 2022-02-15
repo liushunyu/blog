@@ -38,7 +38,53 @@ os.rmdir()       # 删除目录（文件夹不能有文件）
 os.removedirs()  # 递归删除目录树（文件夹不能有文件）
 
 os.rename("old_name", "new_name")  # 重命名文件或目录
+```
 
+
+
+### os.walk() 操作
+
+`os.walk()` 方法用于通过在目录树中游走输出在目录中的文件夹名和文件名。
+
+```python
+import os
+
+# 依次列出当前目录下所有文件名和文件夹名再往下遍历
+for root, dirs, files in os.walk("."):
+    for name in files:
+        print(os.path.join(root, name))
+    for name in dirs:
+        print(os.path.join(root, name))
+
+# 按照遍历顺序依次列出当前文件夹名和其下所有文件名
+for root, dirs, files in os.walk("."):
+    path = root.split(os.sep)
+    print((len(path) - 1) * '---', os.path.basename(root))
+    for file in files:
+        print(len(path) * '---', file)
+```
+
+
+
+### os.listdir()  操作
+
+`os.listdir()` 方法用于返回指定的文件夹包含的文件或文件夹的名字的列表。这个列表以字母顺序。 它不包括 '.' 和 '..' 即使它在文件夹中。
+
+``` python
+import os
+# 列出当前目录下所有文件名和文件夹名，不包括 '.' 和 '..' 
+os.listdir(".")
+
+# 实践，获得当前目录下所有文件与文件夹路径
+files = os.listdir(path)
+files = [os.path.join(path, f) for f in files]
+```
+
+
+
+### os.path() 操作
+
+```python
 os.path.isfile()    # 检验给出的路径是否是一个文件
 os.path.isdir()     # 检验给出的路径是否是一个目录
 os.path.isabs()     # 判断是否是绝对路径
@@ -48,9 +94,8 @@ os.path.splitext()  # 分离文件扩展名
 os.path.dirname()   # 获取文件路径名
 os.path.basename()  # 获取一个绝对路径下的文件名
 os.path.getsize()   # 获取文件大小
+os.path.join()      # 将多个目录和一个文件名合成一个路径
 ```
-
-- [python os.walk() os.listdir() 与 os.path()](https://liushunyu.github.io/2019/08/15/python-os.walk()-os.listdir()-与-os.path()/)
 
 
 
@@ -76,3 +121,11 @@ shutil.rmtree("dir")                     # 递归删除目录树（文件夹里�
 [Python os&&shutil](https://blog.csdn.net/u012164509/article/details/93995887)
 
 [python中的os,shutil模块的定义以及用法](https://www.cnblogs.com/czaiz/p/7693915.html)
+
+[Python os.walk() 方法](https://www.runoob.com/python/os-walk.html)
+
+[Python os.path() 模块](https://www.runoob.com/python/python-os-path.html)
+
+[Python os.listdir() 方法](https://www.runoob.com/python/os-listdir.html)
+
+[如何使用os.walk（）以递归方式遍历Python中的目录？](https://cloud.tencent.com/developer/ask/49191)
