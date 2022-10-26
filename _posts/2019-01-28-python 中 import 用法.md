@@ -33,6 +33,7 @@ tags:
 
 ```python
 import mod
+from . import mod
 # 或
 from mod import *
 ```
