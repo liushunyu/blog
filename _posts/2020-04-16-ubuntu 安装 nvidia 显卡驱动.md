@@ -124,6 +124,16 @@ lspci | grep -i nvidia
 2、到官网[下载NVIDIA官方显卡驱动](https://www.nvidia.com/Download/index.aspx)，然后存储到相应路径并执行安装文件。
 
 
+3、启动持续性能模式
+
+```bash
+nvidia-smi -pm 1
+
+# 安装新驱动时需要关闭 PM mode，否则会出错：
+nvidia-smi -pm 0
+```
+
+
 
 ### 安装完成
 
@@ -152,4 +162,8 @@ nvidia-smi
 [Ubuntu 18.04安装NVIDIA显卡驱动教程](https://www.linuxidc.com/Linux/2019-02/157170.htm)
 
 [Linux(CentOS)下安装NVIDIA GPU驱动](https://www.cnblogs.com/YSPXIZHEN/p/11466145.html)
+
+[linux server 安装cuda & nvidia驱动](https://zhuanlan.zhihu.com/p/514004965)
+
+
 

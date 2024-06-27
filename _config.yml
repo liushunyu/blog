@@ -6,7 +6,7 @@ email: shunyu.liu@foxmail.com
 description: "Shunyu 的博客"
 keyword: "Shunyu 的博客, Shunyu's Blog"
 url: "http://liushunyu.github.io"          # your host, for absolute URL
-baseurl: ""                                # for example, '/blog' if your blog hosted on 'host/blog'
+baseurl: "/blog"                                # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
 future: true

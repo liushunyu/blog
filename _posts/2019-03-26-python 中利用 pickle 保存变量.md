@@ -35,7 +35,7 @@ def save_variable(v,filename):
     return filename
 
 # 读取变量
-def load_variavle(filename):
+def load_variable(filename):
     f = open(filename, 'rb')
     r = pickle.load(f)
     f.close()
