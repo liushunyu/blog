@@ -25,7 +25,7 @@ tags:
 
 
 
-<img width="480" src="/img/in-post/2019-08-15-windows 下搭建 ftp 服务器.assets/1.png"/>
+<img width="480" src="/img/in-post/2019-08-23-windows下搭建ftp服务器.assets/1.png"/>
 
 
 
@@ -37,7 +37,7 @@ tags:
 
 1、FTP 服务器
 
-<img width="480" src="/img/in-post/2019-08-15-windows 下搭建 ftp 服务器.assets/2.png"/>
+<img width="480" src="/img/in-post/2019-08-23-windows下搭建ftp服务器.assets/2.png"/>
 
 
 
@@ -45,7 +45,7 @@ tags:
 
 > 注：如果没有这一项请手动添加：点击 “允许其它应用” -> 浏览 -> 添加 “C:Windows\System32\svchost.exe”
 
-<img width="480" src="/img/in-post/2019-08-15-windows 下搭建 ftp 服务器.assets/3.png"/>
+<img width="480" src="/img/in-post/2019-08-23-windows下搭建ftp服务器.assets/3.png"/>
 
 
 
@@ -55,7 +55,7 @@ tags:
 
 
 
-<img width="480" src="/img/in-post/2019-08-15-windows 下搭建 ftp 服务器.assets/4.png"/>
+<img width="480" src="/img/in-post/2019-08-23-windows下搭建ftp服务器.assets/4.png"/>
 
 
 
@@ -63,19 +63,19 @@ tags:
 
 
 
-<img width="480" src="/img/in-post/2019-08-15-windows 下搭建 ftp 服务器.assets/5.png"/>
+<img width="480" src="/img/in-post/2019-08-23-windows下搭建ftp服务器.assets/5.png"/>
 
 
 
-<img width="480" src="/img/in-post/2019-08-15-windows 下搭建 ftp 服务器.assets/6.png"/>
+<img width="480" src="/img/in-post/2019-08-23-windows下搭建ftp服务器.assets/6.png"/>
 
 
 
-<img width="480" src="/img/in-post/2019-08-15-windows 下搭建 ftp 服务器.assets/7.png"/>
+<img width="480" src="/img/in-post/2019-08-23-windows下搭建ftp服务器.assets/7.png"/>
 
 
 
-<img width="480" src="/img/in-post/2019-08-15-windows 下搭建 ftp 服务器.assets/8.png"/>
+<img width="480" src="/img/in-post/2019-08-23-windows下搭建ftp服务器.assets/8.png"/>
 
 
 
@@ -89,7 +89,7 @@ tags:
 
 
 
-<img width="480" src="/img/in-post/2019-08-15-windows 下搭建 ftp 服务器.assets/9.png"/>
+<img width="480" src="/img/in-post/2019-08-23-windows下搭建ftp服务器.assets/9.png"/>
 
 
 
@@ -101,7 +101,7 @@ tags:
 
 
 
-<img width="480" src="/img/in-post/2019-08-15-windows 下搭建 ftp 服务器.assets/10.png"/>
+<img width="480" src="/img/in-post/2019-08-23-windows下搭建ftp服务器.assets/10.png"/>
 
 
 
@@ -114,7 +114,7 @@ tags:
 
 
 
-<img width="480" src="/img/in-post/2019-08-15-windows 下搭建 ftp 服务器.assets/11.png"/>
+<img width="480" src="/img/in-post/2019-08-23-windows下搭建ftp服务器.assets/11.png"/>
 
 
 
@@ -127,7 +127,7 @@ tags:
 
 
 
-<img width="480" src="/img/in-post/2019-08-15-windows 下搭建 ftp 服务器.assets/12.png"/>
+<img width="480" src="/img/in-post/2019-08-23-windows下搭建ftp服务器.assets/12.png"/>
 
 
 
@@ -143,7 +143,7 @@ tags:
 
 
 
-<img width="480" src="/img/in-post/2019-08-15-windows 下搭建 ftp 服务器.assets/13.png"/>
+<img width="480" src="/img/in-post/2019-08-23-windows下搭建ftp服务器.assets/13.png"/>
 
 
 
