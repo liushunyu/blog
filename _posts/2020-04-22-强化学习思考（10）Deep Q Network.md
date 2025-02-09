@@ -68,7 +68,7 @@ $$
 
 - 注意 Q network 初始化权重需要比较小，这样网络前期训练可以更依赖于 target 中的 $r$ 值
 
-<img width="480" src="/img/in-post/2020-04-22-强化学习思考（10）Deep Q Network.assets/image-20190819222132744.png"/>
+<img width="480" src="/blog/img/in-post/2020-04-22-强化学习思考（10）Deep Q Network.assets/image-20190819222132744.png"/>
 
 
 
@@ -110,7 +110,7 @@ $$
 
 为了不让模型学习到 $Q(s,a)=A(s,a)$，我们对 $A(s,a)$  减去其均值，使 $A(s,a)$ 具有零和特征，这时候学习到的 $V(s)$ 便相当于 $Q(s,a)$ 的平均值。
 
-<img width="480" src="/img/in-post/2020-04-22-强化学习思考（10）Deep Q Network.assets/image-20190819223356959.png"/>
+<img width="480" src="/blog/img/in-post/2020-04-22-强化学习思考（10）Deep Q Network.assets/image-20190819223356959.png"/>
 
 
 
@@ -118,7 +118,7 @@ $$
 
 在训练的过程中，对于在经验 buffer 里面的样本，那些具有更大的 TD 误差的样本会有更高的概率被采样，这样可以加快训练速度，此外在这个过程中，参数更新的过程也会有相应的更改。
 
-<img width="480" src="/img/in-post/2020-04-22-强化学习思考（10）Deep Q Network.assets/image-20190819224532388.png"/>
+<img width="480" src="/blog/img/in-post/2020-04-22-强化学习思考（10）Deep Q Network.assets/image-20190819224532388.png"/>
 
 
 
@@ -132,7 +132,7 @@ $$
 - typically faster learning, especially early on
 - only actually correct when learning on-policy
 
-<img width="480" src="/img/in-post/2020-04-22-强化学习思考（10）Deep Q Network.assets/image-20190819224640633.png"/>
+<img width="480" src="/blog/img/in-post/2020-04-22-强化学习思考（10）Deep Q Network.assets/image-20190819224640633.png"/>
 
 如何解决 on-policy 到 off-policy 的使用：
 
@@ -175,7 +175,7 @@ $$
 
 状态-行动价值函数 $Q^\pi(s,a)$ 是累积收益的期望值，也就是说是价值分布的均值。然而有的时候不同的分布得到的均值可能一样，但我们并不知道实际的分布是什么。
 
-<img width="480" src="/img/in-post/2020-04-22-强化学习思考（10）Deep Q Network.assets/image-20190819225321134.png"/>
+<img width="480" src="/blog/img/in-post/2020-04-22-强化学习思考（10）Deep Q Network.assets/image-20190819225321134.png"/>
 
 Distributional Q-function 认为可以输出Q值的分布，当具有相同的均值时，选择具有较小方差（风险）的那一个，但实际上这个方法很难付诸实践。
 
@@ -183,7 +183,7 @@ Distributional Q-function 认为可以输出Q值的分布，当具有相同的�
 
 ### Rainbow
 
-<img width="480" src="/img/in-post/2020-04-22-强化学习思考（10）Deep Q Network.assets/image-20190819225419121.png"/>
+<img width="480" src="/blog/img/in-post/2020-04-22-强化学习思考（10）Deep Q Network.assets/image-20190819225419121.png"/>
 
 上述图像表明 DDQN 对于 rainbow 来说用处不大，这是因为 DDQN 是用来解决高估问题的，而这个问题在 distributional Q-function 中已经得到了解决。
 
@@ -225,7 +225,7 @@ these method works OK, for up to about 40 dimensions
   - just as efficient as Q-learning
   - loses representational power: 缺点就在于 Q 函数只能是固定的形式（如这里的二次函数），非常受限，Q 函数的建模泛化能力将大大降低。
 
-<img width="480" src="/img/in-post/2020-04-22-强化学习思考（10）Deep Q Network.assets/image-20190819225620305.png"/>
+<img width="480" src="/blog/img/in-post/2020-04-22-强化学习思考（10）Deep Q Network.assets/image-20190819225620305.png"/>
 
 这里 $\sum$ 和 $\mu$ 是高斯分布的方差和均值，因此，该矩阵 $\sum$ 一定是正定的。要让 $Q$ 值较高，意味着要使得 $(a-\mu)^2$ 的值更小，也就是说 $a=\mu$。
 
@@ -248,7 +248,7 @@ $$
 
 Pathwise Derivative Policy Gradient 训练一个 actor $\pi$，如果给这个 actor 输入 state，会返回一个使得 $Q$ 值最大的 action $a$。然后将这个 actor 返回的 action 和 state 一起输入到一个固定的 $Q$ 中，计算出来的 $Q$ 值一定会增大，然后使用梯度上升更新 actor，重复上述步骤。
 
-<img width="480" src="/img/in-post/2020-04-21-强化学习思考（8）Actor-Critic 方法.assets/image-20190820121719895.png"/>
+<img width="480" src="/blog/img/in-post/2020-04-21-强化学习思考（8）Actor-Critic 方法.assets/image-20190820121719895.png"/>
 
 以上网络实际上是两个网络的叠加，类似于 conditional GAN，其中 actor 是 generator，$Q$ 是 discriminator。
 
@@ -256,7 +256,7 @@ Pathwise Derivative Policy Gradient 训练一个 actor $\pi$，如果给这个 a
 
 具体算法如下：
 
-<img width="480" src="/img/in-post/2020-04-21-强化学习思考（8）Actor-Critic 方法.assets/image-20190820121940466.png"/>
+<img width="480" src="/blog/img/in-post/2020-04-21-强化学习思考（8）Actor-Critic 方法.assets/image-20190820121940466.png"/>
 
 1、当前采取的 action 由训练的 actor $\pi$ 决定。
 
@@ -268,7 +268,7 @@ Pathwise Derivative Policy Gradient 训练一个 actor $\pi$，如果给这个 a
 
 由于该方法与 GAN 类似，可以根据已有的研究进行两个领域的研究方向迁移，为之后的研究提供一定的思路。
 
-<img width="480" src="/img/in-post/2020-04-21-强化学习思考（8）Actor-Critic 方法.assets/image-20190820122603754.png"/>
+<img width="480" src="/blog/img/in-post/2020-04-21-强化学习思考（8）Actor-Critic 方法.assets/image-20190820122603754.png"/>
 
 
 

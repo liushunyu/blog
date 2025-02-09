@@ -74,7 +74,7 @@ Dec-HDRQNs; CERTs; value-based; off-policy; model-free; discrete action space; c
 
 1、针对 DRQN 的训练提出了 concurrent experience replay trajectories 的概念，即每个智能体在独立训练自己的 Q-function 时，从经验池中采样出来的数据需要从 episode 层面以及时间步层面上对齐。
 
-<img width="80%" src="/img/in-post/2020-06-29-强化学习论文（14）Dec-HDRQNs&CERTs.assets/image-20200629114443632.png"/>
+<img width="80%" src="/blog/img/in-post/2020-06-29-强化学习论文（14）Dec-HDRQNs&CERTs.assets/image-20200629114443632.png"/>
 
 
 
@@ -86,13 +86,13 @@ Dec-HDRQNs; CERTs; value-based; off-policy; model-free; discrete action space; c
 
 2、首先利用 Dec-HDRQNs 为每一个 single-task 进行训练并将数据集存储在 CERTs 中。
 
-<img width="80%" src="/img/in-post/2020-06-29-强化学习论文（14）Dec-HDRQNs&CERTs.assets/image-20200629114959751.png"/>
+<img width="80%" src="/blog/img/in-post/2020-06-29-强化学习论文（14）Dec-HDRQNs&CERTs.assets/image-20200629114959751.png"/>
 
 
 
 3、然后采用蒸馏的方法将所有 single-task 上的知识蒸馏到一个到一组处理  multi-tasks 的智能体上。
 
-<img width="80%" src="/img/in-post/2020-06-29-强化学习论文（14）Dec-HDRQNs&CERTs.assets/image-20200629115023087.png"/>
+<img width="80%" src="/blog/img/in-post/2020-06-29-强化学习论文（14）Dec-HDRQNs&CERTs.assets/image-20200629115023087.png"/>
 
 
 
@@ -102,7 +102,7 @@ Dec-HDRQNs; CERTs; value-based; off-policy; model-free; discrete action space; c
 
 - 根据 grid-world 的 $m$ 的大小定义为不同的 task
 
-<img width="100%" src="/img/in-post/2020-06-29-强化学习论文（14）Dec-HDRQNs&CERTs.assets/image-20200629115419034.png"/>
+<img width="100%" src="/blog/img/in-post/2020-06-29-强化学习论文（14）Dec-HDRQNs&CERTs.assets/image-20200629115419034.png"/>
 
 
 

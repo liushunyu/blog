@@ -42,19 +42,19 @@ sh cuda_10.1.243_418.87.00_linux.run
 
 第一步：如果提示系统已安装了 cuda，直接忽略选择 **Continute**
 
-<img width="480" src="/img/in-post/2019-10-31-cuda + cudnn 用户配置.assets/1.png"/>
+<img width="480" src="/blog/img/in-post/2019-10-31-cuda + cudnn 用户配置.assets/1.png"/>
 
 
 
 第二步：输入 `accept` 同意协议
 
-<img width="480" src="/img/in-post/2019-10-31-cuda + cudnn 用户配置.assets/2.png"/>
+<img width="480" src="/blog/img/in-post/2019-10-31-cuda + cudnn 用户配置.assets/2.png"/>
 
 
 
 第三步：CUDA Installer：取消 **Driver** 的勾选，然后进去 **Options** 进行安装设置
 
-<img width="480" src="/img/in-post/2019-10-31-cuda + cudnn 用户配置.assets/3.png"/>
+<img width="480" src="/blog/img/in-post/2019-10-31-cuda + cudnn 用户配置.assets/3.png"/>
 
 
 
@@ -62,14 +62,14 @@ sh cuda_10.1.243_418.87.00_linux.run
 
 > 留意一下 **Samples Options** 中的 **Install Path** 是不是 `/home/lsy/cuda`
 
-<img width="480" src="/img/in-post/2019-10-31-cuda + cudnn 用户配置.assets/4.png"/>
+<img width="480" src="/blog/img/in-post/2019-10-31-cuda + cudnn 用户配置.assets/4.png"/>
 
 a. 配置 **Toolkit Options**：
 
 - 取消全部选项的勾选
 - Change Toolkit Install Path：`/home/lsy/cuda/cuda-10.1`
 
-<img width="480" src="/img/in-post/2019-10-31-cuda + cudnn 用户配置.assets/5.png"/>
+<img width="480" src="/blog/img/in-post/2019-10-31-cuda + cudnn 用户配置.assets/5.png"/>
 
 
 

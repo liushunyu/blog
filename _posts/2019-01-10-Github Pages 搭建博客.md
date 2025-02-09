@@ -37,7 +37,7 @@ tags:
 
 新建一个仓库 repository，仓库名字为 `xxx.github.io`，其中 `xxx` 为你 github 的 `username`。
 
-<img width="480" src="/img/in-post/2019-01-10-Github Pages 搭建博客.assets/1.png"/>
+<img width="480" src="/blog/img/in-post/2019-01-10-Github Pages 搭建博客.assets/1.png"/>
 
 然后把自己新建的仓库 clone下来。
 
@@ -276,13 +276,13 @@ const HOSTNAME_WHITELIST = [
 
 > Github 头像下拉菜单 -> Settings -> 左边 Developer settings 下的 OAuth Apps -> New OAuth App -> 填写相关信息
 
-<img width="480" src="/img/in-post/2019-01-10-Github Pages 搭建博客.assets/2.png"/>
+<img width="480" src="/blog/img/in-post/2019-01-10-Github Pages 搭建博客.assets/2.png"/>
 
 
 
 2、填写相关信息
 
-<img width="480" src="/img/in-post/2019-01-10-Github Pages 搭建博客.assets/3.png"/>
+<img width="480" src="/blog/img/in-post/2019-01-10-Github Pages 搭建博客.assets/3.png"/>
 
 
 
